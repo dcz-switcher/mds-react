@@ -4,6 +4,12 @@ import Badge from './Badge';
 
 const meta = {
   component: Badge,
+  argTypes: {
+    color: {
+      name: "color token (override severity color)",
+      control: "text"
+    }
+  }
 } satisfies Meta<typeof Badge>;
 
 export default meta;

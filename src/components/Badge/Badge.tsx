@@ -3,7 +3,8 @@ import React, {ReactNode} from 'react';
 export type BadgeProps = {
     readonly label?: string;
     readonly size?: "small" | "big";
-    readonly color?: "neutral" | "success" | "warning" | "danger" | "new" ;
+    readonly severity?: "neutral" | "success" | "warning" | "danger" | "new";
+    readonly color?: string; // override severity color
     readonly icon?: string;
 }
 
@@ -11,11 +12,15 @@ export type BadgeProps = {
 export default function Badge({
     label,
     size,
-    color = "neutral",
-    icon
+    severity = "neutral",
+    icon,
+    color,
 }: BadgeProps) {
+
+    const colorClass = (color) ? `mds-background-color__${color}` : "";
+
     return  (
-        <p className={`mds-badge mds-badge--${size} mds-badge--${color}`}>
+        <p className={`mds-badge mds-badge--${size} mds-badge--${severity} ${colorClass}`}>
             {icon ? (
                 <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
             ) : (
