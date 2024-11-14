@@ -4,6 +4,12 @@ import Button from './Button';
 
 const meta = {
   component: Button,
+  argTypes: {
+    children: {
+      name: "Text",
+      control: {type: "text"}
+    }
+  }
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -11,5 +17,5 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {args: {
-  children: "Design System", variant : "secondary"
+  children: "Button", variant : "secondary"
 }};
