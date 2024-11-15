@@ -22,5 +22,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {args: {
-  title: "", children: "", severity: "info"
+  title: "",
+  children: "This is not an exercice but a real alert",
+  severity: "info",
+  icon: "info"
 }};

@@ -5,17 +5,19 @@ export type AlertProps = {
     readonly children?: ReactNode;
     readonly severity?: "info" | "success" | "warning" | "danger";
     readonly title?: string;
+    readonly icon?: string;
 }
 
 export default function Alert({
     children,
     severity = "info",
-    title
+    title,
+    icon = "info"
 }){
     return (
         <div className={`mds-alert mds-alert--basic mds-alert-type--${severity} mds-border-4--color-white`}>
             <div className="mds-alert__header">
-                <span className="mds-icon mds-icon__info" aria-hidden="true"></span>
+                <span className={`mds-icon mds-icon__${icon}`} aria-hidden="true"></span>
                 { title ? (
                     <h2 className="mds-sr-only">{title}</h2>
                 ):( null )}
