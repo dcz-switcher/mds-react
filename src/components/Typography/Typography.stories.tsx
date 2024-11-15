@@ -7,6 +7,10 @@ const meta = {
   argTypes: {
     children: {
       type: "string"
+    },
+    component: {
+      control: "select",
+      options: ["span", "p", "div", "h1", "h2", "h3", "h4", "h5", "h6"]
     }
   }
 } satisfies Meta<typeof Typography>;
