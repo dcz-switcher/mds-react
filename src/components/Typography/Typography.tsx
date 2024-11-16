@@ -11,6 +11,7 @@ const variantMappingClass = {
     body2: 'mds-text--2',
     body3: 'mds-text--3',
     body4: 'mds-text--4',
+    underline: 'mds-underline',
   };
 
   const variantMappingTag = {
@@ -24,11 +25,12 @@ const variantMappingClass = {
     body2: 'p',
     body3: 'p',
     body4: 'p',
+    underline: 'span',
   }
 
 export type typographyProps = {
     readonly children?: ReactNode;
-    readonly variant? : "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" ;
+    readonly variant? : "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "underline" ;
     readonly component?: string;
     readonly align?: "center" | "inherit" | "justify" | "left" | "right";
 }

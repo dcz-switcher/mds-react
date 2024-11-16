@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Typography from './Typography';
@@ -26,3 +27,20 @@ export const Default: Story = {
     align: "left",
   }
 };
+
+export const NestedTypography: Story = {
+  render: (args) => (
+    <Typography variant='h1'>
+      Parent typography <Typography variant='body1' component='span'>Nested Typography</Typography>
+    </Typography>
+  )
+}
+
+export const UnderlineFx: Story = {
+  render: (args) => (
+    <div>
+      <Typography variant='h1'>Title H1 with <Typography variant='underline'>underline</Typography> effect</Typography>
+    </div>
+    
+  )
+}
