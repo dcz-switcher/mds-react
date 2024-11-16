@@ -12,6 +12,10 @@ const meta = {
     component: {
       control: "select",
       options: ["span", "p", "div", "h1", "h2", "h3", "h4", "h5", "h6"]
+    },
+    underlineColor: {
+      name: 'Underline color token',
+      type: "string"
     }
   }
 } satisfies Meta<typeof Typography>;
@@ -24,8 +28,8 @@ export const Default: Story = {
   args: {
     children: "This is a sentence",
     variant: "body1",
-    align: "left",
-  }
+    align: "left"
+  },
 };
 
 export const NestedTypography: Story = {
@@ -39,7 +43,7 @@ export const NestedTypography: Story = {
 export const UnderlineFx: Story = {
   render: (args) => (
     <div>
-      <Typography variant='h1'>Title H1 with <Typography variant='underline'>underline</Typography> effect</Typography>
+      <Typography variant='h1'>Title H1 with <Typography variant='underline' underlineColor='color-4100'>underline</Typography> effect</Typography>
     </div>
     
   )

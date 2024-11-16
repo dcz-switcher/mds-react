@@ -33,20 +33,23 @@ export type typographyProps = {
     readonly variant? : "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "underline" ;
     readonly component?: string;
     readonly align?: "center" | "inherit" | "justify" | "left" | "right";
+    readonly underlineColor?: string;
 }
 
 export default function Typography({
     children, 
     variant = "body1",
     component,
-    align = "left"
+    align = "left",
+    underlineColor
 }:typographyProps) {
    
     const tagComponent = component || variantMappingTag[variant];
     const Tag = tagComponent as "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div" | "span";
+    const variantClass = (variant == "underline" && underlineColor) ? variantMappingClass[variant] + '--' + underlineColor : variantMappingClass[variant];
 
     return (
-        <Tag className={variantMappingClass[variant]} style={{textAlign: align}}>
+        <Tag className={variantClass} style={{textAlign: align}}>
             {children}
         </Tag>
       
