@@ -5,6 +5,9 @@ import Alert from './Alert';
 const meta = {
   component: Alert,
   argTypes: {
+    title: {
+      name: 'Title (sr only)'
+    },
     children: {
       name: 'children',
       control: 'text'

@@ -6,7 +6,7 @@ const meta = {
   component: Badge,
   argTypes: {
     color: {
-      name: "color token (override severity color)",
+      name: "Color token override",
       control: "text"
     }
   }
