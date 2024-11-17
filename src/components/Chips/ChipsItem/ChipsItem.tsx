@@ -2,12 +2,12 @@ import React from "react";
 
 
 export type ChipsItemProps = {
-    readonly label? : string;
+    readonly label?: string;
 }
 
 export default function ChipsItem({
-    label,
-}) {
+    label
+}:ChipsItemProps) {
     return (
         <li>
             <button type="button" className="mds-chips__item" aria-pressed="false" aria-disabled="false">{label}</button>
