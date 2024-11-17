@@ -1,11 +1,11 @@
 import React, { ReactNode } from 'react';
 
 
-export type CardProps = {
-    readonly title?: string;
-    readonly icon?: string;
-    readonly href?: string;
-    readonly target?: string;
+type CardProps = {
+    title?: string;
+    icon?: string;
+    href?: string;
+    target?: string;
 }
 
 export default function CardCompactV({

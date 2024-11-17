@@ -2,7 +2,7 @@ import React from "react";
 
 
 export type ChipsItemProps = {
-    readonly label?: string;
+    label?: string;
 }
 
 export default function ChipsItem({

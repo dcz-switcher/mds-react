@@ -1,8 +1,8 @@
 import React, { ReactNode } from "react"
 
-export type ChipsListProps = {
-    readonly children?: ReactNode;
-    readonly reverse?: boolean;
+type ChipsListProps = {
+    children?: ReactNode;
+    reverse?: boolean;
 }
 
 

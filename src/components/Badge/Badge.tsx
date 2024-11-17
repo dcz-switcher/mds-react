@@ -1,11 +1,11 @@
 import React, {ReactNode} from 'react';
 
-export type BadgeProps = {
-    readonly label?: string;
-    readonly size?: "small" | "big";
-    readonly severity?: "neutral" | "success" | "warning" | "danger" | "new";
-    readonly color?: string; // override severity color
-    readonly icon?: string;
+type BadgeProps = {
+    label?: string;
+    size?: "small" | "big";
+    severity?: "neutral" | "success" | "warning" | "danger" | "new";
+    color?: string; // override severity color
+    icon?: string;
 }
 
 

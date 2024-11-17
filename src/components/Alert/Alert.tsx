@@ -1,11 +1,11 @@
 import React, {Children, ReactNode} from "react";
 
 
-export type AlertProps = {
-    readonly children?: ReactNode;
-    readonly severity?: "info" | "success" | "warning" | "danger";
-    readonly title?: string;
-    readonly icon?: string;
+type AlertProps = {
+    children?: ReactNode;
+    severity?: "info" | "success" | "warning" | "danger";
+    title?: string;
+    icon?: string;
 }
 
 export default function Alert({
