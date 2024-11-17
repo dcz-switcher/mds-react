@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 
-
+/*
 export type ButtonProps = {
     readonly children?: ReactNode;
     readonly variant?: "primary" | "secondary" | "tertiary";
@@ -9,6 +9,16 @@ export type ButtonProps = {
     readonly startIcon?: string;
     readonly endIcon?: string;
 }
+*/
+   
+interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
+    children?: ReactNode;
+    variant?: "primary" | "secondary" | "tertiary";
+    size?: "small" | "medium";
+    fullWidth?: boolean;
+    startIcon?: string;
+    endIcon?: string;
+}
 
 export default function Button({
     children, 
@@ -16,13 +26,14 @@ export default function Button({
     size = "medium",
     fullWidth = false,
     startIcon,
-    endIcon
+    endIcon,
+    ...buttonProps
 }: ButtonProps){
 
     const fullWidthClass = (fullWidth) ? "mds-full-width" : "";
 
     return (
-        <button className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass}`}>
+        <button className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass}`} {...buttonProps}>
             {startIcon ? (
                 <span className={`mds-icon__${startIcon}--left`} aria-hidden="true"></span>
             ) : (null)}
