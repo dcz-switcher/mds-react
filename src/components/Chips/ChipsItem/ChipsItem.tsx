@@ -3,14 +3,16 @@ import React from "react";
 
 export type ChipsItemProps = {
     label?: string;
+    active?: boolean;
 }
 
 export default function ChipsItem({
-    label
+    label,
+    active = false
 }:ChipsItemProps) {
     return (
         <li>
-            <button type="button" className="mds-chips__item" aria-pressed="false" aria-disabled="false">{label}</button>
+            <button type="button" className="mds-chips__item" aria-pressed={`${active}`} aria-disabled={`${active}`}>{label}</button>
         </li>
     )
 }
