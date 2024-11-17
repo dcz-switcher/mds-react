@@ -22,3 +22,15 @@ export const Default: Story = {
     </ChipsList>
   )
 };
+
+export const ReverseMode: Story = {
+  render: (args) => (
+    <div className='mds-background-color__color-macif--1 mds-squish-inset--8-16'>
+      <ChipsList reverse={true}>
+        <ChipsItem label="One"/>
+        <ChipsItem label="Two"/>
+        <ChipsItem label="Three"/>
+      </ChipsList>
+    </div>
+  )
+}
