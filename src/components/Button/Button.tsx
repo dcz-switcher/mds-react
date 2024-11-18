@@ -1,15 +1,5 @@
 import React, { ReactNode } from 'react';
 
-/*
-export type ButtonProps = {
-    readonly children?: ReactNode;
-    readonly variant?: "primary" | "secondary" | "tertiary";
-    readonly size?: "small" | "medium";
-    readonly fullWidth?: boolean;
-    readonly startIcon?: string;
-    readonly endIcon?: string;
-}
-*/
    
 interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     children?: ReactNode;
@@ -18,6 +8,7 @@ interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     fullWidth?: boolean;
     startIcon?: string;
     endIcon?: string;
+    disabled?: boolean;
 }
 
 export default function Button({
@@ -27,13 +18,15 @@ export default function Button({
     fullWidth = false,
     startIcon,
     endIcon,
+    disabled = false,
     ...buttonProps
 }: ButtonProps){
 
     const fullWidthClass = (fullWidth) ? "mds-full-width" : "";
+    const disabledClass = (disabled) ? "disabled" : "";
 
     return (
-        <button className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass}`} {...buttonProps}>
+        <button className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass}`} disabled={disabled} {...buttonProps}>
             {startIcon ? (
                 <span className={`mds-icon__${startIcon}--left`} aria-hidden="true"></span>
             ) : (null)}
