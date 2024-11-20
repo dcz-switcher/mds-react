@@ -17,7 +17,8 @@ const meta = {
       control: 'radio',
       options: ["info", "success", "warning", "danger"]
     }
-  }
+  },
+  tags: ['autodocs'],
 } satisfies Meta<typeof Alert>;
 
 export default meta;

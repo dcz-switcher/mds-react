@@ -17,7 +17,8 @@ const meta = {
       name: 'Underline color token',
       type: "string"
     }
-  }
+  },
+  tags: ['autodocs'],
 } satisfies Meta<typeof Typography>;
 
 export default meta;
@@ -33,17 +34,27 @@ export const Default: Story = {
 };
 
 export const NestedTypography: Story = {
+  args: {
+    variant: 'body1',
+    component : 'span',
+    children: "Nested Typography"
+  },
   render: (args) => (
     <Typography variant='h1'>
-      Parent typography <Typography variant='body1' component='span'>Nested Typography</Typography>
+      Parent typography <Typography {...args} >{args.children}</Typography>
     </Typography>
   )
 }
 
 export const UnderlineFx: Story = {
+  args: {
+    variant: 'underline',
+    underlineColor: 'color-4100',
+    children: "underline"
+  },
   render: (args) => (
     <div>
-      <Typography variant='h1'>Title H1 with <Typography variant='underline' underlineColor='color-4100'>underline</Typography> effect</Typography>
+      <Typography variant='h1'>Title H1 with <Typography {...args}>{args.children}</Typography> effect</Typography>
     </div>
     
   )

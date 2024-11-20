@@ -12,7 +12,8 @@ const meta = {
         <Story />
       </ChipsList>
     )
-  ]
+  ],
+  tags: ['autodocs'],
 } satisfies Meta<typeof ChipsItem>;
 
 export default meta;

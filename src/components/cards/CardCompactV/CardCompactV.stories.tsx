@@ -12,6 +12,7 @@ const meta = {
       </div>
     ),
   ],
+  tags: ['autodocs'],
 } satisfies Meta<typeof CardCompactV>;
 
 export default meta;

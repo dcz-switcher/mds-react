@@ -6,7 +6,8 @@ import ChipsItem from '../ChipsItem/ChipsItem';
 
 const meta = {
   component: ChipsList,
-  subcomponents: { ChipsItem:ChipsItem as React.ComponentType<unknown>  } // syntaxe for avoid typescript error. source: https://github.com/storybookjs/storybook/issues/23170
+  subcomponents: { ChipsItem:ChipsItem as React.ComponentType<unknown>  }, // syntaxe for avoid typescript error. source: https://github.com/storybookjs/storybook/issues/23170
+  tags: ['autodocs'],
 } satisfies Meta<typeof ChipsList>;
 
 export default meta;

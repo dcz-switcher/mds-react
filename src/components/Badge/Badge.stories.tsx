@@ -9,7 +9,8 @@ const meta = {
       name: "Color token override",
       control: "text"
     }
-  }
+  },
+  tags: ['autodocs'],
 } satisfies Meta<typeof Badge>;
 
 export default meta;
