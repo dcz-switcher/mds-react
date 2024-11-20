@@ -1,4 +1,6 @@
 {
+  "name": "mds-react",
+  "version": "0.1.0",
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.2",
     "@storybook/addon-essentials": "^8.4.3",
