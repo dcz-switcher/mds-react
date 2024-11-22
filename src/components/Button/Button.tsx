@@ -13,7 +13,7 @@ interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     reverse?: boolean;
 }
 
-export default function Button({
+const Button = ({
     component,
     children, 
     variant = "primary",
@@ -24,7 +24,7 @@ export default function Button({
     disabled = false,
     reverse = false,
     ...buttonProps
-}: ButtonProps){
+}: ButtonProps) => {
 
     const tagComponent = component || "button";
     const Tag = tagComponent as "a" | "div";
@@ -32,17 +32,17 @@ export default function Button({
     const fullWidthClass = (fullWidth) ? "mds-full-width" : "";
     const reverseClass = (reverse) ? "mds-btn--reverse" : "";
     
-    let opts = {};
-        
+    let opts : any = {};
+    
     if (Tag == "a") {
-        opts['role'] = "button"
-        opts['href'] = "#"
-        opts['tabindex'] = "0"
+    opts['role'] = "button"
+    opts['href'] = "#"
+    opts['tabindex'] = "0"
     } else if (Tag == "div") {
         opts['role'] = "button"
         opts['tabindex'] = "0"
-    } else {
-        opts = {...buttonProps, opts}; //if Tag == button : merge buttonProps
+        } else {
+            opts = {...buttonProps, opts}; //if Tag == button : merge buttonProps
     }
     
     if (disabled) {
@@ -52,7 +52,7 @@ export default function Button({
             opts['disabled'] = 'disabled';
         }
     }
-
+    
     return (
         <Tag {...opts} 
             className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass} ${reverseClass}`}>
@@ -68,3 +68,5 @@ export default function Button({
         </Tag>
     )
 }
+
+export default Button;
