@@ -10,4 +10,4 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     disabled?: boolean;
     reverse?: boolean;
 }
-export default function Button({ component, children, variant, size, fullWidth, startIcon, endIcon, disabled, reverse, ...buttonProps }: ButtonProps): import("react/jsx-runtime").JSX.Element;
+export default function Button({ component, children, variant, size, fullWidth, startIcon, endIcon, disabled, reverse, ...buttonProps }: ButtonProps): React.JSX.Element;

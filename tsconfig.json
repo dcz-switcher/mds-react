@@ -12,7 +12,7 @@
       "resolveJsonModule": true, // Enables importing JSON modules.
       "isolatedModules": true, // Ensures each file is treated as a separate module.
       "noEmit": true, // Prevents TypeScript from emitting output files.
-      "jsx": "react-jsx", // Configures JSX support for React.
+      "jsx": "react", // Configures JSX support for React.
   
       /* Linting */
       "strict": true, // Enables strict type checking.
