@@ -6,7 +6,7 @@ source: https://medium.com/simform-engineering/building-a-component-library-with
 
 
 ## seams working
-```npm install git://github.com/dcz-switcher/mds-react```
+```npm install git://github.com/dcz-switcher/mds-react#v0.3.0```
 
 ```import {Button} from "mds-react"```
 
