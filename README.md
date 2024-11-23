@@ -10,9 +10,6 @@ source: https://medium.com/simform-engineering/building-a-component-library-with
 
 ```import {Button} from "mds-react"```
 
-Or
-
-```import {Button} from "mds-react/"```
 
 ## not sure
 npm install git://github.com/dcz-switcher/mds-react -D
