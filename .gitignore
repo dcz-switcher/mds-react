@@ -4,3 +4,5 @@ storybook-static
 
 # misc
 .DS_Store
+
+*storybook.log
