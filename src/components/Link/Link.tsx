@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react";
+import { Typography } from "../Typography";
 
 
 const variantMappingClass = {
@@ -9,7 +10,7 @@ const variantMappingClass = {
 }
 
 export type LinkProps = {
-    children? : ReactNode;
+    children? : string;
     variant? : "body1" | "body2" | "body3" | "body4";
     underline?: boolean;
     reverse?: boolean;
