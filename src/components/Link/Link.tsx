@@ -1,6 +1,4 @@
-import React, { ReactNode } from "react";
-import { Typography } from "../Typography";
-
+import React from "react";
 
 const variantMappingClass = {
     body1: 'mds-text--1',
