@@ -8,6 +8,7 @@ declare const meta: {
         icon?: string | undefined;
         href?: string | undefined;
         target?: string | undefined;
+        role?: string | undefined;
     }>) => React.JSX.Element)[];
 };
 export default meta;
