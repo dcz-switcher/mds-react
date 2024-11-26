@@ -6,17 +6,19 @@ export type CardProps = {
     icon?: string;
     href?: string;
     target?: string;
+    role?: string;
 }
 
 export default function CardCompactV({
     title = "title",
     icon = "auto",
     href = "#",
-    target = "_self"
+    target = "_self",
+    role,
 }: CardProps){
 
     return (
-        <div className="mds-card mds-card--compact-v">
+        <div className="mds-card mds-card--compact-v" role={role}>
             <span className="mds-icon__arrow-forward" aria-hidden="true"></span>
             <div className="mds-card__content">
                 <p className="mds-card__title">
