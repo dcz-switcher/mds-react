@@ -11,6 +11,8 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     endIcon?: string;
     disabled?: boolean;
     reverse?: boolean;
+    href?: string;
+    target?: string;
 }
 
 export default function Button({
@@ -23,6 +25,9 @@ export default function Button({
     endIcon,
     disabled = false,
     reverse = false,
+    href,
+    target,
+    
     ...buttonProps
 }: ButtonProps){
 
@@ -35,12 +40,13 @@ export default function Button({
     let opts : any = {};
         
     if (Tag == "a") {
-        opts['role'] = "button"
-        opts['href'] = "#"
-        opts['tabindex'] = "0"
+        opts['role'] = "button";
+        opts['href'] = href;
+        opts['target'] = (target ? target : "_self");
+        opts['tabindex'] = "0";
     } else if (Tag == "div") {
-        opts['role'] = "button"
-        opts['tabindex'] = "0"
+        opts['role'] = "button";
+        opts['tabindex'] = "0";
     } else {
         opts = {...buttonProps, opts}; //if Tag == button : merge buttonProps
     }

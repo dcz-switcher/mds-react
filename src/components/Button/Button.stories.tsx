@@ -24,3 +24,14 @@ export const Default: Story = {
   }
 
 };
+
+export const IsLink: Story = {
+  args: {
+    variant: "primary",
+    children: "Primary",
+    size: "medium",
+    component: "a",
+    href: "https://github.com/dcz-switcher/mds-react",
+    target: "_blank"
+  }
+};
