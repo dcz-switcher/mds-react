@@ -55,14 +55,14 @@ function w({
 }) {
   return /* @__PURE__ */ e.createElement("div", { className: "mds-card mds-card--compact-v", role: l }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__arrow-forward", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("div", { className: "mds-card__content" }, /* @__PURE__ */ e.createElement("p", { className: "mds-card__title" }, /* @__PURE__ */ e.createElement("a", { href: a, className: "mds-card__link", target: t }, n))), /* @__PURE__ */ e.createElement("span", { className: `mds-icon mds-picto__${s}`, "aria-hidden": "true" }));
 }
-function T({
+function B({
   label: n,
   active: s = !1,
   onClick: a
 }) {
   return /* @__PURE__ */ e.createElement("li", null, /* @__PURE__ */ e.createElement("button", { onClick: a, type: "button", className: "mds-chips__item", "aria-pressed": `${s}`, "aria-disabled": `${s}` }, n));
 }
-function B({
+function T({
   children: n,
   reverse: s = !1,
   size: a = "big"
@@ -70,11 +70,12 @@ function B({
   return /* @__PURE__ */ e.createElement("div", { className: `mds-chips ${a == "small" ? "mds-chips--small" : ""} ${s == !0 ? "mds-chips--reverse" : ""}` }, /* @__PURE__ */ e.createElement("ul", { className: "mds-chips__list" }, n));
 }
 const z = ({
-  title: n = "Title",
-  subTitle: s = "Content",
-  heroActions: a,
-  image: t
-}) => /* @__PURE__ */ e.createElement("div", { className: "mds-hero mds-hero--action" }, /* @__PURE__ */ e.createElement("div", { className: "mds-hero__body" }, n, s && /* @__PURE__ */ e.createElement("p", { className: "mds-lead" }, s), a && /* @__PURE__ */ e.createElement("div", { style: { order: 3 } }, a)), /* @__PURE__ */ e.createElement("div", { className: "mds-hero__img" }, /* @__PURE__ */ e.createElement("img", { src: `${t}`, alt: "" }))), f = {
+  upTitle: n,
+  title: s = "Title",
+  subTitle: a = "Content",
+  heroActions: t,
+  image: l
+}) => /* @__PURE__ */ e.createElement("div", { className: "mds-hero mds-hero--action" }, /* @__PURE__ */ e.createElement("div", { className: "mds-hero__body" }, s, n && /* @__PURE__ */ e.createElement("div", { className: "mds-supertitle" }, n), a && /* @__PURE__ */ e.createElement("p", { className: "mds-lead" }, a), t && /* @__PURE__ */ e.createElement("div", { style: { order: 3 } }, t)), /* @__PURE__ */ e.createElement("div", { className: "mds-hero__img" }, /* @__PURE__ */ e.createElement("img", { src: `${l}`, alt: "" }))), f = {
   xsmall: 16,
   small: 24,
   medium: 28,
@@ -83,7 +84,7 @@ const z = ({
   huge: 40,
   enormous: 40,
   giant: 40
-}, $ = {
+}, N = {
   xsmall: 24,
   small: 32,
   medium: 40,
@@ -98,9 +99,9 @@ const z = ({
   size: a = "medium",
   baseClassName: t = "icon"
 }) => {
-  const l = "mds-" + t + "__", r = t == "picto" ? "mds-picto--" + $[a] : "mds-icon--" + f[a];
+  const l = "mds-" + t + "__", r = t == "picto" ? "mds-picto--" + N[a] : "mds-icon--" + f[a];
   return /* @__PURE__ */ e.createElement("span", { className: ` ${l}${n} ${r} ${s ? "mds-color__" + s : ""} ` });
-}, N = {
+}, $ = {
   body1: "mds-text--1",
   body2: "mds-text--2",
   body3: "mds-text--3",
@@ -115,7 +116,7 @@ const z = ({
   startIcon: c,
   endIcon: d
 }) => {
-  const i = `mds-link ${N[s]} ${a ? "" : "mds-link--standalone"} ${t ? "mds-link--reverse" : ""}`;
+  const i = `mds-link ${$[s]} ${a ? "" : "mds-link--standalone"} ${t ? "mds-link--reverse" : ""}`;
   return /* @__PURE__ */ e.createElement("a", { className: i, href: l, target: r }, c && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${c}--right`, "aria-hidden": "true" }), n, d && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${d}--right`, "aria-hidden": "true" }));
 }, S = ({}) => /* @__PURE__ */ e.createElement("p", null, "Play"), p = {
   h1: "mds-h1",
@@ -158,8 +159,8 @@ export {
   k as Badge,
   M as Button,
   w as CardCompactV,
-  T as ChipsItem,
-  B as ChipsList,
+  B as ChipsItem,
+  T as ChipsList,
   z as Hero,
   L as Icon,
   P as Link,
