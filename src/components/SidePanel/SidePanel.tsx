@@ -11,17 +11,11 @@ const SidePanel = ({
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
 
-    // must use a state (isOpen) to set the "open" attribute and having backdrop visible
-    // ... don't know why
-    // but if I use the props "open" instead, the SidePanel is showned but not the backdrop
-    const [isOpen, setIsOpen] = React.useState(open);
-    
     let $closeBtn:HTMLButtonElement;
     
     const closeHandler = () => {
         if (onClose) { 
             onClose();
-            setIsOpen(false);
         }
     }
 
@@ -67,7 +61,7 @@ const SidePanel = ({
     }, [open]);
 
     return (
-        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-labelledby="xxx" aria-modal="true" open={isOpen}>
+        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-labelledby="xxx" aria-modal="true">
             <div className="mds-modal mds-modal--side-panel mds-modal--medium" role="document">
                 <button className="mds-close">
                     <span className="mds-icon__close" aria-hidden="true"></span>
