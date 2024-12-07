@@ -3,11 +3,13 @@ import React, { useEffect, useRef } from "react";
 export type SidePanelProps = {
     open?: boolean;
     onClose?: any;
+    size?: 'small' | 'medium' | 'big';
 };
 
 const SidePanel = ({
     open = false,
-    onClose
+    onClose,
+    size = 'medium'
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
 
@@ -51,9 +53,7 @@ const SidePanel = ({
     useEffect(() => {
         if (open === true) {
             document.addEventListener('keydown', escapeKeyHandler);
-            try{ // must use try/catch to avoid error of using showModal on a non modal object
-                ref.current.showModal();
-            } catch (er){}
+            ref.current.showModal();
         } else {
             ref.current.close();
         }
@@ -64,7 +64,7 @@ const SidePanel = ({
 
     return (
         <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-labelledby="xxx" aria-modal="true">
-            <div className="mds-modal mds-modal--side-panel mds-modal--medium" role="document">
+            <div className={`mds-modal mds-modal--side-panel mds-modal--${size}`} role="document">
                 <button className="mds-close">
                     <span className="mds-icon__close" aria-hidden="true"></span>
                     <span className="mds-sr-only">Fermer la fenêtre de la modale</span>

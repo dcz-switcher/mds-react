@@ -16,12 +16,12 @@ export const Default: Story = {
   args: {open : false}
 };
 */
-export const HandlingClose= () => {
-  
+export const HandlingClose= ({}) => {
   const [isOpen, setIsOpen] = React.useState(false)
   const onCloseHandler = () => {
     setIsOpen(false);
   }
+
   return (
     <>
       <div>
@@ -29,7 +29,7 @@ export const HandlingClose= () => {
       </div>
       <div>
         <Button onClick={() => setIsOpen(true)}>Open SidePanel</Button>
-        <SidePanel open={isOpen} onClose={onCloseHandler}/>
+        <SidePanel open={isOpen} onClose={onCloseHandler} size='big'/>
       </div>
     </>
   )
