@@ -1,15 +1,32 @@
-import React, { useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useRef } from "react";
 
 export type SidePanelProps = {
+    titleIcon?: string;
+    children?: ReactNode;
     open?: boolean;
     onClose?: any;
-    size?: 'small' | 'medium' | 'big';
+    size?: 'small' | 'medium' | 'large';
+    title?: string;
+    hideCloseButton?: boolean;
+    footer?: ReactNode;
 };
 
+const sizeMappingClass = {
+    'small' : 'small',
+    'medium': 'medium',
+    'large' : 'big'
+}
+
+
 const SidePanel = ({
+    titleIcon,
+    children,
     open = false,
     onClose,
-    size = 'medium'
+    size = 'medium',
+    title = "Title",
+    hideCloseButton = false,
+    footer
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
 
@@ -38,14 +55,19 @@ const SidePanel = ({
 
     useEffect(() => {    
         // mount
-        $closeBtn = ref.current.querySelector('button.mds-close');
+        if (!hideCloseButton){
+            $closeBtn = ref.current.querySelector('button.mds-close');
+            $closeBtn.addEventListener("click", closeHandler);
+        }
 
-        $closeBtn.addEventListener("click", closeHandler);
         ref.current.addEventListener('click', backdropClickHandler);
         
         return () => {
             // unmount
-            $closeBtn.removeEventListener("click", closeHandler);
+            if (!hideCloseButton){
+                $closeBtn.removeEventListener("click", closeHandler);
+            }
+
             ref.current.removeEventListener('click', backdropClickHandler);
         }
     }, []);
@@ -57,6 +79,7 @@ const SidePanel = ({
         } else {
             ref.current.close();
         }
+
         return () => {
             document.removeEventListener('keydown', escapeKeyHandler);
         }
@@ -64,30 +87,33 @@ const SidePanel = ({
 
     return (
         <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-labelledby="xxx" aria-modal="true">
-            <div className={`mds-modal mds-modal--side-panel mds-modal--${size}`} role="document">
-                <button className="mds-close">
-                    <span className="mds-icon__close" aria-hidden="true"></span>
-                    <span className="mds-sr-only">Fermer la fenêtre de la modale</span>
-                </button>
+            <div className={`mds-modal mds-modal--side-panel mds-modal--${ sizeMappingClass[size]}`} role="document">
+                
+                {!hideCloseButton && 
+                    <button className="mds-close">
+                        <span className="mds-icon__close" aria-hidden="true"></span>
+                        <span className="mds-sr-only">Fermer la fenêtre de la modale</span>
+                    </button>
+                }
+
                 <div className="mds-modal__container">
                     <div className="mds-modal__header">
-                        <span aria-hidden="true" className="mds-icon__calendar-today--left"></span>
-                        <h1 className="mds-modal__title">Titre</h1>
+                        {titleIcon &&
+                            <span aria-hidden="true" className={`mds-icon__${titleIcon}--left`}></span>
+                        }
+                        <h1 className="mds-modal__title">{title}</h1>
                     </div>
                     <hr className="mds-divider mds-divider--small" />
                     <div className="mds-modal__content">
-                        <p className="mds-text--3">Zone de contenu libre et éditable en HTML</p>
+                        {children}
                     </div>
-                    <div className="mds-modal__footer">
-                        <div className="mds-btn-group">
-                            <button className="mds-btn mds-btn--primary">
-                                button
-                            </button>
-                            <button className="mds-btn mds-btn--secondary">
-                                button
-                            </button>
+
+                    {footer && 
+                        <div className="mds-modal__footer">
+                            {footer}
                         </div>
-                    </div>
+                    }
+
                 </div>
             </div>
         </dialog>
