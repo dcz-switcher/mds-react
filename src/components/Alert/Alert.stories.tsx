@@ -30,3 +30,11 @@ export const Default: Story = {
     severity: "warning"
   }
 };
+
+export const WithAction: Story = {
+  args: {
+    children: "set onClose props to add a close button",
+    severity: 'info',
+    onClose: (function (){alert('clicked')})
+  }
+}

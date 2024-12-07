@@ -4,6 +4,7 @@ type AlertProps = {
     severity?: "info" | "success" | "warning" | "danger";
     title?: string;
     icon?: string;
+    onClose?: any;
 };
-export default function Alert({ children, severity, title, icon }: AlertProps): React.JSX.Element;
+export default function Alert({ children, severity, title, icon, onClose }: AlertProps): React.JSX.Element;
 export {};
