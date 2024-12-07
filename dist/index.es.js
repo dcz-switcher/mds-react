@@ -131,16 +131,20 @@ const P = ({
   }, c = (m) => {
     m.target.classList.contains("mds-dialog") && n();
   };
-  return p(() => (t = a.current.querySelector("button.mds-close"), t.addEventListener("click", n), document.addEventListener("keydown", d), a.current.addEventListener("click", c), () => {
-    t.removeEventListener("click", n), document.removeEventListener("keydown", d), a.current.removeEventListener("click", c);
+  return p(() => (t = a.current.querySelector("button.mds-close"), t.addEventListener("click", n), a.current.addEventListener("click", c), () => {
+    t.removeEventListener("click", n), a.current.removeEventListener("click", c);
   }), []), p(() => {
-    if (l === !0)
+    if (l === !0) {
+      document.addEventListener("keydown", d);
       try {
         a.current.showModal();
       } catch {
       }
-    else
+    } else
       a.current.close();
+    return () => {
+      document.removeEventListener("keydown", d);
+    };
   }, [l]), /* @__PURE__ */ e.createElement("dialog", { ref: a, role: "dialog", id: "mds-modal", className: "mds-dialog", "aria-labelledby": "xxx", "aria-modal": "true" }, /* @__PURE__ */ e.createElement("div", { className: "mds-modal mds-modal--side-panel mds-modal--medium", role: "document" }, /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement("div", { className: "mds-modal__header" }, /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-icon__calendar-today--left" }), /* @__PURE__ */ e.createElement("h1", { className: "mds-modal__title" }, "Titre")), /* @__PURE__ */ e.createElement("hr", { className: "mds-divider mds-divider--small" }), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__content" }, /* @__PURE__ */ e.createElement("p", { className: "mds-text--3" }, "Zone de contenu libre et éditable en HTML")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__footer" }, /* @__PURE__ */ e.createElement("div", { className: "mds-btn-group" }, /* @__PURE__ */ e.createElement("button", { className: "mds-btn mds-btn--primary" }, "button"), /* @__PURE__ */ e.createElement("button", { className: "mds-btn mds-btn--secondary" }, "button"))))));
 }, E = {
   h1: "mds-h1",

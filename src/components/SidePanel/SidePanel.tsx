@@ -39,24 +39,26 @@ const SidePanel = ({
         $closeBtn = ref.current.querySelector('button.mds-close');
 
         $closeBtn.addEventListener("click", closeHandler);
-        document.addEventListener('keydown', escapeKeyHandler);
         ref.current.addEventListener('click', backdropClickHandler);
         
         return () => {
             // unmount
             $closeBtn.removeEventListener("click", closeHandler);
-            document.removeEventListener('keydown', escapeKeyHandler);
             ref.current.removeEventListener('click', backdropClickHandler);
         }
     }, []);
 
     useEffect(() => {
         if (open === true) {
+            document.addEventListener('keydown', escapeKeyHandler);
             try{ // must use try/catch to avoid error of using showModal on a non modal object
                 ref.current.showModal();
             } catch (er){}
         } else {
             ref.current.close();
+        }
+        return () => {
+            document.removeEventListener('keydown', escapeKeyHandler);
         }
     }, [open]);
 
