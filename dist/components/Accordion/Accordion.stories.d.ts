@@ -4,3 +4,4 @@ declare const meta: {
 };
 export default meta;
 export declare const Default: () => React.JSX.Element;
+export declare const OnlyOneExpandedAtATime: () => React.JSX.Element;

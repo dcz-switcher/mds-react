@@ -1,17 +1,21 @@
 import React, { ReactNode, useRef, useEffect } from "react";
 
 export type AccordionItemProps = {
+    id?: string;
     title?: string;
     children?: ReactNode;
     defaultExpanded?: boolean;
     expanded?: boolean;
+    onChange?: any;
     expandIcon?: string; //don't usable currently because icon is also injected by CSS. Bug declared on dec. 8th.
 }
 
 const AccordionItem = ({
+    id,
     title = "Item title",
     children,
     defaultExpanded = false,
+    onChange,
     expanded = defaultExpanded,
     expandIcon = 'expand-more'
 }:AccordionItemProps) => {
@@ -31,6 +35,10 @@ const AccordionItem = ({
 
     const onClickHandler = () => {
         setIsExpanded(!isExpanded);
+
+        if (onChange && id) {
+            onChange(id);
+        }
     }
 
     useEffect(() => {
@@ -43,8 +51,14 @@ const AccordionItem = ({
         return () => {}
     }, [isExpanded]);
 
+
+    useEffect(() => {
+        setIsExpanded(expanded);
+        return () => {}
+    }, [expanded])
+
     return (
-        <div ref={ref} className="mds-accordion__item">
+        <div ref={ref} id={id} className="mds-accordion__item">
             <h2 className="mds-accordion__header">
                 <button type="button" aria-controls="collapse--xx" onClick={onClickHandler} className={`mds-collapse mds-collapse__label ${isExpanded ? 'active' : ''}`} aria-expanded={isExpanded}>
                     {title}
