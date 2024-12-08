@@ -15,11 +15,11 @@ export default meta;
 export const Default = () => {
   return (
     <Accordion>
-      <AccordionItem title='First item expanded' expanded={true}>
+      <AccordionItem title='First item expanded' defaultExpanded={true}>
         <Typography variant='body2'>A simple text inside</Typography>
       </AccordionItem>
       <AccordionItem title='Secondary (empty) item'/>
-      <AccordionItem title='Third item with Buttons inside' expanded={true}>
+      <AccordionItem title='Third item with Buttons inside' defaultExpanded={true}>
         <div className='mds-btn-group'>
           <Button>Button A</Button>
           <Button variant='primary'>Button B</Button>
