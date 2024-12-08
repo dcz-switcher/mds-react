@@ -1,14 +1,11 @@
 import React, { ReactNode, useEffect, useRef } from "react";
 
 export type SidePanelProps = {
-    titleIcon?: string;
     children?: ReactNode;
     open?: boolean;
     onClose?: any;
     size?: 'small' | 'medium' | 'large';
-    title?: string;
-    hideCloseButton?: boolean;
-    footer?: ReactNode;
+    showCloseButton?: boolean;
 };
 
 const sizeMappingClass = {
@@ -19,14 +16,11 @@ const sizeMappingClass = {
 
 
 const SidePanel = ({
-    titleIcon,
     children,
     open = false,
     onClose,
     size = 'medium',
-    title = "Title",
-    hideCloseButton = false,
-    footer
+    showCloseButton = false,
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
 
@@ -55,7 +49,7 @@ const SidePanel = ({
 
     useEffect(() => {    
         // mount
-        if (!hideCloseButton){
+        if (showCloseButton){
             $closeBtn = ref.current.querySelector('button.mds-close');
             $closeBtn.addEventListener("click", closeHandler);
         }
@@ -64,7 +58,7 @@ const SidePanel = ({
         
         return () => {
             // unmount
-            if (!hideCloseButton){
+            if (showCloseButton){
                 $closeBtn.removeEventListener("click", closeHandler);
             }
 
@@ -89,7 +83,7 @@ const SidePanel = ({
         <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-labelledby="xxx" aria-modal="true">
             <div className={`mds-modal mds-modal--side-panel mds-modal--${ sizeMappingClass[size]}`} role="document">
                 
-                {!hideCloseButton && 
+                {showCloseButton && 
                     <button className="mds-close">
                         <span className="mds-icon__close" aria-hidden="true"></span>
                         <span className="mds-sr-only">Fermer la fenêtre de la modale</span>
@@ -97,23 +91,7 @@ const SidePanel = ({
                 }
 
                 <div className="mds-modal__container">
-                    <div className="mds-modal__header">
-                        {titleIcon &&
-                            <span aria-hidden="true" className={`mds-icon__${titleIcon}--left`}></span>
-                        }
-                        <h1 className="mds-modal__title">{title}</h1>
-                    </div>
-                    <hr className="mds-divider mds-divider--small" />
-                    <div className="mds-modal__content">
-                        {children}
-                    </div>
-
-                    {footer && 
-                        <div className="mds-modal__footer">
-                            {footer}
-                        </div>
-                    }
-
+                    {children}
                 </div>
             </div>
         </dialog>

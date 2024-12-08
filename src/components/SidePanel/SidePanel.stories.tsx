@@ -5,6 +5,9 @@ import SidePanel from './SidePanel';
 import { Button } from '../Button';
 import { Alert } from '../Alert';
 import { Typography } from '../Typography';
+import SidePanelHeader from './SidePanelHeader';
+import SidePanelContent from './SidePanelContent';
+import SidePanelFooter from './SidePanelFooter';
 
 const meta = {
   component: SidePanel,
@@ -17,38 +20,57 @@ export const Default: Story = {
   args: {open : false}
 };
 */
-export const HandlingClose= () => {
+export const Default= () => {
   const [isOpen, setIsOpen] = React.useState(false)
   
   const onCloseHandler = () => {
     setIsOpen(false);
   }
 
-  const footerComponent = (
-    <div className='mds-btn-group'>
-      <Button variant='secondary'>Button 1</Button>
-      <Button>Button 2</Button>
-    </div>
-  );
-
-
   return (
     <>
       <div>
-        <Alert>You can close the Side panel with: esc key, close btn or by clicking on the backdrop</Alert>
+        <Alert>You can close the Side panel with: esc key or by clicking on the backdrop</Alert>
       </div>
       <div>
         <Button onClick={() => setIsOpen(true)}>Open SidePanel</Button>
 
-        <SidePanel open={isOpen}
-                titleIcon='settings'
-                title='Title of the SidePanel'
-                onClose={onCloseHandler} 
-                size='medium'
-                footer={footerComponent}>
-          <Typography variant='body2'>Content of the Side Panel</Typography>
+        <SidePanel open={isOpen} onClose={onCloseHandler} size='medium'>
+          <SidePanelContent>
+            <Typography variant='body2'>Here is the basic Side Panel. Usefull for a menu</Typography>
+          </SidePanelContent>
         </SidePanel>
       </div>
+    </>
+  )
+}
+
+export const Full = () => {
+  const [isOpen, setIsOpen] = React.useState(false)
+  
+  const onCloseHandler = () => {
+    setIsOpen(false);
+  }
+
+  return (
+    <>
+    <Button onClick={() => setIsOpen(true)}>Open SidePanel</Button>
+
+    <SidePanel open={isOpen} onClose={onCloseHandler} showCloseButton={true}>
+      <SidePanelHeader title='Full components' icon='settings'/>
+      <SidePanelContent>
+        <Typography variant='h3'>Example of a complete Side Panel</Typography>
+        <Typography variant='body2'>You can add a title with an icon</Typography>
+        <Typography variant='body2'>A close button can be added to close the side panel</Typography>
+        <Typography variant='body2'>You can also add a footer components with, for example, a group of buttons (mds-btn-group) </Typography>
+      </SidePanelContent>
+      <SidePanelFooter>
+        <div className='mds-btn-group'>
+          <Button variant='secondary'>Button A</Button>
+          <Button>Button B</Button>
+        </div>
+      </SidePanelFooter>
+    </SidePanel>
     </>
   )
 }
