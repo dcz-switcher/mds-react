@@ -1,4 +1,9 @@
 import { default as React, HTMLProps } from 'react';
+export declare const LinkColorMappingClass: {
+    link: string;
+    primary: string;
+    text: string;
+};
 export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
     children?: string;
     variant?: "body1" | "body2" | "body3" | "body4";

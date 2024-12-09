@@ -1,4 +1,5 @@
 import React, {Children, ReactNode} from "react";
+import { LinkColorMappingClass } from "../Link/Link";
 
 export type BreadcrumbProps = {
     children?: ReactNode;
@@ -6,18 +7,12 @@ export type BreadcrumbProps = {
     reverse?: boolean;
 }
 
-const colorMappingClass = {
-    link   : "color-use--9",
-    primary: "color-macif--1",
-    text   : "color-grey--80",
-}
-
 const Breadcrumb = ({
     children,
     color = "link",
     reverse = false,
 }:BreadcrumbProps) => {
-    const colorClass = (reverse) ? "color-white" : colorMappingClass[color];
+    const colorClass = (reverse) ? "color-white" : LinkColorMappingClass[color];
     return (
         <nav className="mds-breadcrumbs" role="navigation" aria-labelledby="xx">
             <ul>

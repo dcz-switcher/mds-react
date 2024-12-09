@@ -7,7 +7,7 @@ const variantMappingClass = {
     body4: 'mds-text--4',
 }
 
-const colorMappingClass = {
+export const LinkColorMappingClass = {
     link   : "color-use--9",
     primary: "color-macif--1",
     text   : "color-grey--80",
@@ -33,7 +33,7 @@ const Link = ({
     color = "link",
     ...props
 }:LinkProps) => {
-    const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : "mds-color__"+colorMappingClass[color] }`;
+    const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : "mds-color__"+LinkColorMappingClass[color] }`;
 
     return (
         <a className={classBuilder} {...props}>

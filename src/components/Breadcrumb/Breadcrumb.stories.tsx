@@ -13,8 +13,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-  args: {
-  },
+  args: {},
   render: () => (
     <Breadcrumb>
       <Link href='#' variant='body4'>Link 1</Link>
@@ -24,8 +23,7 @@ export const Default: Story = {
 };
 
 export const Reverse: Story = {
-  args: {
-  },
+  args: {},
   render: () => (
     <p className='mds-background-color__color-macif--1'>
       <Breadcrumb reverse={true}>
