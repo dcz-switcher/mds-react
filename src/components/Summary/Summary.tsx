@@ -1,3 +1,8 @@
+/**
+ * on this version, the active class, to show which section is displayed, is not supported
+ * I don't know how to pass the class name to child component
+ * <li><a className="active" href="#section1">Blablabla</a></li>
+ */
 import React, { Children, ReactNode } from "react";
 import { Typography } from "../Typography";
 
@@ -20,10 +25,6 @@ const Summary = ({
                 {Children.map(children, child => {
                     return <li>{child}</li>
                 })}
-                <li><a className="active" href="#section1">Accident de travail : la définition</a></li>
-                <li><a href="#section2">Accident de travail : que faire ?</a></li>
-                <li><a href="#section3">Accident de travail et salaire : comment ça marche ?</a></li>
-                <li><a href="#section4">La rente d'accident du travail : c'est quoi ?</a></li>
             </ul>
         </nav>
     )
