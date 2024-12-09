@@ -1,4 +1,4 @@
-import e, { useRef as N, useEffect as E, Children as $ } from "react";
+import e, { useRef as b, useEffect as E, Children as $ } from "react";
 const M = ({
   children: a
 }) => /* @__PURE__ */ e.createElement("div", { className: "mds-accordion--standalone" }, a), P = ({
@@ -10,12 +10,12 @@ const M = ({
   expanded: r = l,
   expandIcon: c = "expand-more"
 }) => {
-  const [m, d] = e.useState(0), [o, u] = e.useState(r), p = N(null), h = () => p && p.current ? p.current.querySelector(".mds-accordion__body").offsetHeight : 0, f = () => {
-    u(!o), n && a && n(a);
+  const [d, o] = e.useState(0), [m, u] = e.useState(r), p = b(null), h = () => p && p.current ? p.current.querySelector(".mds-accordion__body").offsetHeight : 0, f = () => {
+    u(!m), n && a && n(a);
   };
-  return E(() => (d(o ? h() : 0), () => {
-  }), [o]), E(() => (u(r), () => {
-  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: p, id: a, className: "mds-accordion__item" }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: f, className: `mds-collapse mds-collapse__label ${o ? "active" : ""}`, "aria-expanded": o }, s, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${c}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${o ? "active" : ""}`, style: { maxHeight: m } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, t)));
+  return E(() => (o(m ? h() : 0), () => {
+  }), [m]), E(() => (u(r), () => {
+  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: p, id: a, className: "mds-accordion__item" }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: f, className: `mds-collapse mds-collapse__label ${m ? "active" : ""}`, "aria-expanded": m }, s, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${c}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${m ? "active" : ""}`, style: { maxHeight: d } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, t)));
 };
 function w({
   children: a,
@@ -53,10 +53,10 @@ const x = {
   startIcon: n,
   endIcon: r,
   color: c = "link",
-  ...m
+  ...d
 }) => {
-  const d = `mds-link ${x[s]} ${t ? "" : "mds-link--standalone"} ${l ? "mds-link--reverse" : "mds-color__" + g[c]}`;
-  return /* @__PURE__ */ e.createElement("a", { className: d, ...m }, n && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${n}--right`, "aria-hidden": "true" }), a, r && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${r}--right`, "aria-hidden": "true" }));
+  const o = `mds-link ${x[s]} ${t ? "" : "mds-link--standalone"} ${l ? "mds-link--reverse" : "mds-color__" + g[c]}`;
+  return /* @__PURE__ */ e.createElement("a", { className: o, ...d }, n && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${n}--right`, "aria-hidden": "true" }), a, r && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${r}--right`, "aria-hidden": "true" }));
 }, A = ({
   children: a,
   color: s = "link",
@@ -73,17 +73,17 @@ function B({
   size: n = "medium",
   fullWidth: r = !1,
   startIcon: c,
-  endIcon: m,
-  disabled: d = !1,
-  reverse: o = !1,
+  endIcon: d,
+  disabled: o = !1,
+  reverse: m = !1,
   href: u,
   target: p,
   ...h
 }) {
-  const _ = a || "button", y = r ? "mds-full-width" : "", v = o ? "mds-btn--reverse" : "";
+  const _ = a || "button", y = r ? "mds-full-width" : "", v = m ? "mds-btn--reverse" : "";
   l == "primary" && t == "conversion" ? l += "-cta" : l == "secondary" && t == "alert" && (l += "-alert");
   let i = {};
-  return _ == "a" ? (i.role = "button", i.href = u, i.target = p || "_self", i.tabindex = "0") : _ == "div" ? (i.role = "button", i.tabindex = "0") : i = { ...h, opts: i }, d && (_ == "a" || _ == "div" ? i["aria-disabled"] = "true" : i.disabled = "disabled"), /* @__PURE__ */ e.createElement(
+  return _ == "a" ? (i.role = "button", i.href = u, i.target = p || "_self", i.tabindex = "0") : _ == "div" ? (i.role = "button", i.tabindex = "0") : i = { ...h, opts: i }, o && (_ == "a" || _ == "div" ? i["aria-disabled"] = "true" : i.disabled = "disabled"), /* @__PURE__ */ e.createElement(
     _,
     {
       ...i,
@@ -91,7 +91,7 @@ function B({
     },
     c ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${c}--left`, "aria-hidden": "true" }) : null,
     s,
-    m ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}--right`, "aria-hidden": "true" }) : null
+    d ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${d}--right`, "aria-hidden": "true" }) : null
   );
 }
 function T({
@@ -160,20 +160,20 @@ const R = ({
   size: l = "medium",
   showCloseButton: n = !1
 }) => {
-  const r = N(null);
+  const r = b(null);
   let c;
-  const m = () => {
+  const d = () => {
     t && t();
-  }, d = (u) => {
-    u.key === "Escape" && (u.preventDefault(), u.stopImmediatePropagation(), m());
   }, o = (u) => {
-    u.target.classList.contains("mds-dialog") && m();
+    u.key === "Escape" && (u.preventDefault(), u.stopImmediatePropagation(), d());
+  }, m = (u) => {
+    u.target.classList.contains("mds-dialog") && d();
   };
-  return E(() => (n && (c = r.current.querySelector("button.mds-close"), c.addEventListener("click", m)), r.current.addEventListener("click", o), () => {
-    n && c.removeEventListener("click", m), r.current.removeEventListener("click", o);
-  }), []), E(() => (s === !0 ? (document.addEventListener("keydown", d), r.current.showModal()) : r.current.close(), () => {
-    document.removeEventListener("keydown", d);
-  }), [s]), /* @__PURE__ */ e.createElement("dialog", { ref: r, role: "dialog", id: "mds-modal", className: "mds-dialog", "aria-labelledby": "xxx", "aria-modal": "true" }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${H[l]}`, role: "document" }, n && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, a)));
+  return E(() => (n && (c = r.current.querySelector("button.mds-close"), c.addEventListener("click", d)), r.current.addEventListener("click", m), () => {
+    n && c.removeEventListener("click", d), r.current.removeEventListener("click", m);
+  }), []), E(() => (s === !0 ? (document.addEventListener("keydown", o), r.current.showModal()) : r.current.close(), () => {
+    document.removeEventListener("keydown", o);
+  }), [s]), /* @__PURE__ */ e.createElement("dialog", { ref: r, role: "dialog", id: "mds-modal", className: "mds-dialog", "aria-modal": "true" }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${H[l]}`, role: "document" }, n && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, a)));
 }, W = ({
   title: a,
   icon: s
@@ -181,7 +181,7 @@ const R = ({
   children: a
 }) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__content" }, a), G = ({
   children: a
-}) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__footer" }, a), b = {
+}) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__footer" }, a), N = {
   h1: "mds-h1",
   h2: "mds-h2",
   h3: "mds-h3",
@@ -212,10 +212,11 @@ function J({
   component: t,
   align: l = "left",
   underlineColor: n = "",
-  framed: r = !1
+  framed: r = !1,
+  ...c
 }) {
-  const m = t || L[s], d = s == "underline" && n ? b[s] + "--" + n : b[s];
-  return /* @__PURE__ */ e.createElement(m, { className: `${d} ${r ? "mds-framed" : ""}`, style: { textAlign: l } }, r ? /* @__PURE__ */ e.createElement("span", null, a) : a);
+  const o = t || L[s], m = s == "underline" && n ? N[s] + "--" + n : N[s];
+  return /* @__PURE__ */ e.createElement(o, { className: `${m} ${r ? "mds-framed" : ""}`, style: { textAlign: l }, ...c }, r ? /* @__PURE__ */ e.createElement("span", null, a) : a);
 }
 export {
   M as Accordion,

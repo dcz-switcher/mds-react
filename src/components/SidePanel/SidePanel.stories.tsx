@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import SidePanel from './SidePanel';
 import { Button } from '../Button';
@@ -15,11 +15,8 @@ const meta = {
 
 export default meta;
 
-/*
-export const Default: Story = {
-  args: {open : false}
-};
-*/
+type Story = StoryObj<typeof meta>;
+
 export const Default= () => {
   const [isOpen, setIsOpen] = React.useState(false)
   
@@ -45,7 +42,7 @@ export const Default= () => {
   )
 }
 
-export const Full = () => {
+const RenderFull = () => {
   const [isOpen, setIsOpen] = React.useState(false)
   
   const onCloseHandler = () => {
@@ -73,4 +70,8 @@ export const Full = () => {
     </SidePanel>
     </>
   )
+}
+
+export const Full:Story =  {
+  render : () => <RenderFull />
 }

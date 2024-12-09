@@ -1,3 +1,8 @@
+/**
+ * Because title is not required in ths version, aria-labeledby is not set
+ * That's because aria-labeledby reference the title id ... and title id is not required CQFD
+ * aria-labelledby="xxx"
+ */
 import React, { ReactNode, useEffect, useRef } from "react";
 
 export type SidePanelProps = {
@@ -80,7 +85,7 @@ const SidePanel = ({
     }, [open]);
 
     return (
-        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-labelledby="xxx" aria-modal="true">
+        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-modal="true">
             <div className={`mds-modal mds-modal--side-panel mds-modal--${ sizeMappingClass[size]}`} role="document">
                 
                 {showCloseButton && 

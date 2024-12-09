@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React, { HTMLAttributes, ReactNode } from "react"
 
 const variantMappingClass = {
     h1: 'mds-h1',
@@ -28,7 +28,7 @@ const variantMappingClass = {
     underline: 'span',
   }
 
-export type typographyProps = {
+export interface typographyProps extends HTMLAttributes<HTMLElement> {
     children?: ReactNode;
     variant? : "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "underline" ;
     component?: string;
@@ -43,7 +43,8 @@ export default function Typography({
     component,
     align = "left",
     underlineColor = '',
-    framed = false
+    framed = false,
+    ...props
 }:typographyProps) {
    
     const tagComponent = component || variantMappingTag[variant];
@@ -51,7 +52,7 @@ export default function Typography({
     const variantClass = (variant == "underline" && underlineColor) ? variantMappingClass[variant] + '--' + underlineColor : variantMappingClass[variant];
 
     return (
-        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""}`} style={{textAlign: align}}>
+        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""}`} style={{textAlign: align}} {...props}>
             {framed ? (
                 <span>{children}</span>
             ):(
