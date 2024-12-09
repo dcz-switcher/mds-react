@@ -23,20 +23,17 @@ export const Default: Story = {args: {
   variant: "body2",
   underline: true,
   reverse: false,
-  href: "#"
+  href: "https://www.google.fr",
+  target: '_blank'
 }};
 
 export const Reverse: Story = {
-  args : {
-    children: "I'm a link in reverse mode",
-    variant: "body2",
-    underline: true,
-    reverse: true,
-    href: "#"
-  },
-  render: (args) => (
+  args : {},
+  render: () => (
     <div className='mds-background-color__color-macif--1 mds-squish-inset--8-16'>
-      <Link {...args}>{args.children}</Link>
+      <Link variant='body2' underline={true} reverse={true} 
+            href='https://www.google.com' target='_blank'
+            rel="noopener">I'm a link in reverse mode</Link>
     </div>
   )
 };
