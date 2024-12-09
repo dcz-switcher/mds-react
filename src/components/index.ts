@@ -1,6 +1,7 @@
 export * from "./Accordion";
 export * from "./Alert";
 export * from "./Badge";
+export * from "./Breadcrumb";
 export * from "./Button";
 export * from "./CardCompactV";
 export * from "./Chips";

@@ -7,6 +7,12 @@ const variantMappingClass = {
     body4: 'mds-text--4',
 }
 
+const colorMappingClass = {
+    link   : "color-use--9",
+    primary: "color-macif--1",
+    text   : "color-grey--80",
+}
+
 export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
     children? : string;
     variant? : "body1" | "body2" | "body3" | "body4";
@@ -14,19 +20,8 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
     reverse?: boolean;
     startIcon?: string;
     endIcon?: string;
+    color?: "link" | "primary" | "text";
 }
-/*
-export type LinkProps = {
-    children? : string;
-    variant? : "body1" | "body2" | "body3" | "body4";
-    underline?: boolean;
-    reverse?: boolean;
-    href?: string;
-    target?: string;
-    startIcon?: string;
-    endIcon?: string;
-}
-*/
 
 const Link = ({
     children,
@@ -35,9 +30,10 @@ const Link = ({
     reverse = false,
     startIcon,
     endIcon,
+    color = "link",
     ...props
 }:LinkProps) => {
-    const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : ""}`;
+    const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : "mds-color__"+colorMappingClass[color] }`;
 
     return (
         <a className={classBuilder} {...props}>

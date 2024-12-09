@@ -1,7 +1,7 @@
 import { default as React } from 'react';
 import { StoryObj } from '@storybook/react';
 declare const meta: {
-    component: ({ children, variant, underline, reverse, startIcon, endIcon, ...props }: import('./Link').LinkProps) => React.JSX.Element;
+    component: ({ children, variant, underline, reverse, startIcon, endIcon, color, ...props }: import('./Link').LinkProps) => React.JSX.Element;
     argTypes: {
         children: {
             name: string;

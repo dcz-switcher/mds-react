@@ -6,6 +6,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
     reverse?: boolean;
     startIcon?: string;
     endIcon?: string;
+    color?: "link" | "primary" | "text";
 }
-declare const Link: ({ children, variant, underline, reverse, startIcon, endIcon, ...props }: LinkProps) => React.JSX.Element;
+declare const Link: ({ children, variant, underline, reverse, startIcon, endIcon, color, ...props }: LinkProps) => React.JSX.Element;
 export default Link;
