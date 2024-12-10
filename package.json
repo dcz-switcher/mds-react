@@ -1,6 +1,6 @@
 {
   "name": "mds-react",
-  "version": "0.10.5",
+  "version": "0.11.0",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
