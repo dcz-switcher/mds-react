@@ -8,7 +8,7 @@ const SidePanelContent = ({
     children
 }:SidePanelContentProps) => {
     return (
-        <div className="mds-modal__content">
+        <div className="mds-modal__content" role="document">
             {children}
         </div>
     )

@@ -1,15 +1,14 @@
-/**
- * Because title is not required in ths version, aria-labeledby is not set
- * That's because aria-labeledby reference the title id ... and title id is not required CQFD
- * aria-labelledby="xxx"
- */
 import React, { ReactNode, useEffect, useRef } from "react";
+import SidePanelHeader from "./SidePanelHeader";
 
 export type SidePanelProps = {
     children?: ReactNode;
     open?: boolean;
     onClose?: any;
     size?: 'small' | 'medium' | 'large';
+    title?: string;
+    icon?: string;
+    visuallyHideTitle?: boolean;
     showCloseButton?: boolean;
 };
 
@@ -25,9 +24,14 @@ const SidePanel = ({
     open = false,
     onClose,
     size = 'medium',
+    title,
+    icon,
+    visuallyHideTitle = false,
     showCloseButton = false,
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
+
+    const ariaId = React.useId();
 
     let $closeBtn:HTMLButtonElement;
     
@@ -85,7 +89,7 @@ const SidePanel = ({
     }, [open]);
 
     return (
-        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-modal="true">
+        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-modal="true" aria-labelledby={ariaId}>
             <div className={`mds-modal mds-modal--side-panel mds-modal--${ sizeMappingClass[size]}`} role="document">
                 
                 {showCloseButton && 
@@ -96,6 +100,7 @@ const SidePanel = ({
                 }
 
                 <div className="mds-modal__container">
+                    <SidePanelHeader title={title} icon={icon} visuallyHidden={visuallyHideTitle} id={ariaId} />
                     {children}
                 </div>
             </div>

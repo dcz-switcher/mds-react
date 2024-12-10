@@ -5,7 +5,6 @@ import SidePanel from './SidePanel';
 import { Button } from '../Button';
 import { Alert } from '../Alert';
 import { Typography } from '../Typography';
-import SidePanelHeader from './SidePanelHeader';
 import SidePanelContent from './SidePanelContent';
 import SidePanelFooter from './SidePanelFooter';
 
@@ -32,9 +31,10 @@ export const Default= () => {
       <div>
         <Button onClick={() => setIsOpen(true)}>Open SidePanel</Button>
 
-        <SidePanel open={isOpen} onClose={onCloseHandler} size='medium'>
+        <SidePanel open={isOpen} onClose={onCloseHandler} size='medium' title='Hello' visuallyHideTitle={true}>
           <SidePanelContent>
             <Typography variant='body2'>Here is the basic Side Panel. Usefull for a menu</Typography>
+            <Typography variant='body2'>The title is visually hidden but available for screen readers</Typography>
           </SidePanelContent>
         </SidePanel>
       </div>
@@ -53,8 +53,7 @@ const RenderFull = () => {
     <>
     <Button onClick={() => setIsOpen(true)}>Open SidePanel</Button>
 
-    <SidePanel open={isOpen} onClose={onCloseHandler} showCloseButton={true}>
-      <SidePanelHeader title='Full components' icon='settings'/>
+    <SidePanel open={isOpen} onClose={onCloseHandler} showCloseButton={true} title='Full panel' icon='settings'>
       <SidePanelContent>
         <Typography variant='h3'>Example of a complete Side Panel</Typography>
         <Typography variant='body2'>You can add a title with an icon</Typography>
