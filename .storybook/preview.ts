@@ -1,7 +1,7 @@
 import type { Preview } from "@storybook/react";
 
-import '../src/styles/mds-3.17.1/mds-style.min.css';
-import '../src/styles/mds-3.17.1/js/mds-js.min.js';
+import '../src/styles/mds-3.18.0/mds-style.min.css';
+import '../src/styles/mds-3.18.0/js/mds-js.min.js';
 
 const preview: Preview = {
   parameters: {

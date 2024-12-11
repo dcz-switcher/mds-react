@@ -31,7 +31,7 @@ export const Default: Story = {
   }
 };
 
-export const WithAction: Story = {
+export const WithCloseButton : Story = {
   args: {
     children: "set onClose props to add a close button",
     severity: 'info',
