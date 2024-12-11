@@ -1,4 +1,4 @@
-import e, { useRef as b, useEffect as g, Children as y } from "react";
+import e, { useRef as f, useEffect as b, Children as y } from "react";
 const F = ({
   children: a
 }) => /* @__PURE__ */ e.createElement("div", { className: "mds-accordion--standalone" }, a), A = ({
@@ -10,14 +10,14 @@ const F = ({
   expanded: r = l,
   expandIcon: m = "expand-more"
 }) => {
-  const [i, c] = e.useState(0), [o, _] = e.useState(r), d = b(null), E = () => d && d.current ? d.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
+  const [i, c] = e.useState(0), [o, _] = e.useState(r), d = f(null), E = () => d && d.current ? d.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
     _(!o), n && a && n(a);
   };
-  return g(() => (c(o ? E() : 0), () => {
-  }), [o]), g(() => (_(r), () => {
+  return b(() => (c(o ? E() : 0), () => {
+  }), [o]), b(() => (_(r), () => {
   }), [r]), /* @__PURE__ */ e.createElement("div", { ref: d, id: a, className: "mds-accordion__item" }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: h, className: `mds-collapse mds-collapse__label ${o ? "active" : ""}`, "aria-expanded": o }, t, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${o ? "active" : ""}`, style: { maxHeight: i } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
 };
-function z({
+function B({
   children: a,
   severity: t = "info",
   title: s,
@@ -26,7 +26,7 @@ function z({
 }) {
   return /* @__PURE__ */ e.createElement("div", { className: `mds-alert mds-alert--basic mds-alert-type--${t} mds-border-4--color-white` }, /* @__PURE__ */ e.createElement("div", { className: "mds-alert__header" }, /* @__PURE__ */ e.createElement("span", { className: `mds-icon mds-icon__${l}`, "aria-hidden": "true" }), s ? /* @__PURE__ */ e.createElement("h2", { className: "mds-sr-only" }, s) : null), n && /* @__PURE__ */ e.createElement("button", { className: "mds-close", onClick: n }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer l'alerte")), /* @__PURE__ */ e.createElement("div", { className: "mds-alert__content" }, /* @__PURE__ */ e.createElement("p", null, a)));
 }
-function B({
+function z({
   label: a,
   size: t = "small",
   severity: s = "neutral",
@@ -80,14 +80,14 @@ function R({
   target: d,
   ...E
 }) {
-  const u = a || "button", f = r ? "mds-full-width" : "", $ = o ? "mds-btn--reverse" : "";
+  const u = a || "button", g = r ? "mds-full-width" : "", $ = o ? "mds-btn--reverse" : "";
   l == "primary" && s == "conversion" ? l += "-cta" : l == "secondary" && s == "alert" && (l += "-alert");
   let p = {};
   return u == "a" ? (p.role = "button", p.href = _, p.target = d || "_self", p.tabindex = "0") : u == "div" ? (p.role = "button", p.tabindex = "0") : p = { ...E, opts: p }, c && (u == "a" || u == "div" ? p["aria-disabled"] = "true" : p.disabled = "disabled"), /* @__PURE__ */ e.createElement(
     u,
     {
       ...p,
-      className: `mds-btn mds-btn--${l} mds-btn--${n} ${f} ${$}`
+      className: `mds-btn mds-btn--${l} mds-btn--${n} ${g} ${$}`
     },
     m ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}--left`, "aria-hidden": "true" }) : null,
     t,
@@ -171,7 +171,14 @@ const C = {
 }) => {
   const n = "mds-" + l + "__", r = l == "picto" ? "mds-picto--" + S[s] : "mds-icon--" + H[s];
   return /* @__PURE__ */ e.createElement("span", { className: ` ${n}${a} ${r} ${t ? "mds-color__" + t : ""} ` });
-}, U = ({}) => /* @__PURE__ */ e.createElement("p", null, "Play"), M = ({
+}, U = ({
+  icon: a,
+  label: t,
+  reverse: s = !1,
+  size: l = "medium",
+  variant: n = "primary",
+  ...r
+}) => /* @__PURE__ */ e.createElement("button", { className: `mds-btn mds-btn--icon-only mds-btn--${n} mds-btn--${l} ${s ? "mds-btn--reverse" : ""}`, ...r }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, t), /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${a}`, "aria-hidden": "true" })), X = ({}) => /* @__PURE__ */ e.createElement("p", null, "Play"), M = ({
   id: a,
   title: t,
   icon: s,
@@ -180,7 +187,7 @@ const C = {
   small: "small",
   medium: "medium",
   large: "big"
-}, X = ({
+}, Y = ({
   children: a,
   open: t = !1,
   onClose: s,
@@ -190,7 +197,7 @@ const C = {
   visuallyHideTitle: m = !1,
   showCloseButton: i = !1
 }) => {
-  const c = b(null), o = e.useId();
+  const c = f(null), o = e.useId();
   let _;
   const d = () => {
     s && s();
@@ -199,14 +206,14 @@ const C = {
   }, h = (u) => {
     u.target.classList.contains("mds-dialog") && d();
   };
-  return g(() => (i && (_ = c.current.querySelector("button.mds-close"), _.addEventListener("click", d)), c.current.addEventListener("click", h), () => {
+  return b(() => (i && (_ = c.current.querySelector("button.mds-close"), _.addEventListener("click", d)), c.current.addEventListener("click", h), () => {
     i && _.removeEventListener("click", d), c.current.removeEventListener("click", h);
-  }), []), g(() => (t === !0 ? (document.addEventListener("keydown", E), c.current.showModal()) : c.current.close(), () => {
+  }), []), b(() => (t === !0 ? (document.addEventListener("keydown", E), c.current.showModal()) : c.current.close(), () => {
     document.removeEventListener("keydown", E);
   }), [t]), /* @__PURE__ */ e.createElement("dialog", { ref: c, role: "dialog", id: "mds-modal", className: "mds-dialog", "aria-modal": "true", "aria-labelledby": o }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${L[l]}`, role: "document" }, i && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement(M, { title: n, icon: r, visuallyHidden: m, id: o }), a)));
-}, Y = ({
+}, Z = ({
   children: a
-}) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__content", role: "document" }, a), Z = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__content", role: "document" }, a), ee = ({
   children: a
 }) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__footer" }, a), N = {
   h1: "mds-h1",
@@ -249,13 +256,13 @@ function P({
   const o = s || I[t], _ = t == "underline" && n ? N[t] + "--" + n : N[t], d = !r && t.substring(0, 1) != "h" && m ? "mds-color__" + w[m] : "";
   return /* @__PURE__ */ e.createElement(o, { className: `${_} ${r ? "mds-framed" : ""} ${d} `, style: { textAlign: l }, ...i }, r ? /* @__PURE__ */ e.createElement("span", null, a) : a);
 }
-const ee = ({
+const ae = ({
   children: a,
   title: t = "Summary"
 }) => {
   const s = e.useId();
   return /* @__PURE__ */ e.createElement("nav", { className: "mds-summary", role: "navigation", "aria-labelledby": s }, /* @__PURE__ */ e.createElement(P, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: s }, t), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, y.map(a, (l) => /* @__PURE__ */ e.createElement("li", null, l))));
-}, ae = ({
+}, te = ({
   id: a,
   label: t,
   checked: s = !1,
@@ -269,8 +276,8 @@ const ee = ({
 export {
   F as Accordion,
   A as AccordionItem,
-  z as Alert,
-  B as Badge,
+  B as Alert,
+  z as Badge,
   D as Breadcrumb,
   R as Button,
   K as Callout,
@@ -282,14 +289,15 @@ export {
   k as Divider,
   O as Hero,
   Q as Icon,
+  U as IconButton,
   q as Link,
-  U as Play,
-  X as SidePanel,
-  Y as SidePanelContent,
-  Z as SidePanelFooter,
+  X as Play,
+  Y as SidePanel,
+  Z as SidePanelContent,
+  ee as SidePanelFooter,
   M as SidePanelHeader,
-  ee as Summary,
-  ae as Toggle,
+  ae as Summary,
+  te as Toggle,
   P as Typography
 };
 //# sourceMappingURL=index.es.js.map

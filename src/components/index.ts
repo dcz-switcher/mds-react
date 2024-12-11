@@ -9,6 +9,7 @@ export * from "./Chips";
 export * from "./Divider";
 export * from "./Hero";
 export * from "./Icon";
+export * from "./IconButton";
 export * from "./Link";
 export * from "./Play";
 export * from "./SidePanel";
