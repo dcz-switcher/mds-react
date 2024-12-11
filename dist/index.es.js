@@ -1,5 +1,5 @@
-import e, { useRef as g, useEffect as N, Children as v } from "react";
-const A = ({
+import e, { useRef as b, useEffect as g, Children as v } from "react";
+const T = ({
   children: a
 }) => /* @__PURE__ */ e.createElement("div", { className: "mds-accordion--standalone" }, a), F = ({
   id: a,
@@ -8,16 +8,16 @@ const A = ({
   defaultExpanded: l = !1,
   onChange: n,
   expanded: r = l,
-  expandIcon: p = "expand-more"
+  expandIcon: c = "expand-more"
 }) => {
-  const [o, m] = e.useState(0), [c, _] = e.useState(r), d = g(null), E = () => d && d.current ? d.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
-    _(!c), n && a && n(a);
+  const [i, m] = e.useState(0), [d, E] = e.useState(r), o = b(null), _ = () => o && o.current ? o.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
+    E(!d), n && a && n(a);
   };
-  return N(() => (m(c ? E() : 0), () => {
-  }), [c]), N(() => (_(r), () => {
-  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: d, id: a, className: "mds-accordion__item" }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: h, className: `mds-collapse mds-collapse__label ${c ? "active" : ""}`, "aria-expanded": c }, t, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${p}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${c ? "active" : ""}`, style: { maxHeight: o } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
+  return g(() => (m(d ? _() : 0), () => {
+  }), [d]), g(() => (E(r), () => {
+  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: o, id: a, className: "mds-accordion__item" }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: h, className: `mds-collapse mds-collapse__label ${d ? "active" : ""}`, "aria-expanded": d }, t, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${c}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${d ? "active" : ""}`, style: { maxHeight: i } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
 };
-function T({
+function A({
   children: a,
   severity: t = "info",
   title: s,
@@ -52,11 +52,11 @@ const x = {
   reverse: l = !1,
   startIcon: n,
   endIcon: r,
-  color: p = "link",
-  ...o
+  color: c = "link",
+  ...i
 }) => {
-  const m = `mds-link ${x[t]} ${s ? "" : "mds-link--standalone"} ${l ? "mds-link--reverse" : "mds-color__" + y[p]}`;
-  return /* @__PURE__ */ e.createElement("a", { className: m, ...o }, n && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${n}--right`, "aria-hidden": "true" }), a, r && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${r}--right`, "aria-hidden": "true" }));
+  const m = `mds-link ${x[t]} ${s ? "" : "mds-link--standalone"} ${l ? "mds-link--reverse" : "mds-color__" + y[c]}`;
+  return /* @__PURE__ */ e.createElement("a", { className: m, ...i }, n && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${n}--right`, "aria-hidden": "true" }), a, r && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${r}--right`, "aria-hidden": "true" }));
 }, q = ({
   children: a,
   color: t = "link",
@@ -72,26 +72,26 @@ function D({
   variant: l = "primary",
   size: n = "medium",
   fullWidth: r = !1,
-  startIcon: p,
-  endIcon: o,
+  startIcon: c,
+  endIcon: i,
   disabled: m = !1,
-  reverse: c = !1,
-  href: _,
-  target: d,
-  ...E
+  reverse: d = !1,
+  href: E,
+  target: o,
+  ..._
 }) {
-  const i = a || "button", f = r ? "mds-full-width" : "", $ = c ? "mds-btn--reverse" : "";
+  const u = a || "button", f = r ? "mds-full-width" : "", $ = d ? "mds-btn--reverse" : "";
   l == "primary" && s == "conversion" ? l += "-cta" : l == "secondary" && s == "alert" && (l += "-alert");
-  let u = {};
-  return i == "a" ? (u.role = "button", u.href = _, u.target = d || "_self", u.tabindex = "0") : i == "div" ? (u.role = "button", u.tabindex = "0") : u = { ...E, opts: u }, m && (i == "a" || i == "div" ? u["aria-disabled"] = "true" : u.disabled = "disabled"), /* @__PURE__ */ e.createElement(
-    i,
+  let p = {};
+  return u == "a" ? (p.role = "button", p.href = E, p.target = o || "_self", p.tabindex = "0") : u == "div" ? (p.role = "button", p.tabindex = "0") : p = { ..._, opts: p }, m && (u == "a" || u == "div" ? p["aria-disabled"] = "true" : p.disabled = "disabled"), /* @__PURE__ */ e.createElement(
+    u,
     {
-      ...u,
+      ...p,
       className: `mds-btn mds-btn--${l} mds-btn--${n} ${f} ${$}`
     },
-    p ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${p}--left`, "aria-hidden": "true" }) : null,
+    c ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${c}--left`, "aria-hidden": "true" }) : null,
     t,
-    o ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${o}--right`, "aria-hidden": "true" }) : null
+    i ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${i}--right`, "aria-hidden": "true" }) : null
   );
 }
 const R = ({
@@ -187,28 +187,28 @@ const C = {
   size: l = "medium",
   title: n,
   icon: r,
-  visuallyHideTitle: p = !1,
-  showCloseButton: o = !1
+  visuallyHideTitle: c = !1,
+  showCloseButton: i = !1
 }) => {
-  const m = g(null), c = e.useId();
-  let _;
-  const d = () => {
+  const m = b(null), d = e.useId();
+  let E;
+  const o = () => {
     s && s();
-  }, E = (i) => {
-    i.key === "Escape" && (i.preventDefault(), i.stopImmediatePropagation(), d());
-  }, h = (i) => {
-    i.target.classList.contains("mds-dialog") && d();
+  }, _ = (u) => {
+    u.key === "Escape" && (u.preventDefault(), u.stopImmediatePropagation(), o());
+  }, h = (u) => {
+    u.target.classList.contains("mds-dialog") && o();
   };
-  return N(() => (o && (_ = m.current.querySelector("button.mds-close"), _.addEventListener("click", d)), m.current.addEventListener("click", h), () => {
-    o && _.removeEventListener("click", d), m.current.removeEventListener("click", h);
-  }), []), N(() => (t === !0 ? (document.addEventListener("keydown", E), m.current.showModal()) : m.current.close(), () => {
-    document.removeEventListener("keydown", E);
-  }), [t]), /* @__PURE__ */ e.createElement("dialog", { ref: m, role: "dialog", id: "mds-modal", className: "mds-dialog", "aria-modal": "true", "aria-labelledby": c }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${M[l]}`, role: "document" }, o && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement(L, { title: n, icon: r, visuallyHidden: p, id: c }), a)));
+  return g(() => (i && (E = m.current.querySelector("button.mds-close"), E.addEventListener("click", o)), m.current.addEventListener("click", h), () => {
+    i && E.removeEventListener("click", o), m.current.removeEventListener("click", h);
+  }), []), g(() => (t === !0 ? (document.addEventListener("keydown", _), m.current.showModal()) : m.current.close(), () => {
+    document.removeEventListener("keydown", _);
+  }), [t]), /* @__PURE__ */ e.createElement("dialog", { ref: m, role: "dialog", id: "mds-modal", className: "mds-dialog", "aria-modal": "true", "aria-labelledby": d }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${M[l]}`, role: "document" }, i && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement(L, { title: n, icon: r, visuallyHidden: c, id: d }), a)));
 }, X = ({
   children: a
 }) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__content", role: "document" }, a), Y = ({
   children: a
-}) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__footer" }, a), b = {
+}) => /* @__PURE__ */ e.createElement("div", { className: "mds-modal__footer" }, a), N = {
   h1: "mds-h1",
   h2: "mds-h2",
   h3: "mds-h3",
@@ -220,7 +220,7 @@ const C = {
   body3: "mds-text--3",
   body4: "mds-text--4",
   underline: "mds-underline"
-}, P = {
+}, I = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
@@ -240,10 +240,10 @@ function w({
   align: l = "left",
   underlineColor: n = "",
   framed: r = !1,
-  ...p
+  ...c
 }) {
-  const m = s || P[t], c = t == "underline" && n ? b[t] + "--" + n : b[t];
-  return /* @__PURE__ */ e.createElement(m, { className: `${c} ${r ? "mds-framed" : ""}`, style: { textAlign: l }, ...p }, r ? /* @__PURE__ */ e.createElement("span", null, a) : a);
+  const m = s || I[t], d = t == "underline" && n ? N[t] + "--" + n : N[t];
+  return /* @__PURE__ */ e.createElement(m, { className: `${d} ${r ? "mds-framed" : ""}`, style: { textAlign: l }, ...c }, r ? /* @__PURE__ */ e.createElement("span", null, a) : a);
 }
 const Z = ({
   children: a,
@@ -251,11 +251,21 @@ const Z = ({
 }) => {
   const s = e.useId();
   return /* @__PURE__ */ e.createElement("nav", { className: "mds-summary", role: "navigation", "aria-labelledby": s }, /* @__PURE__ */ e.createElement(w, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: s }, t), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, v.map(a, (l) => /* @__PURE__ */ e.createElement("li", null, l))));
+}, ee = ({
+  id: a,
+  label: t,
+  checked: s = !1,
+  disabled: l = !1,
+  onChange: n,
+  reverse: r = !1
+}) => {
+  const c = a || e.useId();
+  return /* @__PURE__ */ e.createElement("div", { className: `mds-toggle ${r ? "mds-toggle--reverse" : ""}` }, /* @__PURE__ */ e.createElement("input", { type: "checkbox", onChange: n, role: "switch", id: c, checked: s, disabled: l, "aria-disabled": l }), /* @__PURE__ */ e.createElement("label", { htmlFor: c }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, t)));
 };
 export {
-  A as Accordion,
+  T as Accordion,
   F as AccordionItem,
-  T as Alert,
+  A as Alert,
   z as Badge,
   q as Breadcrumb,
   D as Button,
@@ -275,6 +285,7 @@ export {
   Y as SidePanelFooter,
   L as SidePanelHeader,
   Z as Summary,
+  ee as Toggle,
   w as Typography
 };
 //# sourceMappingURL=index.es.js.map
