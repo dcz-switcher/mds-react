@@ -28,6 +28,11 @@ const variantMappingClass = {
     underline: 'span',
   }
 
+  const colorMappingClass = {
+    primary: 'color-macif--1',
+    text: ''
+  }
+
 export interface typographyProps extends HTMLAttributes<HTMLElement> {
     children?: ReactNode;
     variant? : "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "underline" ;
@@ -35,15 +40,17 @@ export interface typographyProps extends HTMLAttributes<HTMLElement> {
     align?: "center" | "inherit" | "justify" | "left" | "right";
     underlineColor?: string;
     framed?: boolean;
+    color?: 'primary' | 'text';
 }
 
 export default function Typography({
     children, 
-    variant = "body1",
+    variant = "body2",
     component,
     align = "left",
     underlineColor = '',
     framed = false,
+    color,
     ...props
 }:typographyProps) {
    
@@ -51,8 +58,10 @@ export default function Typography({
     const Tag = tagComponent as "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div" | "span";
     const variantClass = (variant == "underline" && underlineColor) ? variantMappingClass[variant] + '--' + underlineColor : variantMappingClass[variant];
 
+    const colorClass = (!framed && variant.substring(0, 1) != 'h' && color) ? 'mds-color__'+colorMappingClass[color] : '';
+
     return (
-        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""}`} style={{textAlign: align}} {...props}>
+        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""} ${colorClass} `} style={{textAlign: align}} {...props}>
             {framed ? (
                 <span>{children}</span>
             ):(

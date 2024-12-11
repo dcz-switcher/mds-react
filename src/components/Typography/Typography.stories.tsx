@@ -53,3 +53,14 @@ export const Underline: Story = {
     <Typography variant='h1'>This is a title <Typography {...args}>{args.children}</Typography> effect</Typography>
   )
 };
+
+export const WithStyle: Story = {
+  render: () => (
+    <>
+      <Typography style={{}}>This text is normal</Typography>
+      <Typography style={{fontWeight: 'bold'}}>This text is bold (set by style=fontWeight:bold)</Typography>
+      <Typography style={{fontStyle: 'italic'}}>And this one is italic (set by style=fontStyle:italic)</Typography>
+      <Typography color='primary'>And last one is a text with primary brand color (set by props "primary")</Typography>
+    </>
+  )
+}
