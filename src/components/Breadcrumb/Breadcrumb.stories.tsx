@@ -25,11 +25,11 @@ export const Default: Story = {
 export const Reverse: Story = {
   args: {},
   render: () => (
-    <p className='mds-background-color__color-macif--1'>
+    <div className='mds-background-color__color-macif--1'>
       <Breadcrumb reverse={true}>
         <Link href='#' variant='body4' reverse={true}>Link 1</Link>
         <Link variant='body4' aria-current="page" reverse={true}>Link 2</Link>
       </Breadcrumb>
-    </p>
+    </div>
   )
 };

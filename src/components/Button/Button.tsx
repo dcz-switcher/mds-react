@@ -52,10 +52,10 @@ export default function Button({
         opts['role'] = "button";
         opts['href'] = href;
         opts['target'] = (target ? target : "_self");
-        opts['tabindex'] = "0";
+        opts['tabIndex'] = "0";
     } else if (Tag == "div") {
         opts['role'] = "button";
-        opts['tabindex'] = "0";
+        opts['tabIndex'] = "0";
     } else {
         opts = {...buttonProps, opts}; //if Tag == button : merge buttonProps
     }
