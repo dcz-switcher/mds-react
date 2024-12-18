@@ -8,7 +8,7 @@ const CalloutContent = ({
     children
 }:CalloutContentProps) => {
     return (
-        <p className="mds-callout__desc">{children}</p>
+        <div className="mds-callout__desc">{children}</div>
     )
 }
 

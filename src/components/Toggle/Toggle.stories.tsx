@@ -40,8 +40,8 @@ export const Reverse = () => {
   }
 
   return (
-    <p className='mds-background-color__color-macif--1 mds-stretch-inset--12-8'>
+    <div className='mds-background-color__color-macif--1 mds-stretch-inset--12-8'>
       <Toggle label='Reverse' reverse={true} checked={isActivated} onChange={ToggleChangeHandler}/>
-    </p>
+    </div>
   )
 }
