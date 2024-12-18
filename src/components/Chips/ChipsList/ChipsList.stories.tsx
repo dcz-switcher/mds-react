@@ -27,7 +27,7 @@ export const Default: Story = {
       {
         chipsDataSet.map((data) => {
           return (
-            <ChipsItem {...data} />      
+            <ChipsItem key={data.id} {...data} />      
           )
         })
       }

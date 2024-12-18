@@ -70,8 +70,9 @@ const SidePanel = ({
             if (showCloseButton){
                 $closeBtn.removeEventListener("click", closeHandler);
             }
-
-            ref.current.removeEventListener('click', backdropClickHandler);
+            try{
+                ref.current.removeEventListener('click', backdropClickHandler);
+            } catch (er){}
         }
     }, []);
 
