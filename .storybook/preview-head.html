@@ -1,0 +1,15 @@
+<!--
+    <script>
+        // tentative de hack pour que le script JS du DS fonctionne
+        // l'event DOMContentLoaded est propagé avant que l'iframe ne soit chargée
+        // dès lors, aucun composant n'est vu par le JS
+        // il faudrait écouter tous les changements du DOM pour relancer le DOMContentLoaded
+        // là, ça ne fonctionne que si on refresh le navigateur
+        setTimeout(() => {
+            window.document.dispatchEvent(new Event('DOMContentLoaded', {
+                bubbles: true,
+                cancelable: true
+            }));
+        }, 1000);
+    </script>
+-->
