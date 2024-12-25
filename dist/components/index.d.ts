@@ -14,5 +14,7 @@ export * from './Link';
 export * from './Play';
 export * from './SidePanel';
 export * from './Summary';
+export * from './Tabs';
+export * from './TextField';
 export * from './Toggle';
 export * from './Typography';
