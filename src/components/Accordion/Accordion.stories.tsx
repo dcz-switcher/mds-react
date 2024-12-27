@@ -33,7 +33,6 @@ export const OnlyOneExpandedAtATime = () => {
   const [expanded, setExpanded] = React.useState('panel1');
   
   const onChangeHandler = (panelId:string) => {
-    console.log(panelId);
     setExpanded(panelId);
   }
 

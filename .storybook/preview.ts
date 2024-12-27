@@ -4,6 +4,7 @@ import '../src/styles/mds-3.18.1/mds-style.min.css';
 import '../src/styles/mds-3.18.1/js/mds-js.min.js';
 
 const preview: Preview = {
+  tags: ['autodocs'],
   parameters: {
     controls: {
       matchers: {
