@@ -21,8 +21,8 @@ const IconButton = ({
 }:IconButtonProps) => {
     return (
         <button className={`mds-btn mds-btn--icon-only mds-btn--${variant} mds-btn--${size} ${reverse ? 'mds-btn--reverse' : ''} ${className} `} {...buttonProps}>
-                <span className="mds-sr-only">{label}</span>	
-                <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
+            <span className="mds-sr-only">{label}</span>	
+            <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
         </button>
     )
 }

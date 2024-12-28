@@ -1,8 +1,8 @@
 import { default as React } from 'react';
 export type CardMediaProps = {
-    component?: 'img' | 'picto';
+    component?: 'img' | 'icon' | 'picto';
     src?: string;
-    picto?: string;
+    icon?: string;
 };
-declare const CardMedia: ({ component, src, picto, }: CardMediaProps) => React.JSX.Element;
+declare const CardMedia: ({ component, src, icon, }: CardMediaProps) => React.JSX.Element;
 export default CardMedia;

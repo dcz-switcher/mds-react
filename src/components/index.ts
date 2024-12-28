@@ -5,6 +5,7 @@ export * from "./Box";
 export * from "./Breadcrumb";
 export * from "./Button";
 export * from "./Callout";
+export * from "./Card";
 export * from "./CardCompactV";
 export * from "./Chips";
 export * from "./Divider";
