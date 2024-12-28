@@ -7,6 +7,7 @@ declare const meta: {
         label?: string | undefined;
         active?: boolean | undefined;
         onClick?: any;
+        className?: string | undefined;
     }>) => React.JSX.Element)[];
 };
 export default meta;

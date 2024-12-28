@@ -27,18 +27,20 @@ export type IconProps = {
     color?: string;
     size?: 'xsmall' | 'small' | 'medium'| 'large' | 'xlarge' | 'huge' | 'enormous' | 'giant' ;
     baseClassName?: string;
+    className?: string;
 }
 
 const Icon = ({
     children = "person",
     color,
     size = 'medium',
-    baseClassName = "icon"
+    baseClassName = "icon",
+    className,
 }:IconProps) => {
     const baseClass = "mds-" + baseClassName + "__";
     const sizeClass = (baseClassName == 'picto') ? "mds-picto--"+pictoSizeMappingClass[size] : "mds-icon--"+iconSizeMappingClass[size];
     return (
-        <span className={` ${baseClass}${children} ${sizeClass} ${color ?  "mds-color__"+color : ''} `}></span>
+        <span className={` ${baseClass}${children} ${sizeClass} ${color ?  "mds-color__"+color : ''} ${className} `}></span>
     )
 }
 

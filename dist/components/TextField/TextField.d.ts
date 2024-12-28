@@ -12,6 +12,7 @@ export interface TextFieldProps extends ComponentProps<'input'> {
     supportingText?: string;
     startIcon?: string;
     type?: 'number' | 'text' | 'tel' | 'email' | 'password' | any;
+    className?: string;
 }
-declare const TextField: ({ endAdornment, error, errorText, fullWidth, id, label, optionalText, required, reverse, supportingText, startIcon, type, ...props }: TextFieldProps) => React.JSX.Element;
+declare const TextField: ({ endAdornment, error, errorText, fullWidth, id, label, optionalText, required, reverse, supportingText, startIcon, type, className, ...props }: TextFieldProps) => React.JSX.Element;
 export default TextField;

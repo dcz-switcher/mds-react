@@ -21,6 +21,7 @@ export interface LinkProps extends HTMLProps<HTMLAnchorElement> {
     startIcon?: string;
     endIcon?: string;
     color?: "link" | "primary" | "text";
+    className?: string;
 }
 
 const Link = ({
@@ -31,9 +32,10 @@ const Link = ({
     startIcon,
     endIcon,
     color = "link",
+    className,
     ...props
 }:LinkProps) => {
-    const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : "mds-color__"+LinkColorMappingClass[color] }`;
+    const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : "mds-color__"+LinkColorMappingClass[color] } ${className}`;
 
     return (
         <a className={classBuilder} {...props}>

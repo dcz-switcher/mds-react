@@ -9,6 +9,7 @@ declare const meta: {
         href?: string | undefined;
         target?: string | undefined;
         role?: string | undefined;
+        className?: string | undefined;
     }>) => React.JSX.Element)[];
 };
 export default meta;

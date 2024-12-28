@@ -12,5 +12,6 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     startIcon?: string;
     target?: string;
     variant?: "primary" | "secondary" | "tertiary";
+    className?: string;
 }
-export default function Button({ component, children, color, variant, size, fullWidth, startIcon, endIcon, disabled, reverse, href, target, ...buttonProps }: ButtonProps): React.JSX.Element;
+export default function Button({ component, children, color, variant, size, fullWidth, startIcon, endIcon, disabled, reverse, href, target, className, ...buttonProps }: ButtonProps): React.JSX.Element;

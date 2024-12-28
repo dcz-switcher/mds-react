@@ -41,6 +41,7 @@ export interface typographyProps extends HTMLAttributes<HTMLElement> {
     underlineColor?: string;
     framed?: boolean;
     color?: 'primary' | 'text';
+    className?: string;
 }
 
 export default function Typography({
@@ -51,6 +52,7 @@ export default function Typography({
     underlineColor = '',
     framed = false,
     color,
+    className,
     ...props
 }:typographyProps) {
    
@@ -61,7 +63,7 @@ export default function Typography({
     const colorClass = (!framed && variant.substring(0, 1) != 'h' && color) ? 'mds-color__'+colorMappingClass[color] : '';
 
     return (
-        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""} ${colorClass} `} style={{textAlign: align}} {...props}>
+        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""} ${colorClass} ${className}`} style={{textAlign: align}} {...props}>
             {framed ? (
                 <span>{children}</span>
             ):(

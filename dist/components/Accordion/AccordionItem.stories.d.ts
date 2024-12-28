@@ -1,7 +1,7 @@
 import { default as React } from 'react';
 import { StoryObj } from '@storybook/react';
 declare const meta: {
-    component: ({ id, title, children, defaultExpanded, onChange, expanded, expandIcon }: import('./AccordionItem').AccordionItemProps) => React.JSX.Element;
+    component: ({ id, title, children, defaultExpanded, onChange, expanded, expandIcon, className, }: import('./AccordionItem').AccordionItemProps) => React.JSX.Element;
     decorators: ((Story: import('@storybook/csf').PartialStoryFn<import('@storybook/react').ReactRenderer, {
         id?: string | undefined;
         title?: string | undefined;
@@ -10,6 +10,7 @@ declare const meta: {
         expanded?: boolean | undefined;
         onChange?: any;
         expandIcon?: string | undefined;
+        className?: string | undefined;
     }>) => React.JSX.Element)[];
 };
 export default meta;

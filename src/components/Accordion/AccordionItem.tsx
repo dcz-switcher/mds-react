@@ -8,6 +8,7 @@ export type AccordionItemProps = {
     expanded?: boolean;
     onChange?: any;
     expandIcon?: string; //don't usable currently because icon is also injected by CSS. Bug declared on dec. 8th.
+    className?: string;
 }
 
 const AccordionItem = ({
@@ -17,7 +18,8 @@ const AccordionItem = ({
     defaultExpanded = false,
     onChange,
     expanded = defaultExpanded,
-    expandIcon = 'expand-more'
+    expandIcon = 'expand-more',
+    className,
 }:AccordionItemProps) => {
     const [maxH, setMaxH] = React.useState(0);
     
@@ -58,7 +60,7 @@ const AccordionItem = ({
     }, [expanded])
 
     return (
-        <div ref={ref} id={id} className="mds-accordion__item">
+        <div ref={ref} id={id} className={`mds-accordion__item ${className}`}>
             <h2 className="mds-accordion__header">
                 <button type="button" aria-controls="collapse--xx" onClick={onClickHandler} className={`mds-collapse mds-collapse__label ${isExpanded ? 'active' : ''}`} aria-expanded={isExpanded}>
                     {title}

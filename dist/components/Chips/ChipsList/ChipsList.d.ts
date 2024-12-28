@@ -3,6 +3,7 @@ type ChipsListProps = {
     children?: ReactNode;
     reverse?: boolean;
     size?: "small" | "big";
+    className?: string;
 };
-export default function ChipsList({ children, reverse, size }: ChipsListProps): React.JSX.Element;
+export default function ChipsList({ children, reverse, size, className, }: ChipsListProps): React.JSX.Element;
 export {};

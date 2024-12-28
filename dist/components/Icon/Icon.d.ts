@@ -4,6 +4,7 @@ export type IconProps = {
     color?: string;
     size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge' | 'huge' | 'enormous' | 'giant';
     baseClassName?: string;
+    className?: string;
 };
-declare const Icon: ({ children, color, size, baseClassName }: IconProps) => React.JSX.Element;
+declare const Icon: ({ children, color, size, baseClassName, className, }: IconProps) => React.JSX.Element;
 export default Icon;

@@ -4,6 +4,7 @@ export type SidePanelHeaderProps = {
     title?: string;
     icon?: string;
     visuallyHidden?: boolean;
+    className?: string;
 };
-declare const SidePanelHeader: ({ id, title, icon, visuallyHidden }: SidePanelHeaderProps) => React.JSX.Element;
+declare const SidePanelHeader: ({ id, title, icon, visuallyHidden, className, }: SidePanelHeaderProps) => React.JSX.Element;
 export default SidePanelHeader;

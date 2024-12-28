@@ -7,6 +7,7 @@ export type BadgeProps = {
     severity?: "neutral" | "success" | "warning" | "danger" | "new";
     color?: string; // override severity color
     icon?: string;
+    className?: string;
 }
 
 
@@ -16,12 +17,13 @@ export default function Badge ({
     severity = "neutral",
     icon,
     color,
+    className,
 }: BadgeProps) {
 
     const colorClass = (color) ? `mds-background-color__${color}` : "";
 
     return  (
-        <p className={`mds-badge mds-badge--${size} mds-badge--${severity} ${colorClass}`}>
+        <p className={`mds-badge mds-badge--${size} mds-badge--${severity} ${colorClass} ${className}`}>
             {icon &&
                 <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
             }

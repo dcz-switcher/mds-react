@@ -7,6 +7,7 @@ export type AccordionItemProps = {
     expanded?: boolean;
     onChange?: any;
     expandIcon?: string;
+    className?: string;
 };
-declare const AccordionItem: ({ id, title, children, defaultExpanded, onChange, expanded, expandIcon }: AccordionItemProps) => React.JSX.Element;
+declare const AccordionItem: ({ id, title, children, defaultExpanded, onChange, expanded, expandIcon, className, }: AccordionItemProps) => React.JSX.Element;
 export default AccordionItem;

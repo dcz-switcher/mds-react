@@ -5,6 +5,7 @@ export type CalloutProps = {
     children?: ReactNode;
     color?: string;
     icon?: string;
+    className?: string;
 };
-declare const Callout: ({ title, subtitle, children, color, icon }: CalloutProps) => React.JSX.Element;
+declare const Callout: ({ title, subtitle, children, color, icon, className, }: CalloutProps) => React.JSX.Element;
 export default Callout;

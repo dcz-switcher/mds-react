@@ -1,6 +1,6 @@
 import { StoryObj } from '@storybook/react';
 declare const meta: {
-    component: ({ children, color, size, baseClassName }: import('./Icon').IconProps) => import("react").JSX.Element;
+    component: ({ children, color, size, baseClassName, className, }: import('./Icon').IconProps) => import("react").JSX.Element;
     argTypes: {
         children: {
             type: "string";

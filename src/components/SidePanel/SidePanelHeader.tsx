@@ -6,16 +6,18 @@ export type SidePanelHeaderProps = {
     title? : string;
     icon?: string;
     visuallyHidden?: boolean;
+    className?: string;
 }
 
 const SidePanelHeader = ({
     id,
     title,
     icon,
-    visuallyHidden = false
+    visuallyHidden = false,
+    className,
 }:SidePanelHeaderProps) => {
     return (
-        <div className={` ${visuallyHidden ? 'mds-sr-only' : ''} `}>
+        <div className={` ${visuallyHidden ? 'mds-sr-only' : ''} ${className}`}>
 
             <div className={`mds-modal__header`}>
                 {icon && 

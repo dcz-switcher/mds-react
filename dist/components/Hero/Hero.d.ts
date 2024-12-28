@@ -5,6 +5,7 @@ export type HeroProps = {
     subTitle?: ReactNode;
     heroActions?: ReactNode;
     image?: string;
+    className?: string;
 };
-declare const Hero: ({ upTitle, title, subTitle, heroActions, image }: HeroProps) => React.JSX.Element;
+declare const Hero: ({ upTitle, title, subTitle, heroActions, image, className, }: HeroProps) => React.JSX.Element;
 export default Hero;

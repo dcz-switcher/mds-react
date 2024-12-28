@@ -7,6 +7,7 @@ type AlertProps = {
     title?: string;
     icon?: string;
     onClose?: any;
+    className?: string;
 }
 
 export default function Alert({
@@ -14,10 +15,11 @@ export default function Alert({
     severity = "info",
     title,
     icon = "info",
-    onClose
+    onClose,
+    className,
 }:AlertProps){
     return (
-        <div className={`mds-alert mds-alert--basic mds-alert-type--${severity} mds-border-4--color-white`}>
+        <div className={`mds-alert mds-alert--basic mds-alert-type--${severity} mds-border-4--color-white ${className}`}>
             <div className="mds-alert__header">
                 <span className={`mds-icon mds-icon__${icon}`} aria-hidden="true"></span>
                 { title ? (

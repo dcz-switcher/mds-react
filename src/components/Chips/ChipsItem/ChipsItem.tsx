@@ -4,16 +4,18 @@ import React from "react";
 export type ChipsItemProps = {
     label?: string;
     active?: boolean;
-    onClick?: any
+    onClick?: any;
+    className?: string;
 }
 
 export default function ChipsItem({
     label,
     active = false,
-    onClick
+    onClick,
+    className,
 }:ChipsItemProps) {
     return (
-        <li>
+        <li className={className}>
             <button onClick={onClick} type="button" className="mds-chips__item" aria-pressed={`${active}`} aria-disabled={`${active}`}>{label}</button>
         </li>
     )

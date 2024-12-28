@@ -6,6 +6,7 @@ export type CalloutProps = {
     children?: ReactNode;
     color?: string;
     icon?: string;
+    className?: string;
 }
 
 const Callout = ({
@@ -13,10 +14,11 @@ const Callout = ({
     subtitle,
     children,
     color = 'color-grey--5',
-    icon
+    icon,
+    className,
 }:CalloutProps) => {
     return (
-        <div className={`mds-callout mds-background-color__${color}`}>
+        <div className={`mds-callout mds-background-color__${color} ${className}`}>
             {icon && 
                 <span aria-hidden="true" className={`mds-picto__${icon} mds-callout__picto`}></span>
             }

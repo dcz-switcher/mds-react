@@ -1,6 +1,6 @@
 import { default as React } from 'react';
 declare const meta: {
-    component: ({ id, label, checked, disabled, onChange, reverse }: import('./Toggle').ToggleProps) => React.JSX.Element;
+    component: ({ id, label, checked, disabled, onChange, reverse, className, }: import('./Toggle').ToggleProps) => React.JSX.Element;
 };
 export default meta;
 export declare const Default: (args: {

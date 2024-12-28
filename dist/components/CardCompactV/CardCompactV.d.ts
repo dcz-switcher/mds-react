@@ -5,5 +5,6 @@ export type CardProps = {
     href?: string;
     target?: string;
     role?: string;
+    className?: string;
 };
-export default function CardCompactV({ title, icon, href, target, role, }: CardProps): React.JSX.Element;
+export default function CardCompactV({ title, icon, href, target, role, className, }: CardProps): React.JSX.Element;

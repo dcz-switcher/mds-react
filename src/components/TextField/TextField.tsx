@@ -13,6 +13,7 @@ export interface TextFieldProps extends ComponentProps<'input'> {
     supportingText?: string;
     startIcon?: string;
     type?: 'number' | 'text' | 'tel' | 'email' | 'password' | any;
+    className?: string;
 }
 
 const inputMappingClass:any = {
@@ -35,6 +36,7 @@ const TextField = ({
     supportingText,
     startIcon,
     type = 'text',
+    className,
     ...props
 }:TextFieldProps) => {
 
@@ -43,13 +45,13 @@ const TextField = ({
     const errorId = React.useId();
 
     return (
-        <div className={`mds-input-group ${reverse ? 'mds-input-group--reverse' : ''}`}><label htmlFor={id} className="mds-label">{label} {requiredLabel} {supportingText ? <span className="mds-label--description">{supportingText}</span>: ''}</label>
+        <div className={`mds-input-group ${reverse ? 'mds-input-group--reverse' : ''} ${className}`}><label htmlFor={id} className="mds-label">{label} {requiredLabel} {supportingText ? <span className="mds-label--description">{supportingText}</span>: ''}</label>
             <div className={`mds-input-cell ${fullWidth ? 'mds-full-width': ''} ${startIcon ? 'mds-wrapper--icon-left': ''}`}>
                 {startIcon ? 
                     <span aria-hidden="true" className={`mds-input__icon mds-icon__${startIcon}`}></span>
                     : ''
                 }
-                <input {...props} className={`mds-input mds-input-${inputClass}`} id={id} type={type} aria-required={required} aria-invalid={error} aria-describedby={error && errorText ? errorId : ''} />
+                <input className={`mds-input mds-input-${inputClass}`} id={id} type={type} aria-required={required} aria-invalid={error} aria-describedby={error && errorText ? errorId : ''} {...props} />
                 {type === 'password' ?
                     <button type="button" className="mds-input__icon">
                         <span className="mds-sr-only">Masquer le mot de passe</span>

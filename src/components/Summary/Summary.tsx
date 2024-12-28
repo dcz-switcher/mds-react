@@ -9,17 +9,19 @@ import { Typography } from "../Typography";
 type SummaryProps = {
     children?: ReactNode;
     title?: string;
+    className?: string;
 }
 
 const Summary = ({
     children,
     title = "Summary",
+    className,
 }:SummaryProps) => {
 
     const ariaId = React.useId();
 
     return (
-        <nav className="mds-summary" role="navigation" aria-labelledby={ariaId}>
+        <nav className={`mds-summary ${className}`} role="navigation" aria-labelledby={ariaId}>
             <Typography variant="h4" component="p" role="heading" aria-level={2} id={ariaId}>{title}</Typography>
             <ul className="mds-list">
                 {Children.map(children, child => {

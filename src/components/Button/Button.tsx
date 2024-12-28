@@ -14,6 +14,7 @@ export interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
     startIcon?: string;
     target?: string;
     variant?: "primary" | "secondary" | "tertiary";
+    className?: string;
 }
 
 export default function Button({
@@ -29,7 +30,7 @@ export default function Button({
     reverse = false,
     href,
     target,
-    
+    className,
     ...buttonProps
 }: ButtonProps){
 
@@ -70,7 +71,7 @@ export default function Button({
 
     return (
         <Tag {...opts} 
-            className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass} ${reverseClass}`}>
+            className={`mds-btn mds-btn--${variant} mds-btn--${size} ${fullWidthClass} ${reverseClass} ${className}`}>
             
             {startIcon ? (
                 <span className={`mds-icon__${startIcon}--left`} aria-hidden="true"></span>

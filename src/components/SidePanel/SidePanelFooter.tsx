@@ -2,13 +2,15 @@ import React, { ReactNode } from "react";
 
 export type SidePanelFooterProps = {
     children? : ReactNode;
+    className?: string;
 }
 
 const SidePanelFooter = ({
-    children
+    children,
+    className,
 }:SidePanelFooterProps) => {
     return (
-        <div className="mds-modal__footer">
+        <div className={`mds-modal__footer ${className}`}>
             {children}
         </div>
     )

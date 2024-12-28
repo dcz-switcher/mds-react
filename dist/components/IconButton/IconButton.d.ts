@@ -5,6 +5,7 @@ export interface IconButtonProps extends React.ComponentPropsWithoutRef<"button"
     reverse?: boolean;
     size?: "small" | "medium";
     variant?: "primary" | "secondary" | "tertiary";
+    className?: string;
 }
-declare const IconButton: ({ icon, label, reverse, size, variant, ...buttonProps }: IconButtonProps) => React.JSX.Element;
+declare const IconButton: ({ icon, label, reverse, size, variant, className, ...buttonProps }: IconButtonProps) => React.JSX.Element;
 export default IconButton;

@@ -24,7 +24,7 @@ export const Default: Story = {args: {
   underline: true,
   reverse: false,
   href: "https://www.google.fr",
-  target: '_blank'
+  target: '_blank',
 }};
 
 export const Reverse: Story = {

@@ -6,6 +6,7 @@ export type HeroProps = {
     subTitle?: ReactNode;
     heroActions?: ReactNode;
     image?: string;
+    className?: string;
 }
 
 
@@ -14,12 +15,13 @@ const Hero = ({
     title = "Title",
     subTitle = "Content",
     heroActions,
-    image
+    image,
+    className,
 }:HeroProps) => {
 
     
     return (
-        <div className="mds-hero mds-hero--action">
+        <div className={`mds-hero mds-hero--action ${className}`}>
             <div className="mds-hero__body">
                 {title}
                 {upTitle &&

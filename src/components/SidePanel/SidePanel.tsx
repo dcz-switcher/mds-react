@@ -10,6 +10,7 @@ export type SidePanelProps = {
     icon?: string;
     visuallyHideTitle?: boolean;
     showCloseButton?: boolean;
+    className?: string;
 };
 
 const sizeMappingClass = {
@@ -28,6 +29,7 @@ const SidePanel = ({
     icon,
     visuallyHideTitle = false,
     showCloseButton = false,
+    className,
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
 
@@ -90,7 +92,7 @@ const SidePanel = ({
     }, [open]);
 
     return (
-        <dialog ref={ref} role="dialog" id="mds-modal" className="mds-dialog" aria-modal="true" aria-labelledby={ariaId}>
+        <dialog ref={ref} role="dialog" id="mds-modal" className={`mds-dialog ${className}`} aria-modal="true" aria-labelledby={ariaId}>
             <div className={`mds-modal mds-modal--side-panel mds-modal--${ sizeMappingClass[size]}`} role="document">
                 
                 {showCloseButton && 

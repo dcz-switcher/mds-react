@@ -11,7 +11,7 @@ const Box = ({
     ...props
 }:BoxProps) => {
     return (
-        <div {...props} className={className}>
+        <div className={className} {...props} >
             {children}
         </div>
     )

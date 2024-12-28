@@ -8,6 +8,7 @@ export type SidePanelProps = {
     icon?: string;
     visuallyHideTitle?: boolean;
     showCloseButton?: boolean;
+    className?: string;
 };
-declare const SidePanel: ({ children, open, onClose, size, title, icon, visuallyHideTitle, showCloseButton, }: SidePanelProps) => React.JSX.Element;
+declare const SidePanel: ({ children, open, onClose, size, title, icon, visuallyHideTitle, showCloseButton, className, }: SidePanelProps) => React.JSX.Element;
 export default SidePanel;

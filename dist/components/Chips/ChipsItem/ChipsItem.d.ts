@@ -3,5 +3,6 @@ export type ChipsItemProps = {
     label?: string;
     active?: boolean;
     onClick?: any;
+    className?: string;
 };
-export default function ChipsItem({ label, active, onClick }: ChipsItemProps): React.JSX.Element;
+export default function ChipsItem({ label, active, onClick, className, }: ChipsItemProps): React.JSX.Element;

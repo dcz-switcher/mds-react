@@ -5,6 +5,7 @@ type AlertProps = {
     title?: string;
     icon?: string;
     onClose?: any;
+    className?: string;
 };
-export default function Alert({ children, severity, title, icon, onClose }: AlertProps): React.JSX.Element;
+export default function Alert({ children, severity, title, icon, onClose, className, }: AlertProps): React.JSX.Element;
 export {};

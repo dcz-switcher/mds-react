@@ -2,13 +2,15 @@ import React, { ReactNode } from "react";
 
 export type CalloutContentProps = {
     children?: ReactNode;
+    className?: string;
 }
 
 const CalloutContent = ({
-    children
+    children,
+    className,
 }:CalloutContentProps) => {
     return (
-        <div className="mds-callout__desc">{children}</div>
+        <div className={`mds-callout__desc ${className}`}>{children}</div>
     )
 }
 

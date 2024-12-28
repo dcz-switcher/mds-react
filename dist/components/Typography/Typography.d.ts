@@ -7,5 +7,6 @@ export interface typographyProps extends HTMLAttributes<HTMLElement> {
     underlineColor?: string;
     framed?: boolean;
     color?: 'primary' | 'text';
+    className?: string;
 }
-export default function Typography({ children, variant, component, align, underlineColor, framed, color, ...props }: typographyProps): React.JSX.Element;
+export default function Typography({ children, variant, component, align, underlineColor, framed, color, className, ...props }: typographyProps): React.JSX.Element;

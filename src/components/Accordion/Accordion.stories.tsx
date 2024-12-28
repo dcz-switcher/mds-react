@@ -19,7 +19,7 @@ export const Default = () => {
         <Typography variant='body2'>A simple text inside</Typography>
       </AccordionItem>
       <AccordionItem title='Secondary (empty) item'/>
-      <AccordionItem title='Third item with Buttons inside' defaultExpanded={true}>
+      <AccordionItem title='Third item with Buttons inside'>
         <div className='mds-btn-group'>
           <Button>Button A</Button>
           <Button variant='primary'>Button B</Button>
