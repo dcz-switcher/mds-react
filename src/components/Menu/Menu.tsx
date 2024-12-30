@@ -4,6 +4,7 @@ export type MenuProps = {
     anchorEl:ReactNode;
     anchorOrigin?: 'tl' | 'tr' | 'bl' | 'br';
     children?:ReactNode;
+    className?: string;
 };
 
 
@@ -18,12 +19,13 @@ const Menu = ({
     anchorEl,
     anchorOrigin = 'bl',
     children,
+    className,
 }:MenuProps) => {
     
     const AnchorOrigin = AnchorMappingclass[anchorOrigin];
 
     return (
-        <div className={`mds-dropdown__layout ${AnchorOrigin}`}>
+        <div className={`mds-dropdown__layout ${AnchorOrigin} ${className}`}>
             {anchorEl}
             <div className="mds-dropdown__container">
                 <div className="mds-dropdown mds-dropdown__handleClick">

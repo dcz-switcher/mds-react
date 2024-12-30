@@ -4,15 +4,17 @@ export type ListItemText = {
     headline?: ReactNode;
     primary?: ReactNode;
     secondary?: ReactNode;
+    className?: string;
 };
 
 const ListItemText = ({
     headline,
     primary,
     secondary,
+    className,
 }:ListItemText) => {
     return (
-        <div className="mds-action-list__item-container-content">
+        <div className={`mds-action-list__item-container-content ${className}`}>
             <div className="mds-action-list__item-text-content">
                 {headline ?
                     <span className="mds-action-list__item-headline">{headline}</span>
