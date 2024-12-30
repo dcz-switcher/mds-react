@@ -13,6 +13,8 @@ export * from './Hero';
 export * from './Icon';
 export * from './IconButton';
 export * from './Link';
+export * from './List';
+export * from './Menu';
 export * from './Play';
 export * from './SidePanel';
 export * from './Summary';
