@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react"
+import React, { HTMLAttributes, ReactNode, createContext, useContext } from "react"
 
 const variantMappingClass = {
     h1: 'mds-h1',
@@ -33,6 +33,9 @@ const variantMappingClass = {
     text: 'color-grey--80',
   }
 
+const TypographyAncestryContext = createContext(false);
+export const useTypographyAncestry = () => useContext(TypographyAncestryContext);
+
 export interface typographyProps extends HTMLAttributes<HTMLElement> {
     children?: ReactNode;
     variant? : "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "underline" ;
@@ -55,20 +58,24 @@ export default function Typography({
     className = '',
     ...props
 }:typographyProps) {
-   
-    const tagComponent = component || variantMappingTag[variant];
+    const hasTypographyParent = useTypographyAncestry();
+
+    //const tagComponent = component || variantMappingTag[variant];
+    const tagComponent = (hasTypographyParent) ? "span" : (component || variantMappingTag[variant]);
     const Tag = tagComponent as "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div" | "span";
     const variantClass = (variant == "underline" && underlineColor) ? variantMappingClass[variant] + '--' + underlineColor : variantMappingClass[variant];
 
     const colorClass = (!framed && variant.substring(0, 1) != 'h' && color) ? 'mds-color__'+colorMappingClass[color] : '';
 
     return (
-        <Tag className={`${variantClass} ${framed ? "mds-framed" : ""} ${colorClass} ${className}`} style={{textAlign: align}} {...props}>
-            {framed ? (
-                <span>{children}</span>
-            ):(
-                children
-            )}
-        </Tag>
+        <TypographyAncestryContext.Provider value={true}>
+            <Tag className={`${variantClass} ${framed ? "mds-framed" : ""} ${colorClass} ${className}`} style={{textAlign: align}} {...props}>
+                {framed ? (
+                    <span>{children}</span>
+                ):(
+                    children
+                )}
+            </Tag>
+        </TypographyAncestryContext.Provider>
     )
 }

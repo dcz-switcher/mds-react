@@ -35,7 +35,6 @@ export const Nested: Story = {
   args: {
     children: "a text nested",
     variant: "body1",
-    component: "span",
   },
   render: (args) => (
     <Typography variant='h1'>An example of <Typography {...args}>{args.children}</Typography> in another one.
