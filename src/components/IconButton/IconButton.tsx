@@ -16,7 +16,7 @@ const IconButton = ({
     reverse = false,
     size = 'medium',
     variant = "primary",
-    className,
+    className = '',
     ...buttonProps
 }:IconButtonProps) => {
     return (

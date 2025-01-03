@@ -7,7 +7,7 @@ export type CalloutContentProps = {
 
 const CalloutContent = ({
     children,
-    className,
+    className = '',
 }:CalloutContentProps) => {
     return (
         <div className={`mds-callout__desc ${className}`}>{children}</div>

@@ -29,7 +29,7 @@ const SidePanel = ({
     icon,
     visuallyHideTitle = false,
     showCloseButton = false,
-    className,
+    className = '',
 }:SidePanelProps) => {
     const ref = useRef(null) as any;
 

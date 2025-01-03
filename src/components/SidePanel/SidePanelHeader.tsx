@@ -14,7 +14,7 @@ const SidePanelHeader = ({
     title,
     icon,
     visuallyHidden = false,
-    className,
+    className = '',
 }:SidePanelHeaderProps) => {
     return (
         <div className={` ${visuallyHidden ? 'mds-sr-only' : ''} ${className}`}>

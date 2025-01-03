@@ -12,7 +12,7 @@ const Breadcrumb = ({
     children,
     color = "link",
     reverse = false,
-    className,
+    className = '',
 }:BreadcrumbProps) => {
     const colorClass = (reverse) ? "color-white" : LinkColorMappingClass[color];
     return (

@@ -7,7 +7,7 @@ export type SidePanelFooterProps = {
 
 const SidePanelFooter = ({
     children,
-    className,
+    className = '',
 }:SidePanelFooterProps) => {
     return (
         <div className={`mds-modal__footer ${className}`}>

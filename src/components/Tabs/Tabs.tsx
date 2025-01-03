@@ -9,7 +9,7 @@ export type TabsProps = {
 const Tabs = ({
     reverse = false,
     children,
-    className,
+    className = '',
 }:TabsProps) => {
 
     return (

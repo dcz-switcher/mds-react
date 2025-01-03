@@ -15,7 +15,7 @@ const Callout = ({
     children,
     color = 'color-grey--5',
     icon,
-    className,
+    className = '',
 }:CalloutProps) => {
     return (
         <div className={`mds-callout mds-background-color__${color} ${className}`}>

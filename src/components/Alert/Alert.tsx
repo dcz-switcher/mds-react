@@ -16,7 +16,7 @@ export default function Alert({
     title,
     icon = "info",
     onClose,
-    className,
+    className = '',
 }:AlertProps){
     return (
         <div className={`mds-alert mds-alert--basic mds-alert-type--${severity} mds-border-4--color-white ${className}`}>

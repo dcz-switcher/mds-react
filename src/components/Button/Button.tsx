@@ -30,7 +30,7 @@ export default function Button({
     reverse = false,
     href,
     target,
-    className,
+    className = '',
     ...buttonProps
 }: ButtonProps){
 

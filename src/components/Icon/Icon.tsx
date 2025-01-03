@@ -35,7 +35,7 @@ const Icon = ({
     color,
     size = 'medium',
     baseClassName = "icon",
-    className,
+    className = '',
 }:IconProps) => {
     const baseClass = "mds-" + baseClassName + "__";
     const sizeClass = (baseClassName == 'picto') ? "mds-picto--"+pictoSizeMappingClass[size] : "mds-icon--"+iconSizeMappingClass[size];

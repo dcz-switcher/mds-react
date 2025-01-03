@@ -12,7 +12,7 @@ export default function ChipsItem({
     label,
     active = false,
     onClick,
-    className,
+    className = '',
 }:ChipsItemProps) {
     return (
         <li className={className}>

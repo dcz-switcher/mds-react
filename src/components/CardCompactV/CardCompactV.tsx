@@ -16,7 +16,7 @@ export default function CardCompactV({
     href = "#",
     target = "_self",
     role,
-    className,
+    className = '',
 }: CardProps){
 
     return (

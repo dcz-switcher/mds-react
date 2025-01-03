@@ -18,7 +18,7 @@ const Divider = ({
     component = 'hr',
     variant = 'thin',
     reverse = false,
-    className,
+    className = '',
     ...props
 }:DividerProps) => {
     const Tag = component;

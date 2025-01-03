@@ -7,7 +7,7 @@ export type SidePanelContentProps = {
 
 const SidePanelContent = ({
     children,
-    className,
+    className = '',
 }:SidePanelContentProps) => {
     return (
         <div className={`mds-modal__content ${className}`} role="document">

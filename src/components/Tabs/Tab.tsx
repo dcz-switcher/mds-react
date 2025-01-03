@@ -12,7 +12,7 @@ const Tab = ({
     label,
     icon,
     ariaCurrent = false,
-    className,
+    className = '',
 }:TabProps) => {
 
     const tabIcon = (icon) ? <Icon baseClassName="picto" size="xsmall">{icon}</Icon> : '';

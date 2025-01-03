@@ -36,7 +36,7 @@ const TextField = ({
     supportingText,
     startIcon,
     type = 'text',
-    className,
+    className = '',
     ...props
 }:TextFieldProps) => {
 

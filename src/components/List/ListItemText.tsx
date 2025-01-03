@@ -11,7 +11,7 @@ const ListItemText = ({
     headline,
     primary,
     secondary,
-    className,
+    className = '',
 }:ListItemText) => {
     return (
         <div className={`mds-action-list__item-container-content ${className}`}>

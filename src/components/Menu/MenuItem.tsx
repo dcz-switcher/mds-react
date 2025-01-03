@@ -7,7 +7,7 @@ export type MenuItemProps = {
 
 const MenuItem = ({
     children,
-    className,
+    className = '',
 }:MenuItemProps) => {
     return (
         <div className={`}mds-dropdown__item ${className}`}>

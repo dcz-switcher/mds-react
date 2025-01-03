@@ -9,7 +9,7 @@ export type ListItemProps = {
 const ListItem = ({
     children,
     secondaryAction,
-    className,
+    className = '',
 }:ListItemProps) => {
     return  (
         <li className={`mds-action-list__item mds-side-padding ${className}`}>

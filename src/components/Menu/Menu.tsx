@@ -19,7 +19,7 @@ const Menu = ({
     anchorEl,
     anchorOrigin = 'bl',
     children,
-    className,
+    className = '',
 }:MenuProps) => {
     
     const AnchorOrigin = AnchorMappingclass[anchorOrigin];

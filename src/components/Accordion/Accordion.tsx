@@ -8,7 +8,7 @@ export type AccordionProps = {
 
 const Accordion = ({
     children,
-    className,
+    className = '',
 }:AccordionProps) => {
     return (
         <div className={`mds-accordion--standalone ${className}`}>

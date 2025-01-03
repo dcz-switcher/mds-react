@@ -19,7 +19,7 @@ const AccordionItem = ({
     onChange,
     expanded = defaultExpanded,
     expandIcon = 'expand-more',
-    className,
+    className = '',
 }:AccordionItemProps) => {
     const [maxH, setMaxH] = React.useState(0);
     

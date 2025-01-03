@@ -7,7 +7,7 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const Box = ({
     children,
-    className,
+    className = '',
     ...props
 }:BoxProps) => {
     return (

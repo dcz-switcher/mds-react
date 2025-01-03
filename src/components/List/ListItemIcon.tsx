@@ -8,7 +8,7 @@ export type ListItemIconProps = {
 
 const ListItemIcon = ({
     children,
-    className,
+    className = '',
 }:ListItemIconProps) => {
     return (
         <span className={`mds-action-list__item-icon ${className}`} aria-hidden="true">

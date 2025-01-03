@@ -7,7 +7,7 @@ export type ListProps = {
 
 const List = ({
     children,
-    className,
+    className = '',
 }:ListProps) => {
     return (
         <div role="group" className={`mds-action-list ${className}`}>

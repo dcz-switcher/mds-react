@@ -9,7 +9,7 @@ export type TabPanelProps = {
 const TabPanel = ({
     children,
     hidden = false,
-    className,
+    className = '',
 }:TabPanelProps) => {
     return (
         <div className={`mds-tabs__panel ${className}`} hidden={hidden}>

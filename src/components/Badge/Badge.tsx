@@ -17,7 +17,7 @@ export default function Badge ({
     severity = "neutral",
     icon,
     color,
-    className,
+    className = '',
 }: BadgeProps) {
 
     const colorClass = (color) ? `mds-background-color__${color}` : "";

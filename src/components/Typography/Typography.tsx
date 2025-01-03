@@ -30,7 +30,7 @@ const variantMappingClass = {
 
   const colorMappingClass = {
     primary: 'color-macif--1',
-    text: ''
+    text: 'color-grey--80',
   }
 
 export interface typographyProps extends HTMLAttributes<HTMLElement> {
@@ -52,7 +52,7 @@ export default function Typography({
     underlineColor = '',
     framed = false,
     color,
-    className,
+    className = '',
     ...props
 }:typographyProps) {
    

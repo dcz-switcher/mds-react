@@ -15,7 +15,7 @@ type SummaryProps = {
 const Summary = ({
     children,
     title = "Summary",
-    className,
+    className = '',
 }:SummaryProps) => {
 
     const ariaId = React.useId();

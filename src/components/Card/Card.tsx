@@ -29,7 +29,7 @@ const Card = ({
     cardMedia,
     cardHeader,
     children,
-    className,
+    className = '',
     ...props
 }:CardProps) => {
     const cardClass = 'mds-card ' + cardMappingClass[variant];

@@ -17,7 +17,7 @@ const Toggle = ({
     disabled = false,
     onChange,
     reverse = false,
-    className,
+    className = '',
 }:ToggleProps) => {
 
     const ToggleId = (id) ? id : React.useId();

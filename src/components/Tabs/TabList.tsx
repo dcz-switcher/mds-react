@@ -9,7 +9,7 @@ export type TabListProps = {
 const TabList = ({
     children,
     ariaLabel,
-    className,
+    className = '',
 }:TabListProps) => {
     return (
         <nav role="navigation" aria-label={ariaLabel} className={className}>

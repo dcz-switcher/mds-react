@@ -12,7 +12,7 @@ export default function ChipsList ({
     children,
     reverse = false,
     size = "big",
-    className,
+    className = '',
 }:ChipsListProps) {
     
     return (

@@ -8,7 +8,7 @@ export type TabPanelListProps = {
 
 const TabPanelList = ({
     children,
-    className,
+    className = '',
 }:TabPanelListProps) => {
     return (
         <div className={`mds-tabs__panels ${className}`}>

@@ -32,7 +32,7 @@ const Link = ({
     startIcon,
     endIcon,
     color = "link",
-    className,
+    className = '',
     ...props
 }:LinkProps) => {
     const classBuilder = `mds-link ${variantMappingClass[variant]} ${!underline ? "mds-link--standalone" : ""} ${reverse ? "mds-link--reverse" : "mds-color__"+LinkColorMappingClass[color] } ${className}`;

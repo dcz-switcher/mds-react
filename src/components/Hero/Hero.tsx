@@ -16,7 +16,7 @@ const Hero = ({
     subTitle = "Content",
     heroActions,
     image,
-    className,
+    className = '',
 }:HeroProps) => {
 
     
