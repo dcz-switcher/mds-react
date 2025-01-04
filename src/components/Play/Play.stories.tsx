@@ -12,8 +12,6 @@ export default meta;
 
 export const Default = ({}) => {
   return (
-    <Play>Play component
-      <Play>Nested play component</Play>
-    </Play>
+    <Play>Play component</Play>
   )
 };

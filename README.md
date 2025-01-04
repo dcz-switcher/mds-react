@@ -1,24 +1,28 @@
 # EXPERIMENTATION
 
-## Librairie de composants React
+A React components library
 
 
-### Installation
-Tips: 
-- set the latest version after #
-- don't forget the "v" before version : #v0.3.0 (not #0.3.0)
+## Installation
 
 ```
 npm install git://github.com/dcz-switcher/mds-react#v0.3.0
 ```
+> ### Tips
+> - set the latest version after #
+> - don't forget the "v" before version : #v0.3.0 (not #0.3.0)
 
-### Usage
+## Update
+1. set the new version in package.json (don't forget the "v")
+2. use the update command ```npm update mds-react```
+
+## Usage
 
 ```
 import {Button, Icon} from "mds-react"
 ```
 
-## New version workflow
+# New version workflow
 1. don't forget to add export * in index.ts in components folder, if needed
 2. update the version in package.js
 3. build with ```npm run build```
