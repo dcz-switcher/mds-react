@@ -7,6 +7,7 @@ import { Alert } from '../Alert';
 import { Typography } from '../Typography';
 import SidePanelContent from './SidePanelContent';
 import SidePanelFooter from './SidePanelFooter';
+import { CardCompactV } from '../CardCompactV';
 
 const meta = {
   component: SidePanel,
@@ -25,18 +26,29 @@ export const Default= () => {
 
   return (
     <>
+      <SidePanel open={isOpen} onClose={onCloseHandler} size='medium' title='Hello' visuallyHideTitle={true}>
+        <SidePanelContent>
+          <Typography variant='body2'>Here is the basic Side Panel. Usefull for a menu</Typography>
+          <Typography variant='body2'>The title is visually hidden but available for screen readers</Typography>
+        </SidePanelContent>
+      </SidePanel>
       <div>
         <Alert>You can close the Side panel with: esc key or by clicking on the backdrop</Alert>
       </div>
       <div>
         <Button onClick={() => setIsOpen(true)}>Open SidePanel</Button>
-
-        <SidePanel open={isOpen} onClose={onCloseHandler} size='medium' title='Hello' visuallyHideTitle={true}>
-          <SidePanelContent>
-            <Typography variant='body2'>Here is the basic Side Panel. Usefull for a menu</Typography>
-            <Typography variant='body2'>The title is visually hidden but available for screen readers</Typography>
-          </SidePanelContent>
-        </SidePanel>
+      </div>
+      <div>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        <CardCompactV title='body is scrollable'/>
+        
       </div>
     </>
   )

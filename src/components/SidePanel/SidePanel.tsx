@@ -40,6 +40,7 @@ const SidePanel = ({
     const closeHandler = () => {
         if (onClose) { 
             onClose();
+            document.body.style.overflow = "scroll";
         }
     }
 
@@ -81,6 +82,7 @@ const SidePanel = ({
     useEffect(() => {
         if (open === true) {
             document.addEventListener('keydown', escapeKeyHandler);
+            document.body.style.overflow = "hidden";
             ref.current.showModal();
         } else {
             ref.current.close();
@@ -88,6 +90,7 @@ const SidePanel = ({
 
         return () => {
             document.removeEventListener('keydown', escapeKeyHandler);
+            document.body.style.overflow = "scroll";
         }
     }, [open]);
 
