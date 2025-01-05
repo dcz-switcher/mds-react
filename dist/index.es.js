@@ -1,4 +1,4 @@
-import e, { useRef as y, useEffect as $, Children as f, createContext as C, useContext as x, cloneElement as L } from "react";
+import e, { useRef as g, useEffect as $, Children as f, createContext as C, useContext as x, cloneElement as L } from "react";
 const G = ({
   children: t,
   className: a = ""
@@ -12,7 +12,7 @@ const G = ({
   expandIcon: c = "expand-more",
   className: m = ""
 }) => {
-  const [_, d] = e.useState(0), [o, i] = e.useState(r), u = y(null), b = () => u && u.current ? u.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
+  const [_, d] = e.useState(0), [o, i] = e.useState(r), u = g(null), b = () => u && u.current ? u.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
     i(!o), n && t && n(t);
   };
   return $(() => (d(o ? b() : 0), () => {
@@ -117,7 +117,7 @@ const ae = ({
 }) => /* @__PURE__ */ e.createElement(e.Fragment, null, t), se = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-callout__desc ${a}` }, t), g = {
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-callout__desc ${a}` }, t), v = {
   h1: "mds-h1",
   h2: "mds-h2",
   h3: "mds-h3",
@@ -129,7 +129,7 @@ const ae = ({
   body3: "mds-text--3",
   body4: "mds-text--4",
   underline: "mds-underline"
-}, T = {
+}, S = {
   h1: "h1",
   h2: "h2",
   h3: "h3",
@@ -141,7 +141,7 @@ const ae = ({
   body3: "p",
   body4: "p",
   underline: "span"
-}, S = {
+}, T = {
   primary: "color-macif--1",
   text: "color-grey--80"
 }, w = C(!1), A = () => x(w);
@@ -156,7 +156,7 @@ function P({
   className: m = "",
   ..._
 }) {
-  const i = A() ? "span" : s || T[a], u = a == "underline" && n ? g[a] + "--" + n : g[a], b = !r && a.substring(0, 1) != "h" && c ? "mds-color__" + S[c] : "";
+  const i = A() ? "span" : s || S[a], u = a == "underline" && n ? v[a] + "--" + n : v[a], b = !r && a.substring(0, 1) != "h" && c ? "mds-color__" + T[c] : "";
   return /* @__PURE__ */ e.createElement(w.Provider, { value: !0 }, /* @__PURE__ */ e.createElement(i, { className: `${u} ${r ? "mds-framed" : ""} ${b} ${m}`, style: { textAlign: l }, ..._ }, r ? /* @__PURE__ */ e.createElement("span", null, t) : t));
 }
 const F = {
@@ -263,19 +263,25 @@ const B = {
 }) => /* @__PURE__ */ e.createElement("button", { className: `mds-btn mds-btn--icon-only mds-btn--${n} mds-btn--${l} ${s ? "mds-btn--reverse" : ""} ${r} `, ...c }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, a), /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${t}`, "aria-hidden": "true" })), oe = ({
   children: t,
   secondaryAction: a,
-  className: s = ""
-}) => /* @__PURE__ */ e.createElement("li", { className: `mds-action-list__item mds-side-padding ${s}` }, /* @__PURE__ */ e.createElement("div", { className: "mds-action-list__item-content" }, t), a ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-action", "aria-hidden": "true" }, a) : ""), ie = ({
+  className: s = "",
+  trailingText: l
+}) => /* @__PURE__ */ e.createElement("li", { className: `mds-action-list__item mds-side-padding ${s}` }, /* @__PURE__ */ e.createElement("div", { className: "mds-action-list__item-content" }, t), l ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-value" }, l) : "", a ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-action", "aria-hidden": "true" }, a) : ""), ie = ({
   children: t,
   className: a = ""
 }) => /* @__PURE__ */ e.createElement("span", { className: `mds-action-list__item-icon ${a}`, "aria-hidden": "true" }, t), ue = ({
   headline: t,
-  primary: a,
-  secondary: s,
-  className: l = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-action-list__item-container-content ${l}` }, /* @__PURE__ */ e.createElement("div", { className: "mds-action-list__item-text-content" }, t ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-headline" }, t) : "", a ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-title" }, /* @__PURE__ */ e.createElement("a", { className: "mds-action-list__item-link", href: "#" }, a)) : "", s ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-desc" }, s) : "")), pe = ({
+  title: a,
+  supportingText: s,
+  className: l = "",
+  href: n
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-action-list__item-container-content ${l}` }, /* @__PURE__ */ e.createElement("div", { className: "mds-action-list__item-text-content" }, t ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-headline" }, t) : "", a ? n ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-title" }, /* @__PURE__ */ e.createElement("a", { className: "mds-action-list__item-link", href: n }, a)) : /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-title" }, a) : "", s ? /* @__PURE__ */ e.createElement("span", { className: "mds-action-list__item-desc" }, s) : "")), pe = ({
   children: t,
-  className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { role: "group", className: `mds-action-list ${a}` }, /* @__PURE__ */ e.createElement("ul", { className: "mds-action-list--default" }, t)), _e = ({
+  className: a = "",
+  boxed: s = !1
+}) => {
+  const l = s ? "mds-action-list--box" : "mds-action-list--default";
+  return /* @__PURE__ */ e.createElement("div", { role: "group", className: `mds-action-list ${a}` }, /* @__PURE__ */ e.createElement("ul", { className: l }, t));
+}, _e = ({
   children: t,
   className: a = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `}mds-dropdown__item ${a}` }, t), R = {
@@ -318,7 +324,7 @@ const B = {
   showCloseButton: m = !1,
   className: _ = ""
 }) => {
-  const d = y(null), o = e.useId();
+  const d = g(null), o = e.useId();
   let i;
   const u = () => {
     s && (s(), document.body.style.overflow = "scroll");
@@ -349,15 +355,15 @@ const B = {
 }) => {
   const l = e.useId();
   return /* @__PURE__ */ e.createElement("nav", { className: `mds-summary ${s}`, role: "navigation", "aria-labelledby": l }, /* @__PURE__ */ e.createElement(P, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: l }, a), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, f.map(t, (n) => /* @__PURE__ */ e.createElement("li", null, n))));
-}, ge = ({
+}, ve = ({
   reverse: t = !1,
   children: a,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${t ? "mds-tabs--reverse" : ""} ${s}` }, a), ve = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${t ? "mds-tabs--reverse" : ""} ${s}` }, a), ye = ({
   children: t,
   ariaLabel: a,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": a, className: s }, /* @__PURE__ */ e.createElement("ul", { className: "mds-custom-scrollbar__x" }, f.map(t, (l, n) => n == 0 ? /* @__PURE__ */ e.createElement("li", { className: "mds-tabs__tab--selected" }, L(l, { ariaCurrent: !0 })) : /* @__PURE__ */ e.createElement("li", null, l)))), ye = ({
+}) => /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": a, className: s }, /* @__PURE__ */ e.createElement("ul", { className: "mds-custom-scrollbar__x" }, f.map(t, (l, n) => n == 0 ? /* @__PURE__ */ e.createElement("li", { className: "mds-tabs__tab--selected" }, L(l, { ariaCurrent: !0 })) : /* @__PURE__ */ e.createElement("li", null, l)))), ge = ({
   label: t,
   icon: a,
   ariaCurrent: s = !1,
@@ -372,7 +378,7 @@ const B = {
   children: t,
   hidden: a = !1,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs__panel ${s}`, hidden: a }, t), v = {
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs__panel ${s}`, hidden: a }, t), y = {
   text: "text--basic",
   password: "text--basic",
   tel: "phone--basic",
@@ -393,7 +399,7 @@ const B = {
   className: u = "",
   ...b
 }) => {
-  const h = m ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, "(", c, ")"), p = v[i] || v.text, N = e.useId();
+  const h = m ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, "(", c, ")"), p = y[i] || y.text, N = e.useId();
   return /* @__PURE__ */ e.createElement("div", { className: `mds-input-group ${_ ? "mds-input-group--reverse" : ""} ${u}` }, /* @__PURE__ */ e.createElement("label", { htmlFor: n, className: "mds-label" }, r, " ", h, " ", d ? /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, d) : ""), /* @__PURE__ */ e.createElement("div", { className: `mds-input-cell ${l ? "mds-full-width" : ""} ${o ? "mds-wrapper--icon-left" : ""}` }, o ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-input__icon mds-icon__${o}` }) : "", /* @__PURE__ */ e.createElement("input", { className: `mds-input mds-input-${p}`, id: n, type: i, "aria-required": m, "aria-invalid": a, "aria-describedby": a && s ? N : "", ...b }), i === "password" ? /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-input__icon" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Masquer le mot de passe"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__visibility", "aria-hidden": "true" })) : t ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-input__unit" }, " ", t, " ") : ""), a && s ? /* @__PURE__ */ e.createElement("p", { className: "mds-message--error", id: N }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__error--left", "aria-hidden": "true" }), s) : "");
 }, we = ({
   id: t,
@@ -441,11 +447,11 @@ export {
   $e as SidePanelFooter,
   K as SidePanelHeader,
   fe as Summary,
-  ye as Tab,
-  ve as TabList,
+  ge as Tab,
+  ye as TabList,
   xe as TabPanel,
   Ce as TabPanelList,
-  ge as Tabs,
+  ve as Tabs,
   ke as TextField,
   we as Toggle,
   P as Typography

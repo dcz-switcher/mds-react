@@ -2,16 +2,18 @@ import React, { ReactNode } from "react";
 
 export type ListItemText = {
     headline?: ReactNode;
-    primary?: ReactNode;
-    secondary?: ReactNode;
+    title?: ReactNode;
+    supportingText?: string;
     className?: string;
+    href?: string;
 };
 
 const ListItemText = ({
     headline,
-    primary,
-    secondary,
+    title,
+    supportingText,
     className = '',
+    href,
 }:ListItemText) => {
     return (
         <div className={`mds-action-list__item-container-content ${className}`}>
@@ -19,11 +21,14 @@ const ListItemText = ({
                 {headline ?
                     <span className="mds-action-list__item-headline">{headline}</span>
                 : ''}
-                {primary ? 
-                    <span className="mds-action-list__item-title"><a className="mds-action-list__item-link" href="#">{primary}</a></span>
+                {title ? 
+                    href ?
+                        <span className="mds-action-list__item-title"><a className="mds-action-list__item-link" href={href}>{title}</a></span>
+                        :
+                        <span className="mds-action-list__item-title">{title}</span>
                 : ''}
-                {secondary ?
-                    <span className="mds-action-list__item-desc">{secondary}</span>
+                {supportingText ?
+                    <span className="mds-action-list__item-desc">{supportingText}</span>
                 :''}
             </div>
         </div>

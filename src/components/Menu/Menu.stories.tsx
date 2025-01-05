@@ -27,7 +27,6 @@ export const Default = ({}) => {
 
   const AnchorBtn = <Button variant='secondary' className='mds-dropdown__trigger-element' aria-controls='expandable' aria-expanded={false}>Open</Button>;
 
-
   return (
     <Menu 
       anchorEl={AnchorBtn}>
@@ -35,11 +34,11 @@ export const Default = ({}) => {
         <List>
           <ListItem>
             <ListItemIcon><Icon>person</Icon></ListItemIcon>
-            <ListItemText primary="Profil"/>
+            <ListItemText title="Profil" href='#'/>
           </ListItem>
           <ListItem>
             <ListItemIcon><Icon>account-circle</Icon></ListItemIcon>
-            <ListItemText primary="My account"/>
+            <ListItemText title="My account"/>
           </ListItem>
         </List>
       </MenuItem>
