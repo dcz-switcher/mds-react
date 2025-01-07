@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import { peerDependencies } from "./package.json";
+import preserveUseClientDirective from "./preserveUseClientDirective";
 
 export default defineConfig({
   build: {
@@ -12,11 +13,14 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [...Object.keys(peerDependencies)], // Defines external dependencies for Rollup bundling.
+      /*output: {preserveModules: true},*/
+      plugins: [preserveUseClientDirective()],
     },
     sourcemap: true, // Generates source maps for debugging.
     emptyOutDir: true, // Clears the output directory before building.
   },
   plugins: [dts({
-      exclude: ['**/*.stories.tsx']
-    })], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
+    exclude: ['**/*.stories.tsx']
+  }),
+  ], // Uses the 'vite-plugin-dts' plugin for generating TypeScript declaration files (d.ts).
 });

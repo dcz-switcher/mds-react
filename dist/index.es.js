@@ -1,3 +1,4 @@
+'use client';
 import e, { useRef as g, useEffect as $, Children as f, createContext as C, useContext as x, cloneElement as L } from "react";
 const G = ({
   children: t,
