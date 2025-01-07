@@ -1,3 +1,4 @@
+"use client";
 import React, { HTMLAttributes, ReactNode, createContext, useContext } from "react"
 
 const variantMappingClass = {
