@@ -16,6 +16,7 @@ export * from './Link';
 export * from './List';
 export * from './Menu';
 export * from './Play';
+export * from './Quote';
 export * from './SidePanel';
 export * from './Summary';
 export * from './Tabs';
