@@ -12,7 +12,7 @@ const Quote = ({
     autor,
     avatar,
     children,
-    className,
+    className = '',
     reverse = false,
 }:QuoteProps) => {
 

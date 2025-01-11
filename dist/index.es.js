@@ -308,16 +308,17 @@ const F = {
   autor: t,
   avatar: a,
   children: s,
-  className: n,
+  className: n = "",
   reverse: l = !1
 }) => {
   const r = l ? "mds-quote mds-quote--reverse" : "mds-quote";
   return /* @__PURE__ */ e.createElement("blockquote", { className: `${r} ${n}` }, /* @__PURE__ */ e.createElement("p", { className: "mds-quote__text" }, s), t ? /* @__PURE__ */ e.createElement("p", { className: "mds-quote__legendary" }, a ? /* @__PURE__ */ e.createElement("img", { alt: "", src: a, "aria-hidden": "true" }) : "", t) : "");
 }, Ne = ({
   children: t,
-  labelClosed: a = "Afficher plus",
-  labelOpened: s = "Afficher moins"
-}) => /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-show-more__btn mds-text--2 mds-collapse" }, /* @__PURE__ */ e.createElement("span", { className: "mds-visible" }, a), /* @__PURE__ */ e.createElement("span", { className: "mds-hidden" }, s), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more", "aria-hidden": "true" })), /* @__PURE__ */ e.createElement("div", { className: "mds-collapse__content" }, t)), K = ({
+  className: a = "",
+  labelClosed: s = "Afficher plus",
+  labelOpened: n = "Afficher moins"
+}) => /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement("button", { type: "button", className: `mds-show-more__btn mds-text--2 mds-collapse ${a}` }, /* @__PURE__ */ e.createElement("span", { className: "mds-visible" }, s), /* @__PURE__ */ e.createElement("span", { className: "mds-hidden" }, n), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more", "aria-hidden": "true" })), /* @__PURE__ */ e.createElement("div", { className: "mds-collapse__content" }, t)), K = ({
   id: t,
   title: a,
   icon: s,
