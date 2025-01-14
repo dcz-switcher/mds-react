@@ -15,6 +15,7 @@ export * from "./IconButton";
 export * from "./Link";
 export * from "./List";
 export * from "./Menu";
+export * from "./Pagination";
 export * from "./Play";
 export * from "./Quote";
 export * from "./ShowMore";
