@@ -1,5 +1,5 @@
 'use client';
-import e, { useRef as x, useEffect as y, Children as f, createContext as k, useContext as C, cloneElement as L } from "react";
+import e, { useRef as k, useEffect as g, Children as f, createContext as C, useContext as x, cloneElement as L } from "react";
 const G = ({
   children: t,
   className: a = ""
@@ -13,12 +13,12 @@ const G = ({
   expandIcon: m = "expand-more",
   className: d = ""
 }) => {
-  const [_, i] = e.useState(0), [o, u] = e.useState(r), p = x(null), N = () => p && p.current ? p.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
-    u(!o), l && t && l(t);
+  const [o, i] = e.useState(0), [u, p] = e.useState(r), E = k(null), N = () => E && E.current ? E.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
+    p(!u), l && t && l(t);
   };
-  return y(() => (i(o ? N() : 0), () => {
-  }), [o]), y(() => (u(r), () => {
-  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: p, id: t, className: `mds-accordion__item ${d}` }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: h, className: `mds-collapse mds-collapse__label ${o ? "active" : ""}`, "aria-expanded": o }, a, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${o ? "active" : ""}`, style: { maxHeight: _ } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
+  return g(() => (i(u ? N() : 0), () => {
+  }), [u]), g(() => (p(r), () => {
+  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: E, id: t, className: `mds-accordion__item ${d}` }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: h, className: `mds-collapse mds-collapse__label ${u ? "active" : ""}`, "aria-expanded": u }, a, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${u ? "active" : ""}`, style: { maxHeight: o } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
 };
 function U({
   children: t,
@@ -63,10 +63,10 @@ const Y = ({
   endIcon: r,
   color: m = "link",
   className: d = "",
-  ..._
+  ...o
 }) => {
   const i = `mds-link ${H[a]} ${s ? "" : "mds-link--standalone"} ${n ? "mds-link--reverse" : "mds-color__" + w[m]} ${d}`;
-  return /* @__PURE__ */ e.createElement("a", { className: i, ..._ }, l && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${l}--right`, "aria-hidden": "true" }), t, r && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${r}--right`, "aria-hidden": "true" }));
+  return /* @__PURE__ */ e.createElement("a", { className: i, ...o }, l && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${l}--right`, "aria-hidden": "true" }), t, r && /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${r}--right`, "aria-hidden": "true" }));
 }, ee = ({
   children: t,
   color: a = "link",
@@ -85,21 +85,21 @@ function te({
   fullWidth: r = !1,
   startIcon: m,
   endIcon: d,
-  disabled: _ = !1,
+  disabled: o = !1,
   reverse: i = !1,
-  href: o,
-  target: u,
-  className: p = "",
+  href: u,
+  target: p,
+  className: E = "",
   ...N
 }) {
-  const E = t || "button", g = r ? "mds-full-width" : "", M = i ? "mds-btn--reverse" : "";
+  const _ = t || "button", y = r ? "mds-full-width" : "", M = i ? "mds-btn--reverse" : "";
   n == "primary" && s == "conversion" ? n += "-cta" : n == "secondary" && s == "alert" && (n += "-alert");
   let b = {};
-  return E == "a" ? (b.role = "button", b.href = o, b.target = u || "_self", b.tabIndex = "0") : E == "div" ? (b.role = "button", b.tabIndex = "0") : b = { ...N, opts: b }, _ && (E == "a" || E == "div" ? b["aria-disabled"] = "true" : b.disabled = "disabled"), /* @__PURE__ */ e.createElement(
-    E,
+  return _ == "a" ? (b.role = "button", b.href = u, b.target = p || "_self", b.tabIndex = "0") : _ == "div" ? (b.role = "button", b.tabIndex = "0") : b = { ...N, opts: b }, o && (_ == "a" || _ == "div" ? b["aria-disabled"] = "true" : b.disabled = "disabled"), /* @__PURE__ */ e.createElement(
+    _,
     {
       ...b,
-      className: `mds-btn mds-btn--${n} mds-btn--${l} ${g} ${M} ${p}`
+      className: `mds-btn mds-btn--${n} mds-btn--${l} ${y} ${M} ${E}`
     },
     m ? /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}--left`, "aria-hidden": "true" }) : null,
     a,
@@ -115,7 +115,7 @@ const ae = ({
   className: r = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `mds-callout mds-background-color__${n} ${r}` }, l && /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-picto__${l} mds-callout__picto` }), /* @__PURE__ */ e.createElement("h2", { className: "mds-callout__title" }, t, a && /* @__PURE__ */ e.createElement("span", { className: "mds-callout__subtitle" }, a)), s), se = ({
   children: t
-}) => /* @__PURE__ */ e.createElement(e.Fragment, null, t), ne = ({
+}) => /* @__PURE__ */ e.createElement(e.Fragment, null, t), le = ({
   children: t,
   className: a = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `mds-callout__desc ${a}` }, t), v = {
@@ -145,7 +145,7 @@ const ae = ({
 }, A = {
   primary: "color-macif--1",
   text: "color-grey--80"
-}, S = k(!1), T = () => C(S);
+}, S = C(!1), T = () => x(S);
 function P({
   children: t,
   variant: a = "body2",
@@ -155,10 +155,10 @@ function P({
   framed: r = !1,
   color: m,
   className: d = "",
-  ..._
+  ...o
 }) {
-  const u = T() ? "span" : s || F[a], p = a == "underline" && l ? v[a] + "--" + l : v[a], N = !r && a.substring(0, 1) != "h" && m ? "mds-color__" + A[m] : "";
-  return /* @__PURE__ */ e.createElement(S.Provider, { value: !0 }, /* @__PURE__ */ e.createElement(u, { className: `${p} ${r ? "mds-framed" : ""} ${N} ${d}`, style: { textAlign: n }, ..._ }, r ? /* @__PURE__ */ e.createElement("span", null, t) : t));
+  const p = T() ? "span" : s || F[a], E = a == "underline" && l ? v[a] + "--" + l : v[a], N = !r && a.substring(0, 1) != "h" && m ? "mds-color__" + A[m] : "";
+  return /* @__PURE__ */ e.createElement(S.Provider, { value: !0 }, /* @__PURE__ */ e.createElement(p, { className: `${E} ${r ? "mds-framed" : ""} ${N} ${d}`, style: { textAlign: n }, ...o }, r ? /* @__PURE__ */ e.createElement("span", null, t) : t));
 }
 const q = {
   basic1: "mds-card--basic-1 mds-card--default",
@@ -167,7 +167,7 @@ const q = {
   compactH: "mds-card--compact-h",
   highlight: "mds-card--highlight",
   modulable: "mds-card--modulable mds-card--default"
-}, le = ({
+}, ne = ({
   variant: t = "basic1",
   title: a,
   titleLevel: s = "h3",
@@ -176,10 +176,10 @@ const q = {
   cardHeader: r,
   children: m,
   className: d = "",
-  ..._
+  ...o
 }) => {
   const i = "mds-card " + q[t];
-  return /* @__PURE__ */ e.createElement("div", { className: `${i} ${d}` }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__arrow-forward", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("div", { className: "mds-card__content" }, /* @__PURE__ */ e.createElement(P, { className: "mds-card__title", variant: "h3", component: s }, /* @__PURE__ */ e.createElement("a", { className: "mds-card__link", ..._ }, a)), n ? /* @__PURE__ */ e.createElement("p", { className: "mds-card__desc" }, n) : "", t == "modulable" ? m : ""), t == "modulable" && r ? r : "", l);
+  return /* @__PURE__ */ e.createElement("div", { className: `${i} ${d}` }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__arrow-forward", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("div", { className: "mds-card__content" }, /* @__PURE__ */ e.createElement(P, { className: "mds-card__title", variant: "h3", component: s }, /* @__PURE__ */ e.createElement("a", { className: "mds-card__link", ...o }, a)), n ? /* @__PURE__ */ e.createElement("p", { className: "mds-card__desc" }, n) : "", t == "modulable" ? m : ""), t == "modulable" && r ? r : "", l);
 };
 function re({
   title: t = "title",
@@ -301,23 +301,32 @@ const B = {
 }, c = ({
   selected: t = !1,
   page: a,
-  variant: s = "outlined"
-}) => /* @__PURE__ */ e.createElement(e.Fragment, null, s === "ellipsis" ? /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item mds-pagination__dots mds-display--none mds-display-md--flex", "aria-hidden": "true" }, /* @__PURE__ */ e.createElement("span", null, "...")) : /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { className: "mds-btn", type: "button", "aria-label": `page ${a}`, "aria-current": t }, a))), Ne = ({
-  count: t = 1,
-  page: a = 1
+  variant: s = "outlined",
+  onClick: n
 }) => {
-  const s = () => {
-    let l;
-    return t < 8 ? l = [...Array(t)].map((r, m) => /* @__PURE__ */ e.createElement(c, { key: m, page: m.toString(), selected: m === a })) : a <= 3 ? l = /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement(c, { key: 1, page: "1", selected: a === 1 }), /* @__PURE__ */ e.createElement(c, { key: 2, page: "2", selected: a === 2 }), /* @__PURE__ */ e.createElement(c, { key: 3, page: "3", selected: a === 3 }), /* @__PURE__ */ e.createElement(c, { key: 4, page: "4", selected: a === 4 }), /* @__PURE__ */ e.createElement(c, { key: 5, page: "5", selected: a === 5 }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: t, page: t.toString() })) : a > t - 3 ? l = /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement(c, { key: 1, page: "1" }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: t - 4, page: (t - 4).toString(), selected: a === t - 4 }), /* @__PURE__ */ e.createElement(c, { key: t - 3, page: (t - 3).toString(), selected: a === t - 3 }), /* @__PURE__ */ e.createElement(c, { key: t - 2, page: (t - 2).toString(), selected: a === t - 2 }), /* @__PURE__ */ e.createElement(c, { key: t - 1, page: (t - 1).toString(), selected: a === t - 1 }), /* @__PURE__ */ e.createElement(c, { key: t, page: t.toString(), selected: a === t })) : l = /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement(c, { key: 1, page: "1" }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: a - 1, page: (a - 1).toString() }), /* @__PURE__ */ e.createElement(c, { key: a, page: a.toString(), selected: !0 }), /* @__PURE__ */ e.createElement(c, { key: a + 1, page: (a + 1).toString() }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: t, page: t.toString() })), l;
+  const l = () => {
+    n && n();
   };
-  return /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": "page des xxx", className: "mds-pagination" }, /* @__PURE__ */ e.createElement("ul", { className: "mds-pagination__item-list" }, /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: !0 }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-left", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Première page"))), s(), /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Dernière page"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-right", "aria-hidden": "true" })))));
-}, I = k(!1), K = () => C(I), he = ({
+  return /* @__PURE__ */ e.createElement(e.Fragment, null, s === "ellipsis" ? /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item mds-pagination__dots mds-display--none mds-display-md--flex", "aria-hidden": "true" }, /* @__PURE__ */ e.createElement("span", null, "...")) : /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item", onClick: l }, /* @__PURE__ */ e.createElement("button", { className: "mds-btn", type: "button", "aria-label": `page ${a}`, "aria-current": t }, a)));
+}, Ne = ({
+  count: t = 1,
+  page: a = 1,
+  onChange: s
+}) => {
+  const n = () => {
+    let m;
+    return t < 8 ? m = [...Array(t)].map((d, o) => /* @__PURE__ */ e.createElement(c, { key: o + 1, page: (o + 1).toString(), selected: o + 1 === a })) : a <= 3 ? m = /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement(c, { key: 1, page: "1", selected: a === 1, onClick: () => l(1) }), /* @__PURE__ */ e.createElement(c, { key: 2, page: "2", selected: a === 2, onClick: () => l(2) }), /* @__PURE__ */ e.createElement(c, { key: 3, page: "3", selected: a === 3, onClick: () => l(3) }), /* @__PURE__ */ e.createElement(c, { key: 4, page: "4", selected: a === 4, onClick: () => l(4) }), /* @__PURE__ */ e.createElement(c, { key: 5, page: "5", selected: a === 5, onClick: () => l(5) }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: t, page: t.toString(), onClick: () => l(t) })) : a > t - 3 ? m = /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement(c, { key: 1, page: "1", onClick: () => l(1) }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: t - 4, page: (t - 4).toString(), selected: a === t - 4, onClick: () => l(t - 4) }), /* @__PURE__ */ e.createElement(c, { key: t - 3, page: (t - 3).toString(), selected: a === t - 3, onClick: () => l(t - 3) }), /* @__PURE__ */ e.createElement(c, { key: t - 2, page: (t - 2).toString(), selected: a === t - 2, onClick: () => l(t - 2) }), /* @__PURE__ */ e.createElement(c, { key: t - 1, page: (t - 1).toString(), selected: a === t - 1, onClick: () => l(t - 1) }), /* @__PURE__ */ e.createElement(c, { key: t, page: t.toString(), selected: a === t, onClick: () => l(t) })) : m = /* @__PURE__ */ e.createElement(e.Fragment, null, /* @__PURE__ */ e.createElement(c, { key: 1, page: "1", onClick: () => l(1) }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: a - 1, page: (a - 1).toString(), onClick: () => l(a - 1) }), /* @__PURE__ */ e.createElement(c, { key: a, page: a.toString(), selected: !0, onClick: () => l(a) }), /* @__PURE__ */ e.createElement(c, { key: a + 1, page: (a + 1).toString(), onClick: () => l(a + 1) }), /* @__PURE__ */ e.createElement(c, { variant: "ellipsis" }), /* @__PURE__ */ e.createElement(c, { key: t, page: t.toString(), onClick: () => l(t) })), m;
+  }, l = (r) => {
+    s && s(r);
+  };
+  return /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": "page des xxx", className: "mds-pagination" }, /* @__PURE__ */ e.createElement("ul", { className: "mds-pagination__item-list" }, /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: a < 2, onClick: () => l(a - 1) }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-left", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Première page"))), n(), /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: a >= t, onClick: () => l(a + 1) }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Dernière page"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-right", "aria-hidden": "true" })))));
+}, I = C(!1), K = () => x(I), he = ({
   children: t
 }) => {
   if (K())
     throw new Error("Invalid DOM error !!! Play cant be nested in a Play parent");
   return /* @__PURE__ */ e.createElement(I.Provider, { value: !0 }, /* @__PURE__ */ e.createElement("p", null, t));
-}, ge = ({
+}, ye = ({
   autor: t,
   avatar: a,
   children: s,
@@ -326,7 +335,7 @@ const B = {
 }) => {
   const r = l ? "mds-quote mds-quote--reverse" : "mds-quote";
   return /* @__PURE__ */ e.createElement("blockquote", { className: `${r} ${n}` }, /* @__PURE__ */ e.createElement("p", { className: "mds-quote__text" }, s), t ? /* @__PURE__ */ e.createElement("p", { className: "mds-quote__legendary" }, a ? /* @__PURE__ */ e.createElement("img", { alt: "", src: a, "aria-hidden": "true" }) : "", t) : "");
-}, ye = ({
+}, ge = ({
   children: t,
   className: a = "",
   labelClosed: s = "Afficher plus",
@@ -350,44 +359,44 @@ const B = {
   icon: r,
   visuallyHideTitle: m = !1,
   showCloseButton: d = !1,
-  className: _ = ""
+  className: o = ""
 }) => {
-  const i = x(null), o = e.useId();
-  let u;
-  const p = () => {
+  const i = k(null), u = e.useId();
+  let p;
+  const E = () => {
     s && (s(), document.body.style.overflow = "scroll");
-  }, N = (E) => {
-    E.key === "Escape" && (E.preventDefault(), E.stopImmediatePropagation(), p());
-  }, h = (E) => {
-    E.target.classList.contains("mds-dialog") && p();
+  }, N = (_) => {
+    _.key === "Escape" && (_.preventDefault(), _.stopImmediatePropagation(), E());
+  }, h = (_) => {
+    _.target.classList.contains("mds-dialog") && E();
   };
-  return y(() => (d && (u = i.current.querySelector("button.mds-close"), u.addEventListener("click", p)), i.current.addEventListener("click", h), () => {
-    d && u.removeEventListener("click", p);
+  return g(() => (d && (p = i.current.querySelector("button.mds-close"), p.addEventListener("click", E)), i.current.addEventListener("click", h), () => {
+    d && p.removeEventListener("click", E);
     try {
       i.current.removeEventListener("click", h);
     } catch {
     }
-  }), []), y(() => (a === !0 ? (document.addEventListener("keydown", N), document.body.style.overflow = "hidden", i.current.showModal()) : i.current.close(), () => {
+  }), []), g(() => (a === !0 ? (document.addEventListener("keydown", N), document.body.style.overflow = "hidden", i.current.showModal()) : i.current.close(), () => {
     document.removeEventListener("keydown", N), document.body.style.overflow = "scroll";
-  }), [a]), /* @__PURE__ */ e.createElement("dialog", { ref: i, role: "dialog", id: "mds-modal", className: `mds-dialog ${_}`, "aria-modal": "true", "aria-labelledby": o }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${W[n]}`, role: "document" }, d && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement(Q, { title: l, icon: r, visuallyHidden: m, id: o }), t)));
+  }), [a]), /* @__PURE__ */ e.createElement("dialog", { ref: i, role: "dialog", id: "mds-modal", className: `mds-dialog ${o}`, "aria-modal": "true", "aria-labelledby": u }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${W[n]}`, role: "document" }, d && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement(Q, { title: l, icon: r, visuallyHidden: m, id: u }), t)));
 }, ve = ({
   children: t,
   className: a = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__content ${a}`, role: "document" }, t), $e = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__footer ${a}` }, t), xe = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__footer ${a}` }, t), ke = ({
   children: t,
   title: a = "Summary",
   className: s = ""
 }) => {
   const n = e.useId();
   return /* @__PURE__ */ e.createElement("nav", { className: `mds-summary ${s}`, role: "navigation", "aria-labelledby": n }, /* @__PURE__ */ e.createElement(P, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: n }, a), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, f.map(t, (l) => /* @__PURE__ */ e.createElement("li", null, l))));
-}, ke = ({
+}, Ce = ({
   reverse: t = !1,
   children: a,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${t ? "mds-tabs--reverse" : ""} ${s}` }, a), Ce = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${t ? "mds-tabs--reverse" : ""} ${s}` }, a), xe = ({
   children: t,
   ariaLabel: a,
   className: s = ""
@@ -420,15 +429,15 @@ const B = {
   label: r,
   optionalText: m = "facultatif",
   required: d = !1,
-  reverse: _ = !1,
+  reverse: o = !1,
   supportingText: i,
-  startIcon: o,
-  type: u = "text",
-  className: p = "",
+  startIcon: u,
+  type: p = "text",
+  className: E = "",
   ...N
 }) => {
-  const h = d ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, "(", m, ")"), E = $[u] || $.text, g = e.useId();
-  return /* @__PURE__ */ e.createElement("div", { className: `mds-input-group ${_ ? "mds-input-group--reverse" : ""} ${p}` }, /* @__PURE__ */ e.createElement("label", { htmlFor: l, className: "mds-label" }, r, " ", h, " ", i ? /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, i) : ""), /* @__PURE__ */ e.createElement("div", { className: `mds-input-cell ${n ? "mds-full-width" : ""} ${o ? "mds-wrapper--icon-left" : ""}` }, o ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-input__icon mds-icon__${o}` }) : "", /* @__PURE__ */ e.createElement("input", { className: `mds-input mds-input-${E}`, id: l, type: u, "aria-required": d, "aria-invalid": a, "aria-describedby": a && s ? g : "", ...N }), u === "password" ? /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-input__icon" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Masquer le mot de passe"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__visibility", "aria-hidden": "true" })) : t ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-input__unit" }, " ", t, " ") : ""), a && s ? /* @__PURE__ */ e.createElement("p", { className: "mds-message--error", id: g }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__error--left", "aria-hidden": "true" }), s) : "");
+  const h = d ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, "(", m, ")"), _ = $[p] || $.text, y = e.useId();
+  return /* @__PURE__ */ e.createElement("div", { className: `mds-input-group ${o ? "mds-input-group--reverse" : ""} ${E}` }, /* @__PURE__ */ e.createElement("label", { htmlFor: l, className: "mds-label" }, r, " ", h, " ", i ? /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, i) : ""), /* @__PURE__ */ e.createElement("div", { className: `mds-input-cell ${n ? "mds-full-width" : ""} ${u ? "mds-wrapper--icon-left" : ""}` }, u ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-input__icon mds-icon__${u}` }) : "", /* @__PURE__ */ e.createElement("input", { className: `mds-input mds-input-${_}`, id: l, type: p, "aria-required": d, "aria-invalid": a, "aria-describedby": a && s ? y : "", ...N }), p === "password" ? /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-input__icon" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Masquer le mot de passe"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__visibility", "aria-hidden": "true" })) : t ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-input__unit" }, " ", t, " ") : ""), a && s ? /* @__PURE__ */ e.createElement("p", { className: "mds-message--error", id: y }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__error--left", "aria-hidden": "true" }), s) : "");
 }, Me = ({
   id: t,
   label: a,
@@ -451,11 +460,11 @@ export {
   te as Button,
   ae as Callout,
   se as CalloutAction,
-  ne as CalloutContent,
-  le as Card,
+  le as CalloutContent,
+  ne as Card,
   re as CardCompactV,
-  le as CardHeader,
-  le as CardMedia,
+  ne as CardHeader,
+  ne as CardMedia,
   me as ChipsItem,
   ce as ChipsList,
   z as Divider,
@@ -472,18 +481,18 @@ export {
   Ne as Pagination,
   c as PaginationItem,
   he as Play,
-  ge as Quote,
-  ye as ShowMore,
+  ye as Quote,
+  ge as ShowMore,
   fe as SidePanel,
   ve as SidePanelContent,
   $e as SidePanelFooter,
   Q as SidePanelHeader,
-  xe as Summary,
+  ke as Summary,
   we as Tab,
-  Ce as TabList,
+  xe as TabList,
   Pe as TabPanel,
   Se as TabPanelList,
-  ke as Tabs,
+  Ce as Tabs,
   Ie as TextField,
   Me as Toggle,
   P as Typography

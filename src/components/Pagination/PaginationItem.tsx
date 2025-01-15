@@ -4,13 +4,22 @@ export type PaginationItemProps = {
     selected?: boolean,
     page?: string;
     variant?: 'outlined' | 'ellipsis',
+    onClick?:any,
 };
 
 const PaginationItem = ({
     selected = false,
     page,
     variant = 'outlined',
+    onClick,
 }:PaginationItemProps) => {
+
+    const onClickHandler = () => {
+        if (onClick) {
+            onClick();
+        }
+    }
+
     return (
         <>
         {(variant === 'ellipsis') ?
@@ -18,7 +27,7 @@ const PaginationItem = ({
                 <span>...</span>
             </li>
             :
-            <li className="mds-pagination__item">
+            <li className="mds-pagination__item" onClick={onClickHandler}>
                 <button className="mds-btn" type="button" aria-label={`page ${page}`}  aria-current={selected}>{page}</button>
             </li>
         }
