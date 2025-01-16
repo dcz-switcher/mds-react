@@ -3,6 +3,7 @@ export type PaginationProps = {
     count?: number;
     page?: number;
     onChange?: any;
+    className?: string;
 };
-declare const Pagination: ({ count, page, onChange, }: PaginationProps) => React.JSX.Element;
+declare const Pagination: ({ count, page, onChange, className, }: PaginationProps) => React.JSX.Element;
 export default Pagination;

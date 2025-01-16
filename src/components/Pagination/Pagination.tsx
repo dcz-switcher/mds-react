@@ -5,12 +5,14 @@ export type PaginationProps = {
     count?: number;
     page?:number;
     onChange?:any;
+    className?:string;
 };
 
 const Pagination = ({
     count = 1,
     page = 1,
     onChange,
+    className = '',
 }:PaginationProps) => {
 
     const getItems = () => {
@@ -20,7 +22,7 @@ const Pagination = ({
 
         if (count < 8) {
             items = [...Array(count)].map((_, i) => (
-                <PaginationItem key={i+1} page={(i+1).toString()} selected={i+1 === page} />
+                <PaginationItem key={i+1} page={(i+1).toString()} selected={i+1 === page} onClick={() => onClickHandler(i+1)}/>
             ))
         } else if (page <= boundaries) {
             items = <>
@@ -63,7 +65,7 @@ const Pagination = ({
         }
     }
     return (
-        <nav role="navigation" aria-label="page des xxx" className="mds-pagination">
+        <nav role="navigation" aria-label="page des xxx" className={`mds-pagination ${className}`}>
             <ul className="mds-pagination__item-list">
                 <li className="mds-pagination__item">
                     <button type="button" className="mds-btn mds-btn--icon-only mds-pagination__navigation" disabled={page < 2} onClick={() => onClickHandler(page-1)}>

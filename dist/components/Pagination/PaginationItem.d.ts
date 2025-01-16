@@ -4,6 +4,7 @@ export type PaginationItemProps = {
     page?: string;
     variant?: 'outlined' | 'ellipsis';
     onClick?: any;
+    className?: string;
 };
-declare const PaginationItem: ({ selected, page, variant, onClick, }: PaginationItemProps) => React.JSX.Element;
+declare const PaginationItem: ({ selected, page, variant, onClick, className, }: PaginationItemProps) => React.JSX.Element;
 export default PaginationItem;
