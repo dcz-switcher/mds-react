@@ -18,6 +18,7 @@ export * from "./Menu";
 export * from "./Pagination";
 export * from "./Play";
 export * from "./Quote";
+export * from "./Select";
 export * from "./ShowMore";
 export * from "./SidePanel";
 export * from "./Summary"
