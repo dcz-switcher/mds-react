@@ -12,7 +12,7 @@ export interface TextFieldProps extends ComponentProps<'input'> {
     reverse?: boolean;
     supportingText?: string;
     startIcon?: string;
-    type?: 'number' | 'text' | 'tel' | 'email' | 'password' | any;
+    type?: 'text' | 'tel' | 'email' | 'password' | any;
     className?: string;
 }
 
@@ -54,7 +54,7 @@ const TextField = ({
                 <input className={`mds-input mds-input-${inputClass}`} id={id} type={type} aria-required={required} aria-invalid={error} aria-describedby={error && errorText ? errorId : ''} {...props} />
                 {type === 'password' ?
                     <button type="button" className="mds-input__icon">
-                        <span className="mds-sr-only">Masquer le mot de passe</span>
+                        <span className="mds-sr-only" aria-live="polite">Masquer le mot de passe</span>
                         <span className="mds-icon__visibility" aria-hidden="true"></span>
                     </button>
                 : endAdornment ?

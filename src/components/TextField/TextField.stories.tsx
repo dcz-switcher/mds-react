@@ -51,7 +51,7 @@ export const MoreExamples = () => {
       <TextField
         label='Weight' 
         required={true}
-        type='number'
+        type='text'
         endAdornment={<Typography>Kg</Typography>}
         />
     </div>
