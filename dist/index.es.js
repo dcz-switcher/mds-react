@@ -1,5 +1,5 @@
 'use client';
-import e, { useRef as k, useEffect as g, Children as f, createContext as C, useContext as x, cloneElement as L } from "react";
+import e, { useRef as C, useEffect as g, Children as f, createContext as k, useContext as x, cloneElement as L } from "react";
 const J = ({
   children: t,
   className: a = ""
@@ -13,7 +13,7 @@ const J = ({
   expandIcon: c = "expand-more",
   className: m = ""
 }) => {
-  const [o, d] = e.useState(0), [u, p] = e.useState(n), E = k(null), N = () => E && E.current ? E.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
+  const [o, d] = e.useState(0), [u, p] = e.useState(n), E = C(null), N = () => E && E.current ? E.current.querySelector(".mds-accordion__body").offsetHeight : 0, h = () => {
     p(!u), r && t && r(t);
   };
   return g(() => (d(u ? N() : 0), () => {
@@ -145,7 +145,7 @@ const se = ({
 }, A = {
   primary: "color-macif--1",
   text: "color-grey--80"
-}, S = C(!1), T = () => x(S);
+}, S = k(!1), T = () => x(S);
 function I({
   children: t,
   variant: a = "body2",
@@ -283,6 +283,12 @@ const B = {
   const l = s ? "mds-action-list--box" : "mds-action-list--default";
   return /* @__PURE__ */ e.createElement("div", { role: "group", className: `mds-action-list ${a}` }, /* @__PURE__ */ e.createElement("ul", { className: l }, t));
 }, be = ({
+  title: t,
+  reverse: a = !1
+}) => {
+  const s = a ? "mds-loader__layout mds-loader__layout--reverse" : "mds-loader__layout", l = a ? "mds-loader mds-loader--reverse" : "mds-loader";
+  return /* @__PURE__ */ e.createElement("div", { className: s }, /* @__PURE__ */ e.createElement("div", { className: l }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, t)));
+}, Ne = ({
   children: t,
   className: a = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `}mds-dropdown__item ${a}` }, t), V = {
@@ -290,7 +296,7 @@ const B = {
   tr: "mds-dropdown-position--top-right",
   bl: "mds-dropdown-position--bottom-left",
   br: "mds-dropdown-position--bottom-right"
-}, Ne = ({
+}, he = ({
   anchorEl: t,
   anchorOrigin: a = "bl",
   children: s,
@@ -309,7 +315,7 @@ const B = {
     l && l();
   };
   return /* @__PURE__ */ e.createElement(e.Fragment, null, s === "ellipsis" ? /* @__PURE__ */ e.createElement("li", { className: `mds-pagination__item mds-pagination__dots mds-display--none mds-display-md--flex ${r}`, "aria-hidden": "true" }, /* @__PURE__ */ e.createElement("span", null, "...")) : /* @__PURE__ */ e.createElement("li", { className: `mds-pagination__item ${r}`, onClick: n }, /* @__PURE__ */ e.createElement("button", { className: "mds-btn", type: "button", "aria-label": `page ${a}`, "aria-current": t }, a)));
-}, he = ({
+}, ye = ({
   count: t = 1,
   page: a = 1,
   onChange: s,
@@ -322,13 +328,13 @@ const B = {
     s && s(c);
   };
   return /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": "page des xxx", className: `mds-pagination ${l}` }, /* @__PURE__ */ e.createElement("ul", { className: "mds-pagination__item-list" }, /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: a < 2, onClick: () => n(a - 1) }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-left", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Première page"))), r(), /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: a >= t, onClick: () => n(a + 1) }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Dernière page"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-right", "aria-hidden": "true" })))));
-}, P = C(!1), K = () => x(P), ye = ({
+}, P = k(!1), K = () => x(P), ge = ({
   children: t
 }) => {
   if (K())
     throw new Error("Invalid DOM error !!! Play cant be nested in a Play parent");
   return /* @__PURE__ */ e.createElement(P.Provider, { value: !0 }, /* @__PURE__ */ e.createElement("p", null, t));
-}, ge = ({
+}, fe = ({
   autor: t,
   avatar: a,
   children: s,
@@ -343,7 +349,7 @@ const B = {
   selected: s,
   hidden: l,
   value: r
-}) => /* @__PURE__ */ e.createElement("option", { value: r, disabled: a, selected: s, hidden: l }, t), fe = ({
+}) => /* @__PURE__ */ e.createElement("option", { value: r, disabled: a, selected: s, hidden: l }, t), ve = ({
   children: t,
   label: a,
   subLabel: s,
@@ -354,7 +360,7 @@ const B = {
 }) => {
   const m = e.useId(), o = n ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, c);
   return /* @__PURE__ */ e.createElement("div", { className: "mds-select-dropdown" }, /* @__PURE__ */ e.createElement("label", { className: "mds-label", htmlFor: m }, a, o, /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, s)), /* @__PURE__ */ e.createElement("div", { className: "mds-select__item mds-input-cell" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("select", { name: l, id: m, required: n }, r ? /* @__PURE__ */ e.createElement(Q, { disabled: !0, selected: !0, hidden: !0 }, r) : "", t)));
-}, ve = ({
+}, $e = ({
   children: t,
   className: a = "",
   labelClosed: s = "Afficher plus",
@@ -369,7 +375,7 @@ const B = {
   small: "small",
   medium: "medium",
   large: "big"
-}, $e = ({
+}, Ce = ({
   children: t,
   open: a = !1,
   onClose: s,
@@ -380,7 +386,7 @@ const B = {
   showCloseButton: m = !1,
   className: o = ""
 }) => {
-  const d = k(null), u = e.useId();
+  const d = C(null), u = e.useId();
   let p;
   const E = () => {
     s && (s(), document.body.style.overflow = "scroll");
@@ -401,25 +407,25 @@ const B = {
 }, ke = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__content ${a}`, role: "document" }, t), Ce = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__content ${a}`, role: "document" }, t), xe = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__footer ${a}` }, t), xe = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__footer ${a}` }, t), we = ({
   children: t,
   title: a = "Summary",
   className: s = ""
 }) => {
   const l = e.useId();
   return /* @__PURE__ */ e.createElement("nav", { className: `mds-summary ${s}`, role: "navigation", "aria-labelledby": l }, /* @__PURE__ */ e.createElement(I, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: l }, a), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, f.map(t, (r) => /* @__PURE__ */ e.createElement("li", null, r))));
-}, we = ({
+}, Se = ({
   reverse: t = !1,
   children: a,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${t ? "mds-tabs--reverse" : ""} ${s}` }, a), Se = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${t ? "mds-tabs--reverse" : ""} ${s}` }, a), Ie = ({
   children: t,
   ariaLabel: a,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": a, className: s }, /* @__PURE__ */ e.createElement("ul", { className: "mds-custom-scrollbar__x" }, f.map(t, (l, r) => r == 0 ? /* @__PURE__ */ e.createElement("li", { className: "mds-tabs__tab--selected" }, L(l, { ariaCurrent: !0 })) : /* @__PURE__ */ e.createElement("li", null, l)))), Ie = ({
+}) => /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": a, className: s }, /* @__PURE__ */ e.createElement("ul", { className: "mds-custom-scrollbar__x" }, f.map(t, (l, r) => r == 0 ? /* @__PURE__ */ e.createElement("li", { className: "mds-tabs__tab--selected" }, L(l, { ariaCurrent: !0 })) : /* @__PURE__ */ e.createElement("li", null, l)))), Pe = ({
   label: t,
   icon: a,
   ariaCurrent: s = !1,
@@ -427,10 +433,10 @@ const B = {
 }) => {
   const r = a ? /* @__PURE__ */ e.createElement(R, { baseClassName: "picto", size: "xsmall" }, a) : "";
   return /* @__PURE__ */ e.createElement("button", { className: `mds-tabs__tab ${l}`, type: "button", "aria-current": s }, r, t);
-}, Pe = ({
+}, Me = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs__panels ${a}` }, f.map(t, (s, l) => l == 1 ? e.cloneElement(s, { hidden: !0 }) : s)), Me = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs__panels ${a}` }, f.map(t, (s, l) => l == 1 ? e.cloneElement(s, { hidden: !0 }) : s)), Le = ({
   children: t,
   hidden: a = !1,
   className: s = ""
@@ -439,7 +445,7 @@ const B = {
   password: "text--basic",
   tel: "phone--basic",
   email: "mail"
-}, Le = ({
+}, He = ({
   endAdornment: t,
   error: a = !1,
   errorText: s,
@@ -456,8 +462,8 @@ const B = {
   ...N
 }) => {
   const h = m ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, "(", c, ")"), _ = $[p] || $.text, y = e.useId();
-  return /* @__PURE__ */ e.createElement("div", { className: `mds-input-group ${o ? "mds-input-group--reverse" : ""} ${E}` }, /* @__PURE__ */ e.createElement("label", { htmlFor: r, className: "mds-label" }, n, " ", h, " ", d ? /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, d) : ""), /* @__PURE__ */ e.createElement("div", { className: `mds-input-cell ${l ? "mds-full-width" : ""} ${u ? "mds-wrapper--icon-left" : ""}` }, u ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-input__icon mds-icon__${u}` }) : "", /* @__PURE__ */ e.createElement("input", { className: `mds-input mds-input-${_}`, id: r, type: p, "aria-required": m, "aria-invalid": a, "aria-describedby": a && s ? y : "", ...N }), p === "password" ? /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-input__icon" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Masquer le mot de passe"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__visibility", "aria-hidden": "true" })) : t ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-input__unit" }, " ", t, " ") : ""), a && s ? /* @__PURE__ */ e.createElement("p", { className: "mds-message--error", id: y }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__error--left", "aria-hidden": "true" }), s) : "");
-}, He = ({
+  return /* @__PURE__ */ e.createElement("div", { className: `mds-input-group ${o ? "mds-input-group--reverse" : ""} ${E}` }, /* @__PURE__ */ e.createElement("label", { htmlFor: r, className: "mds-label" }, n, " ", h, " ", d ? /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, d) : ""), /* @__PURE__ */ e.createElement("div", { className: `mds-input-cell ${l ? "mds-full-width" : ""} ${u ? "mds-wrapper--icon-left" : ""}` }, u ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-input__icon mds-icon__${u}` }) : "", /* @__PURE__ */ e.createElement("input", { className: `mds-input mds-input-${_}`, id: r, type: p, "aria-required": m, "aria-invalid": a, "aria-describedby": a && s ? y : "", ...N }), p === "password" ? /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-input__icon" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only", "aria-live": "polite" }, "Masquer le mot de passe"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__visibility", "aria-hidden": "true" })) : t ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-input__unit" }, " ", t, " ") : ""), a && s ? /* @__PURE__ */ e.createElement("p", { className: "mds-message--error", id: y }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__error--left", "aria-hidden": "true" }), s) : "");
+}, Fe = ({
   id: t,
   label: a,
   checked: s = !1,
@@ -495,27 +501,28 @@ export {
   ue as ListItem,
   pe as ListItemIcon,
   Ee as ListItemText,
-  Ne as Menu,
-  be as MenuItem,
-  he as Pagination,
+  be as Loader,
+  he as Menu,
+  Ne as MenuItem,
+  ye as Pagination,
   i as PaginationItem,
-  ye as Play,
-  ge as Quote,
-  fe as Select,
+  ge as Play,
+  fe as Quote,
+  ve as Select,
   Q as SelectItem,
-  ve as ShowMore,
-  $e as SidePanel,
+  $e as ShowMore,
+  Ce as SidePanel,
   ke as SidePanelContent,
-  Ce as SidePanelFooter,
+  xe as SidePanelFooter,
   W as SidePanelHeader,
-  xe as Summary,
-  Ie as Tab,
-  Se as TabList,
-  Me as TabPanel,
-  Pe as TabPanelList,
-  we as Tabs,
-  Le as TextField,
-  He as Toggle,
+  we as Summary,
+  Pe as Tab,
+  Ie as TabList,
+  Le as TabPanel,
+  Me as TabPanelList,
+  Se as Tabs,
+  He as TextField,
+  Fe as Toggle,
   I as Typography
 };
 //# sourceMappingURL=index.es.js.map

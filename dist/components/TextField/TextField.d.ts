@@ -11,7 +11,7 @@ export interface TextFieldProps extends ComponentProps<'input'> {
     reverse?: boolean;
     supportingText?: string;
     startIcon?: string;
-    type?: 'number' | 'text' | 'tel' | 'email' | 'password' | any;
+    type?: 'text' | 'tel' | 'email' | 'password' | any;
     className?: string;
 }
 declare const TextField: ({ endAdornment, error, errorText, fullWidth, id, label, optionalText, required, reverse, supportingText, startIcon, type, className, ...props }: TextFieldProps) => React.JSX.Element;
