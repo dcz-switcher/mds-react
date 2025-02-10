@@ -146,7 +146,7 @@ const se = ({
   primary: "color-macif--1",
   text: "color-grey--80"
 }, S = k(!1), T = () => x(S);
-function I({
+function P({
   children: t,
   variant: a = "body2",
   component: s,
@@ -179,7 +179,7 @@ const q = {
   ...o
 }) => {
   const d = "mds-card " + q[t];
-  return /* @__PURE__ */ e.createElement("div", { className: `${d} ${m}` }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__arrow-forward", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("div", { className: "mds-card__content" }, /* @__PURE__ */ e.createElement(I, { className: "mds-card__title", variant: "h3", component: s }, /* @__PURE__ */ e.createElement("a", { className: "mds-card__link", ...o }, a)), l ? /* @__PURE__ */ e.createElement("p", { className: "mds-card__desc" }, l) : "", t == "modulable" ? c : ""), t == "modulable" && n ? n : "", r);
+  return /* @__PURE__ */ e.createElement("div", { className: `${d} ${m}` }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__arrow-forward", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("div", { className: "mds-card__content" }, /* @__PURE__ */ e.createElement(P, { className: "mds-card__title", variant: "h3", component: s }, /* @__PURE__ */ e.createElement("a", { className: "mds-card__link", ...o }, a)), l ? /* @__PURE__ */ e.createElement("p", { className: "mds-card__desc" }, l) : "", t == "modulable" ? c : ""), t == "modulable" && n ? n : "", r);
 };
 function me({
   title: t = "title",
@@ -328,13 +328,18 @@ const B = {
     s && s(c);
   };
   return /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": "page des xxx", className: `mds-pagination ${l}` }, /* @__PURE__ */ e.createElement("ul", { className: "mds-pagination__item-list" }, /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: a < 2, onClick: () => n(a - 1) }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-left", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Première page"))), r(), /* @__PURE__ */ e.createElement("li", { className: "mds-pagination__item" }, /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-btn mds-btn--icon-only mds-pagination__navigation", disabled: a >= t, onClick: () => n(a + 1) }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Dernière page"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__chevron-right", "aria-hidden": "true" })))));
-}, P = k(!1), K = () => x(P), ge = ({
+}, I = k(!1), K = () => x(I), ge = ({
   children: t
 }) => {
   if (K())
     throw new Error("Invalid DOM error !!! Play cant be nested in a Play parent");
-  return /* @__PURE__ */ e.createElement(P.Provider, { value: !0 }, /* @__PURE__ */ e.createElement("p", null, t));
+  return /* @__PURE__ */ e.createElement(I.Provider, { value: !0 }, /* @__PURE__ */ e.createElement("p", null, t));
 }, fe = ({
+  className: t,
+  max: a = 100,
+  value: s,
+  ...l
+}) => /* @__PURE__ */ e.createElement("progress", { className: `mds-progress-bar ${t}`, "aria-hidden": "true", value: s, max: a, ...l }, s), ve = ({
   autor: t,
   avatar: a,
   children: s,
@@ -349,7 +354,7 @@ const B = {
   selected: s,
   hidden: l,
   value: r
-}) => /* @__PURE__ */ e.createElement("option", { value: r, disabled: a, selected: s, hidden: l }, t), ve = ({
+}) => /* @__PURE__ */ e.createElement("option", { value: r, disabled: a, selected: s, hidden: l }, t), $e = ({
   children: t,
   label: a,
   subLabel: s,
@@ -360,7 +365,7 @@ const B = {
 }) => {
   const m = e.useId(), o = n ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, c);
   return /* @__PURE__ */ e.createElement("div", { className: "mds-select-dropdown" }, /* @__PURE__ */ e.createElement("label", { className: "mds-label", htmlFor: m }, a, o, /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, s)), /* @__PURE__ */ e.createElement("div", { className: "mds-select__item mds-input-cell" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("select", { name: l, id: m, required: n }, r ? /* @__PURE__ */ e.createElement(Q, { disabled: !0, selected: !0, hidden: !0 }, r) : "", t)));
-}, $e = ({
+}, Ce = ({
   children: t,
   className: a = "",
   labelClosed: s = "Afficher plus",
@@ -375,7 +380,7 @@ const B = {
   small: "small",
   medium: "medium",
   large: "big"
-}, Ce = ({
+}, ke = ({
   children: t,
   open: a = !1,
   onClose: s,
@@ -404,20 +409,20 @@ const B = {
   }), []), g(() => (a === !0 ? (document.addEventListener("keydown", N), document.body.style.overflow = "hidden", d.current.showModal()) : d.current.close(), () => {
     document.removeEventListener("keydown", N), document.body.style.overflow = "scroll";
   }), [a]), /* @__PURE__ */ e.createElement("dialog", { ref: d, role: "dialog", id: "mds-modal", className: `mds-dialog ${o}`, "aria-modal": "true", "aria-labelledby": u }, /* @__PURE__ */ e.createElement("div", { className: `mds-modal mds-modal--side-panel mds-modal--${j[l]}`, role: "document" }, m && /* @__PURE__ */ e.createElement("button", { className: "mds-close" }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__close", "aria-hidden": "true" }), /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, "Fermer la fenêtre de la modale")), /* @__PURE__ */ e.createElement("div", { className: "mds-modal__container" }, /* @__PURE__ */ e.createElement(W, { title: r, icon: n, visuallyHidden: c, id: u }), t)));
-}, ke = ({
+}, xe = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__content ${a}`, role: "document" }, t), xe = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__content ${a}`, role: "document" }, t), we = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__footer ${a}` }, t), we = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-modal__footer ${a}` }, t), Se = ({
   children: t,
   title: a = "Summary",
   className: s = ""
 }) => {
   const l = e.useId();
-  return /* @__PURE__ */ e.createElement("nav", { className: `mds-summary ${s}`, role: "navigation", "aria-labelledby": l }, /* @__PURE__ */ e.createElement(I, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: l }, a), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, f.map(t, (r) => /* @__PURE__ */ e.createElement("li", null, r))));
-}, Se = ({
+  return /* @__PURE__ */ e.createElement("nav", { className: `mds-summary ${s}`, role: "navigation", "aria-labelledby": l }, /* @__PURE__ */ e.createElement(P, { variant: "h4", component: "p", role: "heading", "aria-level": 2, id: l }, a), /* @__PURE__ */ e.createElement("ul", { className: "mds-list" }, f.map(t, (r) => /* @__PURE__ */ e.createElement("li", null, r))));
+}, Pe = ({
   reverse: t = !1,
   children: a,
   className: s = ""
@@ -425,7 +430,7 @@ const B = {
   children: t,
   ariaLabel: a,
   className: s = ""
-}) => /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": a, className: s }, /* @__PURE__ */ e.createElement("ul", { className: "mds-custom-scrollbar__x" }, f.map(t, (l, r) => r == 0 ? /* @__PURE__ */ e.createElement("li", { className: "mds-tabs__tab--selected" }, L(l, { ariaCurrent: !0 })) : /* @__PURE__ */ e.createElement("li", null, l)))), Pe = ({
+}) => /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": a, className: s }, /* @__PURE__ */ e.createElement("ul", { className: "mds-custom-scrollbar__x" }, f.map(t, (l, r) => r == 0 ? /* @__PURE__ */ e.createElement("li", { className: "mds-tabs__tab--selected" }, L(l, { ariaCurrent: !0 })) : /* @__PURE__ */ e.createElement("li", null, l)))), Me = ({
   label: t,
   icon: a,
   ariaCurrent: s = !1,
@@ -433,10 +438,10 @@ const B = {
 }) => {
   const r = a ? /* @__PURE__ */ e.createElement(R, { baseClassName: "picto", size: "xsmall" }, a) : "";
   return /* @__PURE__ */ e.createElement("button", { className: `mds-tabs__tab ${l}`, type: "button", "aria-current": s }, r, t);
-}, Me = ({
+}, Le = ({
   children: t,
   className: a = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs__panels ${a}` }, f.map(t, (s, l) => l == 1 ? e.cloneElement(s, { hidden: !0 }) : s)), Le = ({
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs__panels ${a}` }, f.map(t, (s, l) => l == 1 ? e.cloneElement(s, { hidden: !0 }) : s)), He = ({
   children: t,
   hidden: a = !1,
   className: s = ""
@@ -445,7 +450,7 @@ const B = {
   password: "text--basic",
   tel: "phone--basic",
   email: "mail"
-}, He = ({
+}, Fe = ({
   endAdornment: t,
   error: a = !1,
   errorText: s,
@@ -463,7 +468,7 @@ const B = {
 }) => {
   const h = m ? "" : /* @__PURE__ */ e.createElement("span", { className: "mds-label--optional" }, "(", c, ")"), _ = $[p] || $.text, y = e.useId();
   return /* @__PURE__ */ e.createElement("div", { className: `mds-input-group ${o ? "mds-input-group--reverse" : ""} ${E}` }, /* @__PURE__ */ e.createElement("label", { htmlFor: r, className: "mds-label" }, n, " ", h, " ", d ? /* @__PURE__ */ e.createElement("span", { className: "mds-label--description" }, d) : ""), /* @__PURE__ */ e.createElement("div", { className: `mds-input-cell ${l ? "mds-full-width" : ""} ${u ? "mds-wrapper--icon-left" : ""}` }, u ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: `mds-input__icon mds-icon__${u}` }) : "", /* @__PURE__ */ e.createElement("input", { className: `mds-input mds-input-${_}`, id: r, type: p, "aria-required": m, "aria-invalid": a, "aria-describedby": a && s ? y : "", ...N }), p === "password" ? /* @__PURE__ */ e.createElement("button", { type: "button", className: "mds-input__icon" }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only", "aria-live": "polite" }, "Masquer le mot de passe"), /* @__PURE__ */ e.createElement("span", { className: "mds-icon__visibility", "aria-hidden": "true" })) : t ? /* @__PURE__ */ e.createElement("span", { "aria-hidden": "true", className: "mds-input__unit" }, " ", t, " ") : ""), a && s ? /* @__PURE__ */ e.createElement("p", { className: "mds-message--error", id: y }, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__error--left", "aria-hidden": "true" }), s) : "");
-}, Fe = ({
+}, Ae = ({
   id: t,
   label: a,
   checked: s = !1,
@@ -507,22 +512,23 @@ export {
   ye as Pagination,
   i as PaginationItem,
   ge as Play,
-  fe as Quote,
-  ve as Select,
+  fe as ProgressLinear,
+  ve as Quote,
+  $e as Select,
   Q as SelectItem,
-  $e as ShowMore,
-  Ce as SidePanel,
-  ke as SidePanelContent,
-  xe as SidePanelFooter,
+  Ce as ShowMore,
+  ke as SidePanel,
+  xe as SidePanelContent,
+  we as SidePanelFooter,
   W as SidePanelHeader,
-  we as Summary,
-  Pe as Tab,
+  Se as Summary,
+  Me as Tab,
   Ie as TabList,
-  Le as TabPanel,
-  Me as TabPanelList,
-  Se as Tabs,
-  He as TextField,
-  Fe as Toggle,
-  I as Typography
+  He as TabPanel,
+  Le as TabPanelList,
+  Pe as Tabs,
+  Fe as TextField,
+  Ae as Toggle,
+  P as Typography
 };
 //# sourceMappingURL=index.es.js.map
