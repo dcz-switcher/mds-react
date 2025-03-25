@@ -9,6 +9,7 @@ export * from "./Card";
 export * from "./CardCompactV";
 export * from "./Chips";
 export * from "./Divider";
+export * from "./Header";
 export * from "./Hero";
 export * from "./Icon";
 export * from "./IconButton";
