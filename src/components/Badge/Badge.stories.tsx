@@ -14,6 +14,7 @@ export const Default: Story = {
   args: {
     label: "My badge",
     severity: "new",
-    size: "small"
+    size: "small",
+    variant: "default"
   }
 };
