@@ -31,7 +31,8 @@ const variantMappingClass = {
 
   const colorMappingClass = {
     primary: 'color-macif--1',
-    text: 'color-grey--80',
+    text   : 'color-grey--80',
+    white  : 'color-white'
   }
 
 const TypographyAncestryContext = createContext(false);
@@ -44,7 +45,7 @@ export interface typographyProps extends HTMLAttributes<HTMLElement> {
     align?: "center" | "inherit" | "justify" | "left" | "right";
     underlineColor?: string;
     framed?: boolean;
-    color?: 'primary' | 'text';
+    color?: 'primary' | 'text' | 'white';
     className?: string;
 }
 
@@ -66,7 +67,9 @@ export default function Typography({
     const Tag = tagComponent as "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div" | "span";
     const variantClass = (variant == "underline" && underlineColor) ? variantMappingClass[variant] + '--' + underlineColor : variantMappingClass[variant];
 
-    const colorClass = (!framed && variant.substring(0, 1) != 'h' && color) ? 'mds-color__'+colorMappingClass[color] : '';
+    // => changed : now, even title can be colored in white to support reverse mode
+    // const colorClass = (!framed && variant.substring(0, 1) != 'h' && color) ? 'mds-color__'+colorMappingClass[color] : '';
+    const colorClass = (!framed && color) ? 'mds-color__'+colorMappingClass[color] : '';
 
     return (
         <TypographyAncestryContext.Provider value={true}>
