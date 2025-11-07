@@ -26,6 +26,7 @@ const Header = ({
         "xmlns:rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
         "xmlns:svg" : "http://www.w3.org/2000/svg",
         "xmlns" : "http://www.w3.org/2000/svg",
+        "xml:space" : "preserve",
     };
 
     return (
