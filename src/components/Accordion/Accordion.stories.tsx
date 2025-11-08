@@ -13,6 +13,13 @@ const meta = {
 export default meta;
 
 export const Default = () => {
+   setTimeout(() => {
+      window.document.dispatchEvent(new Event('DOMContentLoaded', {
+          bubbles: true,
+          cancelable: true
+      }));
+  }, 1000);
+  
   return (
     <Accordion>
       <AccordionItem title='First item expanded' defaultExpanded={true}>
@@ -30,6 +37,14 @@ export const Default = () => {
 }
 
 export const OnlyOneExpandedAtATime = () => {
+
+   setTimeout(() => {
+      window.document.dispatchEvent(new Event('DOMContentLoaded', {
+          bubbles: true,
+          cancelable: true
+      }));
+  }, 1000);
+
   const [expanded, setExpanded] = React.useState('panel1');
   
   const onChangeHandler = (panelId:string) => {

@@ -16,7 +16,7 @@ const Loader = ({
     return (
         <div className={layoutClass}>
             <div className={loaderClass}>
-                <span className="mds-sr-only">{title}</span>
+                <p className="mds-sr-only">{title}</p>
             </div>
         </div>
     )

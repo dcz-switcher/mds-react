@@ -308,7 +308,7 @@ const R = {
   reverse: t = !1
 }) => {
   const s = t ? "mds-loader__layout mds-loader__layout--reverse" : "mds-loader__layout", l = t ? "mds-loader mds-loader--reverse" : "mds-loader";
-  return /* @__PURE__ */ e.createElement("div", { className: s }, /* @__PURE__ */ e.createElement("div", { className: l }, /* @__PURE__ */ e.createElement("span", { className: "mds-sr-only" }, a)));
+  return /* @__PURE__ */ e.createElement("div", { className: s }, /* @__PURE__ */ e.createElement("div", { className: l }, /* @__PURE__ */ e.createElement("p", { className: "mds-sr-only" }, a)));
 }, fe = ({
   children: a,
   className: t = ""
@@ -457,8 +457,10 @@ const R = {
 }, Pe = ({
   reverse: a = !1,
   children: t,
-  className: s = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${a ? "mds-tabs--reverse" : ""} ${s}` }, t), Ie = ({
+  className: s = "",
+  variant: l = "default",
+  ...n
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-tabs ${l == "pills" ? "mds-tabs--pills mds-tabs--standalone" : ""} ${a ? "mds-tabs--reverse" : ""} ${s}`, ...n }, t), Ie = ({
   children: a,
   ariaLabel: t,
   className: s = ""
