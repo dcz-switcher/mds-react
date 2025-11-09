@@ -2,6 +2,11 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Header from './Header';
+import HeaderNav from './HeaderNav';
+import HeaderNavItem from './HeaderNavItem';
+import HeaderNavMenu from './HeaderNavMenu';
+import { MenuItem } from '../Menu';
+import { Link } from '../Link';
 
 const meta = {
   component: Header,
@@ -17,19 +22,27 @@ export const Default: Story = {
   }
 };
 
-export const Navigation: Story = {
-  args: {
-    navMenu: <div className='mds-container mds-display--flex' style={{marginTop: 0, marginBottom: 0}}>
-              <nav role="navigation" aria-label="menu principal" className='mds-display--flex' style={{alignItems: "center", margin: 0}}>
-                    <ul className="mds-header__menu mds-handleClick-nav-item-btn" style={{height: '100%'}}>
-                        <li className="mds-header__menu-item"><button className="mds-btn mds-header__nav-item" style={{height: '100%'}}>menu item<span className="mds-icon__expand-more--right" aria-hidden="true"></span></button></li>
-                        <li className="mds-header__menu-item"><button className="mds-btn mds-header__nav-item" style={{height: '100%'}}>menu item<span className="mds-icon__expand-more--right" aria-hidden="true"></span></button></li>
-                        <li className="mds-header__menu-item"><button className="mds-btn mds-header__nav-item" style={{height: '100%'}}>menu item<span className="mds-icon__expand-more--right" aria-hidden="true"></span></button></li>
-                    </ul>
-                </nav></div>,
-    navMenuPosition : "inside"
-  },
-  render: (args) => (
-    <Header {...args} />
+
+
+export const Navigation = () => {
+    setTimeout(() => {
+      window.document.dispatchEvent(new Event('DOMContentLoaded', {
+          bubbles: true,
+          cancelable: true
+      }));
+  }, 750);
+
+  const headerNav = <HeaderNav>
+    <HeaderNavItem label='Hello'/>
+    <HeaderNavItem label='World'/>
+    <HeaderNavMenu label='More...'>
+      <MenuItem>
+        <Link href='#' underline={false}>Click me</Link>
+      </MenuItem>
+    </HeaderNavMenu>
+  </HeaderNav>
+
+  return (
+    <Header headerNav={headerNav} headerNavPosition='inside'/>
   )
 }

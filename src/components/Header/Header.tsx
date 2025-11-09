@@ -6,8 +6,8 @@ export type HeaderProps = {
     logoHref?: string;
     variant?: "default" | "simple";
     className?: string;
-    navMenu?: ReactNode;
-    navMenuPosition?: "under" | "inside";
+    headerNav?: ReactNode;
+    headerNavPosition?: "under" | "inside";
 }
 
 const Header = ({
@@ -15,8 +15,8 @@ const Header = ({
     logoHref = "/",
     variant = "default",
     className = '',
-    navMenu,
-    navMenuPosition = "under",
+    headerNav,
+    headerNavPosition = "under",
     ...props
 }:HeaderProps) => {
 
@@ -39,7 +39,7 @@ const Header = ({
                     </a>
                 </div>
                 <div className="mds-header__container--right-side">
-                    {navMenu ? 
+                    {headerNav ? 
                         <button className="mds-btn mds-header__nav-item">
                             <span className="mds-icon__menu" aria-hidden="true"></span>
                             menu
@@ -59,18 +59,18 @@ const Header = ({
                             </div>
                     </div>
                     <div className="mds-header__container--right-side" style={{height: '100%'}}>
-                        { (navMenu && navMenuPosition == "inside") ?
-                                navMenu
+                        { (headerNav && headerNavPosition == "inside") ?
+                                headerNav
                             : ""
                         }
                     </div>
                 </div>
             </div>
             <Divider/>
-            { (navMenu && navMenuPosition == "under") ?
+            { (headerNav && headerNavPosition == "under") ?
                 <>
                 <div className="mds-header__container--desktop mds-display--none mds-display-md--block">
-                    {navMenu}
+                    {headerNav}
                 <Divider/>
                 </div>
                 </>
