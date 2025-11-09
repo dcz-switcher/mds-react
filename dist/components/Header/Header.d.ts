@@ -4,8 +4,8 @@ export type HeaderProps = {
     logoHref?: string;
     variant?: "default" | "simple";
     className?: string;
-    navMenu?: ReactNode;
-    navMenuPosition?: "under" | "inside";
+    headerNav?: ReactNode;
+    headerNavPosition?: "under" | "inside";
 };
-declare const Header: ({ sticky, logoHref, variant, className, navMenu, navMenuPosition, ...props }: HeaderProps) => React.JSX.Element;
+declare const Header: ({ sticky, logoHref, variant, className, headerNav, headerNavPosition, ...props }: HeaderProps) => React.JSX.Element;
 export default Header;
