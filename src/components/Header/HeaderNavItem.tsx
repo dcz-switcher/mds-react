@@ -3,15 +3,17 @@ import React from "react";
 export type HeaderNavItemProps = {
     label?: string;
     className?: string;
+    href?: string;
 }
 
 const HeaderNavItem = ({
     label,
-    className,
+    className = '',
+    href,
 }:HeaderNavItemProps) => {
     return (
         <li className={`mds-header__menu-item ${className}`}>
-            <button className="mds-btn mds-header__nav-item" style={{height: '100%'}}>{label}</button>
+            <a className={`mds-btn mds-header__nav-item ${className}`} style={{height: '100%'}} href={href}>{label}</a>
         </li>
     )
 }

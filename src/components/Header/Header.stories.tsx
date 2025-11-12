@@ -33,7 +33,7 @@ export const Navigation = () => {
   }, 750);
 
   const headerNav = <HeaderNav>
-    <HeaderNavItem label='Hello'/>
+    <HeaderNavItem label='Hello' href='/'/>
     <HeaderNavItem label='World'/>
     <HeaderNavMenu label='More...'>
       <MenuItem>

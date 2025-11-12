@@ -10,7 +10,7 @@ export type HeaderNavMenuProps = {
 const HeaderNavMenu = ({
     children,
     label,
-    className,
+    className = '',
 }:HeaderNavMenuProps) => {
 
     const anchorEl = <button className="mds-btn mds-header__nav-item mds-dropdown__trigger-element" style={{height: '100%'}} aria-controls='expandable' aria-expanded={false}>{label}<span className="mds-icon__expand-more--right" aria-hidden="true"></span></button>;

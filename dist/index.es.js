@@ -245,8 +245,9 @@ const R = {
   className: t = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `mds-container mds-display--flex ${t}`, style: { marginTop: 0, marginBottom: 0 } }, /* @__PURE__ */ e.createElement("nav", { role: "navigation", "aria-label": "menu principal", className: "mds-display--flex", style: { alignItems: "center", margin: 0 } }, /* @__PURE__ */ e.createElement("ul", { className: "mds-header__menu mds-handleClick-nav-item-btn", style: { height: "100%" } }, a))), ue = ({
   label: a,
-  className: t
-}) => /* @__PURE__ */ e.createElement("li", { className: `mds-header__menu-item ${t}` }, /* @__PURE__ */ e.createElement("button", { className: "mds-btn mds-header__nav-item", style: { height: "100%" } }, a)), he = ({
+  className: t = "",
+  href: s
+}) => /* @__PURE__ */ e.createElement("li", { className: `mds-header__menu-item ${t}` }, /* @__PURE__ */ e.createElement("a", { className: `mds-btn mds-header__nav-item ${t}`, style: { height: "100%" }, href: s }, a)), he = ({
   children: a,
   className: t = ""
 }) => /* @__PURE__ */ e.createElement("div", { className: `}mds-dropdown__item ${t}` }, a), V = {
@@ -267,7 +268,7 @@ const R = {
 }, Ee = ({
   children: a,
   label: t,
-  className: s
+  className: s = ""
 }) => {
   const l = /* @__PURE__ */ e.createElement("button", { className: "mds-btn mds-header__nav-item mds-dropdown__trigger-element", style: { height: "100%" }, "aria-controls": "expandable", "aria-expanded": !1 }, t, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more--right", "aria-hidden": "true" }));
   return /* @__PURE__ */ e.createElement("li", { className: `mds-header__menu-item ${s}` }, /* @__PURE__ */ e.createElement(B, { anchorEl: l, style: { height: "100%" } }, a));
