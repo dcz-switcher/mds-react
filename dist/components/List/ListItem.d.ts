@@ -4,6 +4,7 @@ export type ListItemProps = {
     secondaryAction?: ReactNode;
     className?: string;
     trailingText?: string;
+    sidePadding?: boolean;
 };
-declare const ListItem: ({ children, secondaryAction, className, trailingText, }: ListItemProps) => React.JSX.Element;
+declare const ListItem: ({ children, secondaryAction, className, trailingText, sidePadding, }: ListItemProps) => React.JSX.Element;
 export default ListItem;

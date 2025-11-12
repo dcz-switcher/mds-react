@@ -16,10 +16,10 @@ export default meta;
 
 
 export const Default= ({
-  boxed = false
+  
 }) => {
   return (
-    <List boxed={boxed}>
+    <List boxed={false} divider={true}>
       <ListItem>
         <ListItemIcon><Icon>euro</Icon></ListItemIcon>
         <ListItemText title="Title" supportingText="Supporting text" headline="Headline"/>
@@ -40,11 +40,25 @@ export const Default= ({
   )
 };
 
-export const IsBoxed = ({
-  boxed = true
-}) => {
+
+export const noDividerNoSidepadding = ({}) => {
   return (
-  <List boxed={boxed}>
+  <List boxed={false} divider={false}>
+        <ListItem sidePadding={false}>
+          <ListItemIcon><Icon>euro</Icon></ListItemIcon>
+          <ListItemText title="Title" supportingText="Supporting text" headline="Headline"/>
+        </ListItem>
+        <ListItem sidePadding={false} trailingText='100+'>
+          <ListItemIcon><Icon>euro</Icon></ListItemIcon>
+          <ListItemText title="Title" href='#'/>
+        </ListItem>
+      </List>
+  )
+}
+
+export const IsBoxed = ({}) => {
+  return (
+  <List boxed={true}>
         <ListItem>
           <ListItemIcon><Icon>euro</Icon></ListItemIcon>
           <ListItemText title="Title" supportingText="Supporting text" headline="Headline"/>

@@ -5,6 +5,7 @@ export type ListItemProps = {
     secondaryAction?: ReactNode;
     className?: string;
     trailingText?: string;
+    sidePadding?: boolean;
 };
 
 const ListItem = ({
@@ -12,9 +13,10 @@ const ListItem = ({
     secondaryAction,
     className = '',
     trailingText,
+    sidePadding = true,
 }:ListItemProps) => {
     return  (
-        <li className={`mds-action-list__item mds-side-padding ${className}`}>
+        <li className={`mds-action-list__item ${sidePadding ? 'mds-side-padding': ''} ${className}`}>
             <div className="mds-action-list__item-content">
                 {children}
             </div>
