@@ -6,6 +6,7 @@ export type MenuProps = {
     children?:ReactNode;
     className?: string;
     style?: object;
+    sidePadding?: boolean;
 };
 
 
@@ -22,15 +23,15 @@ const Menu = ({
     children,
     className = '',
     style,
-    ...props
+    sidePadding = false,
 }:MenuProps) => {
     
     const AnchorOrigin = AnchorMappingclass[anchorOrigin];
 
     return (
-        <div className={`mds-dropdown__layout ${AnchorOrigin} ${className}`} style={style} {...props}>
+        <div className={`mds-dropdown__layout ${AnchorOrigin} ${className}`} style={style}>
             {anchorEl}
-            <div className="mds-dropdown__container">
+            <div className={`mds-dropdown__container ${!sidePadding ? 'mds-inset--0' : ''}`}>
                 <div className="mds-dropdown mds-dropdown__handleClick">
                     {children}
                 </div>

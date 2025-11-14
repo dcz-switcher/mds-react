@@ -10,7 +10,7 @@ const MenuItem = ({
     className = '',
 }:MenuItemProps) => {
     return (
-        <div className={`}mds-dropdown__item ${className}`}>
+        <div className={`mds-dropdown__item ${className}`}>
             {children}
         </div>
     )

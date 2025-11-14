@@ -250,7 +250,7 @@ const R = {
 }) => /* @__PURE__ */ e.createElement("li", { className: `mds-header__menu-item ${t}` }, /* @__PURE__ */ e.createElement("a", { className: `mds-btn mds-header__nav-item ${t}`, style: { height: "100%" }, href: s }, a)), he = ({
   children: a,
   className: t = ""
-}) => /* @__PURE__ */ e.createElement("div", { className: `}mds-dropdown__item ${t}` }, a), V = {
+}) => /* @__PURE__ */ e.createElement("div", { className: `mds-dropdown__item ${t}` }, a), V = {
   tl: "mds-dropdown-position--top-left",
   tr: "mds-dropdown-position--top-right",
   bl: "mds-dropdown-position--bottom-left",
@@ -261,10 +261,10 @@ const R = {
   children: s,
   className: l = "",
   style: n,
-  ...c
+  sidePadding: c = !1
 }) => {
   const r = V[t];
-  return /* @__PURE__ */ e.createElement("div", { className: `mds-dropdown__layout ${r} ${l}`, style: n, ...c }, a, /* @__PURE__ */ e.createElement("div", { className: "mds-dropdown__container" }, /* @__PURE__ */ e.createElement("div", { className: "mds-dropdown mds-dropdown__handleClick" }, s)));
+  return /* @__PURE__ */ e.createElement("div", { className: `mds-dropdown__layout ${r} ${l}`, style: n }, a, /* @__PURE__ */ e.createElement("div", { className: `mds-dropdown__container ${c ? "" : "mds-inset--0"}` }, /* @__PURE__ */ e.createElement("div", { className: "mds-dropdown mds-dropdown__handleClick" }, s)));
 }, Ee = ({
   children: a,
   label: t,

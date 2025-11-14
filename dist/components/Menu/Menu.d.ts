@@ -5,6 +5,7 @@ export type MenuProps = {
     children?: ReactNode;
     className?: string;
     style?: object;
+    sidePadding?: boolean;
 };
-declare const Menu: ({ anchorEl, anchorOrigin, children, className, style, ...props }: MenuProps) => React.JSX.Element;
+declare const Menu: ({ anchorEl, anchorOrigin, children, className, style, sidePadding, }: MenuProps) => React.JSX.Element;
 export default Menu;

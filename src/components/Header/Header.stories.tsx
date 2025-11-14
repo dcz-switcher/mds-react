@@ -6,7 +6,8 @@ import HeaderNav from './HeaderNav';
 import HeaderNavItem from './HeaderNavItem';
 import HeaderNavMenu from './HeaderNavMenu';
 import { MenuItem } from '../Menu';
-import { Link } from '../Link';
+import { List, ListItem, ListItemIcon, ListItemText } from '../List';
+import { Icon } from '../Icon';
 
 const meta = {
   component: Header,
@@ -33,11 +34,24 @@ export const Navigation = () => {
   }, 750);
 
   const headerNav = <HeaderNav>
-    <HeaderNavItem label='Hello' href='/'/>
+    <HeaderNavItem label='Hello world' href='/'/>
     <HeaderNavItem label='World'/>
     <HeaderNavMenu label='More...'>
       <MenuItem>
-        <Link href='#' underline={false}>Click me</Link>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <Icon baseClassName='picto'>auto</Icon>
+            </ListItemIcon>
+            <ListItemText title="First one" href='#' />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <Icon baseClassName='picto'>maison</Icon>
+            </ListItemIcon>
+            <ListItemText title="First two" href='#' />
+          </ListItem>
+        </List>
       </MenuItem>
     </HeaderNavMenu>
   </HeaderNav>
