@@ -270,7 +270,7 @@ const R = {
   label: t,
   className: s = ""
 }) => {
-  const l = /* @__PURE__ */ e.createElement("button", { className: "mds-btn mds-header__nav-item mds-dropdown__trigger-element", style: { height: "100%" }, "aria-controls": "expandable", "aria-expanded": !1 }, t, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more--right", "aria-hidden": "true" }));
+  const l = /* @__PURE__ */ e.createElement("button", { className: "mds-btn mds-header__nav-item mds-dropdown__trigger-element", style: { height: "100%" }, "aria-controls": "expandable", "aria-expanded": !1 }, t, /* @__PURE__ */ e.createElement("span", { className: "mds-icon__expand-more", "aria-hidden": "true" }));
   return /* @__PURE__ */ e.createElement("li", { className: `mds-header__menu-item ${s}` }, /* @__PURE__ */ e.createElement(B, { anchorEl: l, style: { height: "100%" } }, a));
 }, _e = ({
   upTitle: a,

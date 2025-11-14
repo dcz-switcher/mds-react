@@ -54,6 +54,24 @@ export const Navigation = () => {
         </List>
       </MenuItem>
     </HeaderNavMenu>
+    <HeaderNavMenu label='And more...'>
+      <MenuItem>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <Icon baseClassName='picto'>auto</Icon>
+            </ListItemIcon>
+            <ListItemText title="First one" href='#' />
+          </ListItem>
+          <ListItem>
+            <ListItemIcon>
+              <Icon baseClassName='picto'>maison</Icon>
+            </ListItemIcon>
+            <ListItemText title="First two" href='#' />
+          </ListItem>
+        </List>
+      </MenuItem>
+    </HeaderNavMenu>
   </HeaderNav>
 
   return (
