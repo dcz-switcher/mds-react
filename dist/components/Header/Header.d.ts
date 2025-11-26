@@ -6,6 +6,8 @@ export type HeaderProps = {
     className?: string;
     headerNav?: ReactNode;
     headerNavPosition?: "under" | "inside";
+    headerLogoUrl?: string;
+    headerLogoDesktopUrl?: string;
 };
-declare const Header: ({ sticky, logoHref, variant, className, headerNav, headerNavPosition, ...props }: HeaderProps) => React.JSX.Element;
+declare const Header: ({ sticky, logoHref, variant, className, headerNav, headerNavPosition, headerLogoUrl, headerLogoDesktopUrl, ...props }: HeaderProps) => React.JSX.Element;
 export default Header;

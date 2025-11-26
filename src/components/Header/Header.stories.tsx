@@ -17,9 +17,12 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
+
 export const Default: Story = {
   args: {
-    variant: "default"
+    variant: "default",
+    headerLogoUrl: "src/styles/assets/logo-saturn.svg",
+    headerLogoDesktopUrl: "src/styles/assets/logo-saturn.svg"
   }
 };
 
@@ -74,7 +77,8 @@ export const Navigation = () => {
     </HeaderNavMenu>
   </HeaderNav>
 
+
   return (
-    <Header headerNav={headerNav} headerNavPosition='inside'/>
+    <Header headerNav={headerNav} headerNavPosition='inside' headerLogoDesktopUrl="src/styles/assets/logo-saturn.svg" headerLogoUrl="src/styles/assets/logo-saturn.svg"/>
   )
 }

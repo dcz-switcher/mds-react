@@ -1,6 +1,6 @@
 {
   "name": "mds-react",
-  "version": "0.38.2",
+  "version": "0.39.0",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs.js",
@@ -41,8 +41,8 @@
     "vite-plugin-dts": "^4.3.0"
   },
   "peerDependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
   },
   "dependencies": {
     "rollup": "^4.53.1"
