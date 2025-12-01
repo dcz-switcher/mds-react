@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Header from './Header';
@@ -8,6 +8,9 @@ import HeaderNavMenu from './HeaderNavMenu';
 import { MenuItem } from '../Menu';
 import { List, ListItem, ListItemIcon, ListItemText } from '../List';
 import { Icon } from '../Icon';
+import { SidePanel, SidePanelContent } from '../SidePanel';
+import { Typography } from '../Typography';
+import { Box } from '../Box';
 
 const meta = {
   component: Header,
@@ -35,6 +38,17 @@ export const Navigation = () => {
           cancelable: true
       }));
   }, 750);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onMenuOpenHandler = () => {
+    setIsMenuOpen(true);
+  }
+
+  const onMenuCloseHandler = () => {
+    setIsMenuOpen(false);
+  }
+
 
   const headerNav = <HeaderNav>
     <HeaderNavItem label='Hello world' href='/'/>
@@ -79,6 +93,21 @@ export const Navigation = () => {
 
 
   return (
-    <Header headerNav={headerNav} headerNavPosition='inside' headerLogoDesktopUrl="src/styles/assets/logo-saturn.svg" headerLogoUrl="src/styles/assets/logo-saturn.svg"/>
+    <>
+      <SidePanel onClose={onMenuCloseHandler} open={isMenuOpen} showCloseButton={true} visuallyHideTitle={true}>
+        <SidePanelContent>
+          <Box className='mds-stack-t--24'>
+            <Typography variant='h4'>Menu mobile</Typography>
+            <Typography>You have to manage the mobile menu aside</Typography>
+          </Box>
+        </SidePanelContent>
+      </SidePanel>
+
+      <Header headerNav={headerNav} 
+              onMenuOpen={onMenuOpenHandler}
+              headerNavPosition='inside' 
+              headerLogoDesktopUrl="src/styles/assets/logo-saturn.svg" 
+              headerLogoUrl="src/styles/assets/logo-saturn.svg"/>
+    </>
   )
 }

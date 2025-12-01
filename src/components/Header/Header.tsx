@@ -10,6 +10,7 @@ export type HeaderProps = {
     headerNavPosition?: "under" | "inside";
     headerLogoUrl?: string;
     headerLogoDesktopUrl?: string;
+    onMenuOpen?:any;
 }
 
 const Header = ({
@@ -21,6 +22,7 @@ const Header = ({
     headerNavPosition = "under",
     headerLogoUrl,
     headerLogoDesktopUrl,
+    onMenuOpen,
     ...props
 }:HeaderProps) => {
 
@@ -36,7 +38,7 @@ const Header = ({
                 </div>
                 <div className="mds-header__container--right-side">
                     {headerNav ? 
-                        <button className="mds-btn mds-header__nav-item">
+                        <button className="mds-btn mds-header__nav-item" onClick={onMenuOpen}>
                             <span className="mds-icon__menu" aria-hidden="true"></span>
                             menu
                         </button>
