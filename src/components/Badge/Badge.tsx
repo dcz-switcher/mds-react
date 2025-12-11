@@ -1,4 +1,4 @@
-import React, { ElementType } from 'react';
+import React from 'react';
 
 type BadgeSize = "small" | "big";
 type BadgeSeverity = "neutral" | "success" | "warning" | "danger" | "new";
