@@ -17,7 +17,7 @@ export type BadgeProps = {
     color?: string; // override severity color
     icon?: string;
     variant?: BadgeVariant;
-    component? :ElementType;
+    component? : 'p' | 'div' | 'span';
 } & OverridableComponentProps;
 
 
@@ -30,9 +30,10 @@ export default function Badge ({
     color,
     variant = "default",
     className = '',
-    component: Component = 'p',
+    component,
     ...rest
 }: BadgeProps) {
+    const TagComponent = component || 'p';
 
     const colorClass = (color) ? `mds-background-color__${color}` : "";
 
@@ -46,7 +47,7 @@ export default function Badge ({
     ].filter(Boolean).join(' ');
 
     return  (
-        <Component 
+        <TagComponent
             className={classes} 
             {...rest}
         >
@@ -70,6 +71,6 @@ export default function Badge ({
                     <span className="mds-sr-only">{ariaLabel}</span>
                 </>
             }
-        </Component>
+        </TagComponent>
     )
 }
