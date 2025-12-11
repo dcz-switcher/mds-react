@@ -1,16 +1,24 @@
-import React from 'react';
+import React, { ElementType } from 'react';
 
+type BadgeSize = "small" | "big";
+type BadgeSeverity = "neutral" | "success" | "warning" | "danger" | "new";
+type BadgeVariant = "default" | "dot";
+
+interface OverridableComponentProps {
+    className? : string;
+    [key: string]: any;
+}
 
 export type BadgeProps = {
     ariaLabel?: string;
     label?: string;
-    size?: "small" | "big";
-    severity?: "neutral" | "success" | "warning" | "danger" | "new";
+    size?: BadgeSize;
+    severity?: BadgeSeverity;
     color?: string; // override severity color
     icon?: string;
-    variant?: "default" | "dot";
-    className?: string;
-}
+    variant?: BadgeVariant;
+    component? :ElementType;
+} & OverridableComponentProps;
 
 
 export default function Badge ({
@@ -22,29 +30,46 @@ export default function Badge ({
     color,
     variant = "default",
     className = '',
+    component: Component = 'p',
+    ...rest
 }: BadgeProps) {
 
     const colorClass = (color) ? `mds-background-color__${color}` : "";
 
+    const classes = [
+        'mds-badge',
+        `mds-badge--${size}`,
+        `mds-badge--${severity}`,
+        (variant === "dot" && 'mds-badge--dot'),
+        colorClass, 
+        className
+    ].filter(Boolean).join(' ');
+
     return  (
-        variant === "default" ?
-            <p className={`mds-badge mds-badge--${size} mds-badge--${severity} ${colorClass} ${className}`}>
-                {icon &&
-                    <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
-                }
-                <span>{label}</span>
-            </p>
-        : 
-            <p className={`mds-badge mds-badge--dot mds-badge--${size} mds-badge--${severity} ${colorClass} ${className}`}>
-                { (icon && size === "big") ? 
-                    <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
-                : 
-                    size === "big" ? 
-                        label
-                    :
-                        ""
-                }
-                <span className="mds-sr-only">{ariaLabel}</span>
-            </p>
+        <Component 
+            className={classes} 
+            {...rest}
+        >
+            {variant === "default" ?
+                <>
+                    {icon &&
+                        <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
+                    }
+                    <span>{label}</span>
+                </>
+            : 
+                <>
+                    { (icon && size === "big") ? 
+                        <span className={`mds-icon__${icon}`} aria-hidden="true"></span>
+                    : 
+                        size === "big" ? 
+                            label
+                        :
+                            ""
+                    }
+                    <span className="mds-sr-only">{ariaLabel}</span>
+                </>
+            }
+        </Component>
     )
 }
