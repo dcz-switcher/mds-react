@@ -53,6 +53,15 @@ export const Underline: Story = {
   )
 };
 
+export const Framed: Story = {
+  args: {
+    framed: true
+  },
+  render: (args) => (
+    <Typography variant='h4' {...args}>HELLO FRAMED</Typography>
+  )
+};
+
 export const WithStyle: Story = {
   render: () => (
     <>

@@ -3,7 +3,7 @@ export declare const useTypographyAncestry: () => boolean;
 export interface typographyProps extends HTMLAttributes<HTMLElement> {
     children?: ReactNode;
     variant?: "body1" | "body2" | "body3" | "body4" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "underline";
-    component?: string;
+    component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
     align?: "center" | "inherit" | "justify" | "left" | "right";
     underlineColor?: string;
     framed?: boolean;
