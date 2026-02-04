@@ -18,7 +18,7 @@ const X = ({
   };
   return y(() => (d(u ? N() : 0), () => {
   }), [u]), y(() => (p(r), () => {
-  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: E, id: a, className: `mds-accordion__item ${c}` }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: b, className: `mds-collapse mds-collapse__label ${u ? "active" : ""}`, "aria-expanded": u }, t, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${u ? "active" : ""}`, style: { maxHeight: o } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
+  }), [r]), /* @__PURE__ */ e.createElement("div", { ref: E, id: a, className: `mds-accordion__item ${c}` }, /* @__PURE__ */ e.createElement("h2", { className: "mds-accordion__header" }, /* @__PURE__ */ e.createElement("button", { type: "button", "aria-controls": "collapse--xx", onClick: b, className: `mds-collapse mds-collapse__label ${u ? "active" : ""}`, "aria-expanded": u }, t, /* @__PURE__ */ e.createElement("span", { className: `mds-icon__${m}`, "aria-hidden": "true" }))), /* @__PURE__ */ e.createElement("div", { id: "collapse--xx", className: `mds-collapse__content ${u ? "active" : ""}`, style: { maxHeight: o, height: o } }, /* @__PURE__ */ e.createElement("div", { className: "mds-accordion__body" }, s)));
 };
 function Z({
   children: a,

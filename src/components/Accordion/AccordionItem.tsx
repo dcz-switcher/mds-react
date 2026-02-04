@@ -67,7 +67,7 @@ const AccordionItem = ({
                     <span className={`mds-icon__${expandIcon}`} aria-hidden="true"></span>
                 </button>
             </h2>
-            <div id="collapse--xx" className={`mds-collapse__content ${isExpanded ? 'active' : ''}`} style={{'maxHeight': maxH}}>
+            <div id="collapse--xx" className={`mds-collapse__content ${isExpanded ? 'active' : ''}`} style={{'maxHeight': maxH, 'height': maxH}}>
                 <div className="mds-accordion__body">
                     {children}
                 </div>
