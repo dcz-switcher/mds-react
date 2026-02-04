@@ -89,10 +89,11 @@ const $ = ({
   children: a,
   color: t = "link",
   reverse: s = !1,
-  className: l = ""
+  title: l,
+  className: n = ""
 }) => {
-  const n = s ? "color-white" : I[t];
-  return /* @__PURE__ */ e.createElement("nav", { className: `mds-breadcrumbs ${l}`, role: "navigation", "aria-labelledby": "xx" }, /* @__PURE__ */ e.createElement("ul", null, v.map(a, (r) => /* @__PURE__ */ e.createElement("li", { className: `mds-color__${n}` }, r))));
+  const r = s ? "color-white" : I[t], m = s ? "" : "mds-color__color-use--9";
+  return /* @__PURE__ */ e.createElement("nav", { className: `mds-breadcrumbs ${n}`, role: "navigation", "aria-labelledby": "xx" }, l ? /* @__PURE__ */ e.createElement("p", { className: `mds-text--4 ${m}`, id: "xx" }, l) : "", /* @__PURE__ */ e.createElement("ul", null, v.map(a, (c) => /* @__PURE__ */ e.createElement("li", { className: `mds-color__${r}` }, c))));
 };
 function se({
   component: a,
