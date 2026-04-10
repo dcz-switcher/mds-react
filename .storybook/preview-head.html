@@ -13,3 +13,79 @@
         }, 1000);
     </script>
 -->
+    <script>
+        class MdsRating {
+  constructor(element) {
+    this.el = element;
+    this.buttons = Array.from(this.el.querySelectorAll('[role="radio"]'));
+    this.currentValue = parseInt(this.el.dataset.value) || 0;
+    this.init();
+  }
+
+  init() {
+    this.buttons.forEach((btn, index) => {
+      // Clic pour fixer la note
+      btn.addEventListener('click', () => this.setRating(index + 1));
+      
+      // Entrée/Sortie du survol
+      btn.addEventListener('mouseenter', () => this.previewRating(index + 1));
+      
+      // Gestion du clavier
+      btn.addEventListener('keydown', (e) => this.handleKeydown(e, index));
+    });
+
+    // Reset visuel quand la souris quitte le groupe
+    this.el.addEventListener('mouseleave', () => this.renderStates(this.currentValue));
+    
+    // État initial
+    this.renderStates(this.currentValue);
+  }
+
+  // Gère l'apparence visuelle (couleurs)
+  renderStates(value, isPreview = false) {
+    this.buttons.forEach((btn, i) => {
+      const isActive = (i < value);
+      btn.classList.toggle('mds-rating__star--active', isActive);
+      // On peut ajouter une classe différente pour le hover si besoin
+      btn.classList.toggle('mds-rating__star--preview', isPreview && isActive);
+    });
+  }
+
+  previewRating(value) {
+    this.renderStates(value, true);
+  }
+
+  setRating(value) {
+    this.currentValue = value;
+    this.el.dataset.value = value;
+    
+    this.buttons.forEach((btn, i) => {
+      btn.setAttribute('aria-checked', (i + 1 === value) ? 'true' : 'false');
+      btn.tabIndex = (i + 1 === value) ? 0 : -1;
+    });
+
+    this.renderStates(value);
+
+    // Événement pour les développeurs
+    this.el.dispatchEvent(new CustomEvent('mds:ratingChange', { detail: { value } }));
+  }
+
+  handleKeydown(e, index) {
+    let nextIdx;
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      nextIdx = (index + 1) % this.buttons.length;
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      nextIdx = (index - 1 + this.buttons.length) % this.buttons.length;
+    } else {
+      return;
+    }
+
+    e.preventDefault();
+    this.buttons[nextIdx].focus();
+    this.setRating(nextIdx + 1); // La note suit le focus pour plus de simplicité
+  }
+}
+
+// Initialisation automatique
+document.querySelectorAll('.mds-rating').forEach(el => new MdsRating(el));
+    </script>

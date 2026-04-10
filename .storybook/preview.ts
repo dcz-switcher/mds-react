@@ -3,6 +3,8 @@ import type { Preview } from "@storybook/react";
 import '../src/styles/mds-3.24.1/mds-style.min.css';
 import '../src/styles/mds-3.24.1/js/mds-js.min.js';
 
+import '../src/styles/local-style.css';
+
 const preview: Preview = {
   tags: ['autodocs'],
   parameters: {
