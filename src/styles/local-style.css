@@ -35,52 +35,63 @@
   }
 
 
+/* ==========================================================================
+   COMPONENT: mds-copy-field (Using MDS Native Button)
+   ========================================================================== */
 
-
-
-
-  .copy-field {
+   .mds-copy-field {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    background: #f6f6f6;
-    padding: 8px 12px;
-    border-radius: 6px;
+    gap: var(--mds-spacing-2, 8px);
+    /* On laisse déborder pour le focus du bouton natif */
+    overflow: visible !important;
   }
   
-  .copy-btn {
-    border: none;
-    background: none;
-    cursor: pointer;
+  .mds-copy-field__text {
+    font-family: var(--mds-font-family-sans, sans-serif);
+    font-size: var(--mds-font-size-m, 1rem);
+    color: var(--mds-color-text-primary, #1d1d1b);
+  }
+  
+  /* Surcharge légère du bouton pour l'alignement si nécessaire */
+  .mds-copy-field .mds-btn--icon-only {
+    flex-shrink: 0;
+  }
+  
+  /* Feedback visuel unifié en Bleu Macif */
+  .mds-copy-field__feedback {
     display: flex;
     align-items: center;
+    pointer-events: none;
   }
   
-  /* focus visible RGAA */
-  .copy-btn:focus-visible {
-    outline: 2px solid #005fcc;
-    outline-offset: 2px;
+  .mds-copy-field__feedback-text {
+    font-size: var(--mds-font-size-s, 0.875rem);
+    color: var(--mds-color-interactive-primary, #005696);
+    font-weight: bold;
+    margin-left: 4px; /* Proximité renforcée avec l'icône */
+    white-space: nowrap;
+    animation: mds-copy-pop 0.2s ease-out forwards;
   }
   
-  .material-symbols-outlined {
-    font-size: 20px;
+  /* On s'assure que l'icône reste bleue même dans le bouton tertiary */
+  .mds-copy-field .mds-u-color-interactive-primary {
+    color: var(--mds-color-interactive-primary, #005696) !important;
   }
   
-  /* feedback visuel */
-  .copy-btn.copied::after {
-    content: "Copié";
-    font-size: 12px;
-    margin-left: 6px;
+  /* Taille de l'icône augmentée pour la lisibilité */
+  .mds-copy-field .mds-u-font-size-m {
+    font-size: 1.25rem !important;
   }
   
-  /* accessibilité */
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-    border: 0;
+  /* Animation d'apparition du texte */
+  @keyframes mds-copy-pop {
+    from {
+      opacity: 0;
+      transform: translateX(-4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }

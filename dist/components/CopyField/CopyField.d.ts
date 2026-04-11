@@ -1,12 +1,13 @@
 import { default as React } from 'react';
-type CopyFieldType = "iban" | "email" | "phone";
 interface CopyFieldProps {
+    /** La chaîne de caractères à copier */
     value: string;
-    type?: CopyFieldType;
-    label?: string;
-    feedbackMessage?: string;
-    onCopy?: (value: string) => void;
+    /** Le texte de confirmation qui apparaît après le clic */
+    successMessage: string;
+    /** Label pour les lecteurs d'écran (critique pour le bouton icon-only) */
+    buttonAriaLabel: string;
+    /** Classe optionnelle pour l'enveloppe globale */
     className?: string;
 }
-export default function CopyField({ value, type, label, feedbackMessage, onCopy, className, }: CopyFieldProps): React.JSX.Element;
-export {};
+declare const CopyField: React.FC<CopyFieldProps>;
+export default CopyField;

@@ -1,100 +1,71 @@
-import React, { useState, useRef } from "react";
-
-type CopyFieldType = "iban" | "email" | "phone";
+import React, { useState, useEffect, useCallback } from 'react';
 
 interface CopyFieldProps {
+  /** La chaîne de caractères à copier */
   value: string;
-  type?: CopyFieldType;
-  label?: string;
-  feedbackMessage?: string;
-  onCopy?: (value: string) => void;
+  /** Le texte de confirmation qui apparaît après le clic */
+  successMessage: string;
+  /** Label pour les lecteurs d'écran (critique pour le bouton icon-only) */
+  buttonAriaLabel: string;
+  /** Classe optionnelle pour l'enveloppe globale */
   className?: string;
 }
 
-export default function CopyField({
+const CopyField: React.FC<CopyFieldProps> = ({
   value,
-  type = "email",
-  label,
-  feedbackMessage,
-  onCopy,
-  className = "",
-}: CopyFieldProps) {
-  const [copied, setCopied] = useState<boolean>(false);
-  const [message, setMessage] = useState<string>("");
+  successMessage,
+  buttonAriaLabel,
+  className = ""
+}) => {
+  const [isCopied, setIsCopied] = useState<boolean>(false);
 
-  const valueRef = useRef<HTMLSpanElement | null>(null);
-
-  const defaultLabels: Record<CopyFieldType, string> = {
-    iban: "Copier l’IBAN",
-    email: "Copier l’adresse email",
-    phone: "Copier le numéro de téléphone",
-  };
-
-  const defaultMessages: Record<CopyFieldType, string> = {
-    iban: "IBAN copié dans le presse-papier",
-    email: "Adresse email copiée",
-    phone: "Numéro de téléphone copié",
-  };
-
-  const ariaLabel = label ?? `${defaultLabels[type]} ${value}`;
-  const successMessage = feedbackMessage ?? defaultMessages[type];
-
-  const handleCopy = async (): Promise<void> => {
+  const handleCopy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(value);
-
-      setCopied(true);
-      setMessage(successMessage);
-
-      if (onCopy) {
-        onCopy(value);
-      }
-
-      setTimeout(() => {
-        setCopied(false);
-        setMessage("");
-      }, 3000);
-    } catch (e) {
-      setMessage("Erreur lors de la copie");
-
-      // fallback sélection manuelle
-      if (valueRef.current) {
-        const range = document.createRange();
-        range.selectNode(valueRef.current);
-        const selection = window.getSelection();
-        selection?.removeAllRanges();
-        selection?.addRange(range);
-      }
+      setIsCopied(true);
+    } catch (error) {
+      console.error('MDS-CopyField: Erreur de copie', error);
     }
-  };
+  }, [value]);
+
+  useEffect(() => {
+    if (isCopied) {
+      const timer = setTimeout(() => setIsCopied(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isCopied]);
 
   return (
-    <div className={`copy-field ${className}`}>
-      <span ref={valueRef}>{value}</span>
+    <div className={`mds-copy-field ${className}`}>
+      {/* Valeur textuelle */}
+      <span className="mds-copy-field__text">{value}</span>
 
-      <button
+      {/* Bouton Tertiaire Icon-Only conforme MDS */}
+      <button 
         type="button"
+        className={`mds-btn mds-btn--tertiary mds-btn--icon-only ${isCopied ? 'mds-copy-field__button--success' : ''}`}
         onClick={handleCopy}
-        aria-describedby="copy-feedback"
-        aria-label={ariaLabel}
-        className={`copy-btn ${copied ? "copied" : ""}`}
       >
-        <span className="material-symbols-outlined" aria-hidden="true">
-          {copied ? "check" : "content_copy"}
-        </span>
-
-        <span className="visually-hidden">
-          {copied ? "Copié" : "Copier"}
-        </span>
+        {/* Label pour accessibilité (remplace l'aria-label) */}
+        <span className="mds-sr-only">{buttonAriaLabel}</span>
+        
+        {/* Icône avec classe utilitaire pour la taille et la couleur bleu Macif */}
+        <span 
+          className={`
+            ${isCopied ? 'mds-icon__check' : 'mds-icon__content-copy'} 
+            mds-u-color-interactive-primary 
+            mds-u-font-size-m
+          `} 
+          aria-hidden="true"
+        ></span>
       </button>
 
-      <span
-        id="copy-feedback"
-        className="visually-hidden"
-        aria-live="polite"
-      >
-        {message}
-      </span>
+      {/* Feedback visuel et vocal */}
+      <div role="status" aria-live="polite" className="mds-copy-field__feedback">
+        {isCopied && <span className="mds-copy-field__feedback-text">{successMessage}</span>}
+      </div>
     </div>
   );
-}
+};
+
+export default CopyField;
