@@ -33,3 +33,54 @@
     outline-offset: 2px;
     border-radius: 4px;
   }
+
+
+
+
+
+
+  .copy-field {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #f6f6f6;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+  
+  .copy-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* focus visible RGAA */
+  .copy-btn:focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+  }
+  
+  .material-symbols-outlined {
+    font-size: 20px;
+  }
+  
+  /* feedback visuel */
+  .copy-btn.copied::after {
+    content: "Copié";
+    font-size: 12px;
+    margin-left: 6px;
+  }
+  
+  /* accessibilité */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    border: 0;
+  }
