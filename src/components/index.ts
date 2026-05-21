@@ -7,6 +7,7 @@ export * from "./Button";
 export * from "./Callout";
 export * from "./Card";
 export * from "./CardCompactV";
+export * from "./Carousel";
 export * from "./Chips";
 export * from "./Divider";
 export * from "./Header";
